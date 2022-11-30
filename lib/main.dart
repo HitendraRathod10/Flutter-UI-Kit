@@ -6,8 +6,10 @@ import 'package:flutter_ui_kit/Splash/splash_screen.dart';
 import 'package:flutter_ui_kit/Splash/welcome_screen.dart';
 import 'package:flutter_ui_kit/utils/app_color.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:provider/provider.dart';
 
 import 'Home/bottom_navigation_bar_screen.dart';
+import 'Home/home_provider.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -27,10 +29,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'UI Kit',
-      home: BottomNavigationBarScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => HomeProvider()),
+      ],
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'UI Kit',
+        home: BottomNavigationBarScreen(),
+      ),
     );
   }
 }
