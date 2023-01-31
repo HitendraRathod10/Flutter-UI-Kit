@@ -9,6 +9,71 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+
+  showDeleteAlertDialog(BuildContext context) {
+    Widget cancelButton = Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          color: Colors.grey),
+      child: TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child:  const Padding(
+            padding: EdgeInsets.only(
+              left: 10,
+              right: 10,
+            ),
+            child: Text(
+              'Cancel',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          )),
+    );
+    Widget continueButton = Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          color: AppColor.appBlueColor),
+      child: TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child:  const Padding(
+            padding: EdgeInsets.only(
+              left: 30,
+              right: 30,
+            ),
+            child: Text(
+              'Yes',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          )),
+    );
+    AlertDialog alert = AlertDialog(
+      backgroundColor: AppColor.white,
+      titleTextStyle: const TextStyle(color: AppColor.black,fontSize: 18),
+      title: const Text("Delete message",style: TextStyle(fontSize: 25),),
+      content: const Text("Are you sure want to delete this message from chat ?",style: TextStyle(color: AppColor.black,fontSize: 20)),
+      actions: [
+        cancelButton,
+        const SizedBox(
+          width: 01,
+        ),
+        continueButton,
+      ],
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(20.0)
+          )),
+    );
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -53,52 +118,57 @@ class _ChatScreenState extends State<ChatScreen> {
                                 ? CrossAxisAlignment.start
                                 : CrossAxisAlignment.end,
                             children: [
-                              Container(
-                                margin: EdgeInsets.only(bottom: 05),
-                                  width: MediaQuery.of(context).size.width / 1.5,
-                                  decoration: BoxDecoration(
-                                      color: index % 2 == 0
-                                          ? AppColor.white
-                                          : AppColor.appBlueColor,
-                                      borderRadius: index % 2 == 0
-                                          ? const BorderRadius.only(
-                                              bottomRight: Radius.circular(10),
-                                              bottomLeft: Radius.circular(10),
-                                              topRight: Radius.circular(10))
-                                          : const BorderRadius.only(
-                                              bottomLeft: Radius.circular(10),
-                                              topLeft: Radius.circular(10),
-                                              topRight: Radius.circular(10))),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.fromLTRB(10, 10, 10, 05),
-                                        child: Text(
-                                          "hello Good morning ! hello Good morning ! "
-                                          "hello Good morning",
-                                          style: TextStyle(
-                                              color: index % 2 == 0
-                                                  ? AppColor.black
-                                                  : AppColor.white),
+                              InkWell(
+                                onLongPress: (){
+                                  showDeleteAlertDialog(context);
+                                },
+                                child: Container(
+                                  margin: const EdgeInsets.only(bottom: 05),
+                                    width: MediaQuery.of(context).size.width / 1.5,
+                                    decoration: BoxDecoration(
+                                        color: index % 2 == 0
+                                            ? AppColor.white
+                                            : AppColor.appBlueColor,
+                                        borderRadius: index % 2 == 0
+                                            ? const BorderRadius.only(
+                                                bottomRight: Radius.circular(10),
+                                                bottomLeft: Radius.circular(10),
+                                                topRight: Radius.circular(10))
+                                            : const BorderRadius.only(
+                                                bottomLeft: Radius.circular(10),
+                                                topLeft: Radius.circular(10),
+                                                topRight: Radius.circular(10))),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.fromLTRB(10, 10, 10, 05),
+                                          child: Text(
+                                            "hello Good morning ! hello Good morning ! "
+                                            "hello Good morning",
+                                            style: TextStyle(
+                                                color: index % 2 == 0
+                                                    ? AppColor.black
+                                                    : AppColor.white),
+                                          ),
                                         ),
-                                      ),
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.fromLTRB(00, 00, 05, 10),
-                                        child: Text(
-                                          "12:30",
-                                          style: TextStyle(
-                                              color: index % 2 == 0
-                                                  ? AppColor.black
-                                                  : AppColor.white,
-                                              fontSize: 10),
-                                          textAlign: TextAlign.end,
-                                        ),
-                                      )
-                                    ],
-                                  ))
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.fromLTRB(00, 00, 05, 10),
+                                          child: Text(
+                                            "12:30",
+                                            style: TextStyle(
+                                                color: index % 2 == 0
+                                                    ? AppColor.black
+                                                    : AppColor.white,
+                                                fontSize: 10),
+                                            textAlign: TextAlign.end,
+                                          ),
+                                        )
+                                      ],
+                                    )),
+                              )
                             ],
                           ),
                         );

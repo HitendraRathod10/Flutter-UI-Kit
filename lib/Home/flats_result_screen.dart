@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/Overview/overview_screen.dart';
-import 'package:get/get.dart';
 
+import '../Overview/overview_screen.dart';
 import '../utils/app_color.dart';
 
-class BookmarksScreen extends StatefulWidget {
-  const BookmarksScreen({Key? key}) : super(key: key);
+class FlatResultScreen extends StatefulWidget {
+  const FlatResultScreen({Key? key}) : super(key: key);
 
   @override
-  State<BookmarksScreen> createState() => _BookmarksScreenState();
+  State<FlatResultScreen> createState() => _FlatResultScreenState();
 }
 
-class _BookmarksScreenState extends State<BookmarksScreen> {
-  List data = [];
+class _FlatResultScreenState extends State<FlatResultScreen> {
+
   ScrollController _controller = ScrollController();
 
   @override
@@ -20,7 +19,7 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
     return Scaffold(
         appBar: AppBar(
           title:
-              const Text("Bookmarks", style: TextStyle(color: AppColor.black)),
+          const Text("Flats / Apartments", style: TextStyle(color: AppColor.black)),
           backgroundColor: AppColor.white,
           leading: InkWell(
               onTap: () {
@@ -81,7 +80,7 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
                                       decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius:
-                                              BorderRadius.circular(20),
+                                          BorderRadius.circular(20),
                                           border: Border.all(
                                               color: AppColor.white)),
                                       child: const Padding(
@@ -105,7 +104,7 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
                                     decoration: BoxDecoration(
                                         color: AppColor.grey.withOpacity(0.3),
                                         borderRadius:
-                                            BorderRadius.circular(20)),
+                                        BorderRadius.circular(20)),
                                     child: const Padding(
                                       padding: EdgeInsets.all(2),
                                       child: Icon(
@@ -118,11 +117,11 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
                                 ),
                                 SizedBox(
                                     width:
-                                        MediaQuery.of(context).size.width / 1.3,
+                                    MediaQuery.of(context).size.width / 1.3,
                                     child: const Text(
                                       "Prahladnagar, Ahmedabad",
                                       style: TextStyle(
-                                          // fontFamily: AppFont.regular,
+                                        // fontFamily: AppFont.regular,
                                           fontSize: 17),
                                       overflow: TextOverflow.ellipsis,
                                     ))
@@ -138,7 +137,7 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
                                     decoration: BoxDecoration(
                                         color: AppColor.grey.withOpacity(0.3),
                                         borderRadius:
-                                            BorderRadius.circular(20)),
+                                        BorderRadius.circular(20)),
                                     child: const Padding(
                                       padding: EdgeInsets.all(2),
                                       child: Icon(
@@ -153,7 +152,7 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
                                   width: 150,
                                   child: Text("3 BHK",
                                       style: TextStyle(
-                                          // fontFamily: AppFont.regular,
+                                        // fontFamily: AppFont.regular,
                                           fontSize: 17),
                                       overflow: TextOverflow.ellipsis),
                                 )
@@ -169,7 +168,7 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
                                     decoration: BoxDecoration(
                                         color: AppColor.grey.withOpacity(0.3),
                                         borderRadius:
-                                            BorderRadius.circular(20)),
+                                        BorderRadius.circular(20)),
                                     width: 30,
                                     child: const Padding(
                                       padding: EdgeInsets.all(2),
@@ -180,10 +179,10 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
                                 ),
                                 SizedBox(
                                   width:
-                                      MediaQuery.of(context).size.width / 1.4,
+                                  MediaQuery.of(context).size.width / 1.4,
                                   child: const Text("15,000/Month",
                                       style: TextStyle(
-                                          // fontFamily: AppFont.regular,
+                                        // fontFamily: AppFont.regular,
                                           fontSize: 17),
                                       overflow: TextOverflow.ellipsis),
                                 )
@@ -201,6 +200,7 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
               ],
             );
           },
-        ));
+        )
+    );
   }
 }

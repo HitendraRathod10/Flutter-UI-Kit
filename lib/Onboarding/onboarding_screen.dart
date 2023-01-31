@@ -43,7 +43,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             _controller.onboardingPages[index].imageAsset,
                             fit: BoxFit.fill,
                             width: double.infinity,
-                            height: 250,
+                            height: MediaQuery.of(context).size.height/3,
                           ),
                         ),
                       ),

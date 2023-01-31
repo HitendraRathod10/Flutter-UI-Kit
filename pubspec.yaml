@@ -33,6 +33,7 @@ dependencies:
   google_nav_bar: ^5.0.6
   provider: ^6.0.4
   google_maps_flutter: ^2.2.1
+  shared_preferences: ^2.0.15
   flutter:
     sdk: flutter
 

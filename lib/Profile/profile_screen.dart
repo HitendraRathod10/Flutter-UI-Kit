@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Login/login_screen.dart';
 import 'package:flutter_ui_kit/Profile/app_settings_screen.dart';
 import 'package:flutter_ui_kit/Profile/bookmarks_screen.dart';
 import 'package:flutter_ui_kit/Profile/change_password_screen.dart';
@@ -16,6 +17,72 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+
+  showDeleteAlertDialog(BuildContext context) {
+    Widget cancelButton = Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          color: Colors.grey),
+      child: TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child:  const Padding(
+            padding: EdgeInsets.only(
+              left: 10,
+              right: 10,
+            ),
+            child: Text(
+              'No',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          )),
+    );
+    Widget continueButton = Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          color: AppColor.appBlueColor),
+      child: TextButton(
+          onPressed: () {
+            // Navigator.pop(context);
+            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>LoginScreen()), (route) => false);
+          },
+          child:  const Padding(
+            padding: EdgeInsets.only(
+              left: 30,
+              right: 30,
+            ),
+            child: Text(
+              'Yes',
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          )),
+    );
+    AlertDialog alert = AlertDialog(
+      backgroundColor: AppColor.white,
+      titleTextStyle: const TextStyle(color: AppColor.black,fontSize: 18),
+      title: const Text("Logout",style: TextStyle(fontSize: 25),),
+      content: const Text("Are you sure want to logout ?",style: TextStyle(color: AppColor.black,fontSize: 20)),
+      actions: [
+        cancelButton,
+        const SizedBox(
+          width: 01,
+        ),
+        continueButton,
+      ],
+      shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(20.0)
+          )),
+    );
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,7 +175,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Padding(
               padding: const EdgeInsets.fromLTRB(10, 00, 10, 00),
               child: Card(
-                  color: AppColor.white,
+                  color: Colors.grey.shade200,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                     child: Row(
@@ -132,7 +199,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             child: Padding(
               padding: const EdgeInsets.fromLTRB(10, 00, 10, 00),
               child: Card(
-                  color: Colors.grey.shade200,
+                  // color: Colors.grey.shade200,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
                     child: Row(
@@ -149,7 +216,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   )),
             ),
           ),
-          InkWell(
+          /*InkWell(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>const AppSettingsScreen()));
             },
@@ -172,10 +239,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   )),
             ),
-          ),
+          ),*/
           InkWell(
             onTap: (){
-              // Navigator.push(context, MaterialPageRoute(builder: (context)=>const EditProfileScreen()));
+              showDeleteAlertDialog(context);
             },
             child: Padding(
               padding: const EdgeInsets.fromLTRB(10, 00, 10, 00),

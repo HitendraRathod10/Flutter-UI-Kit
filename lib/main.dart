@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Onboarding/onboarding_screen.dart';
+import 'package:flutter_ui_kit/Register/register_screen.dart';
 import 'package:flutter_ui_kit/Splash/splash_screen.dart';
 import 'package:flutter_ui_kit/Splash/welcome_screen.dart';
 import 'package:flutter_ui_kit/utils/app_color.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
       child: GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'UI Kit',
-        home: BottomNavigationBarScreen(),
+        home: SplashScreen(),
       ),
     );
   }

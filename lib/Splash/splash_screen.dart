@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Onboarding/onboarding_screen.dart';
 import 'package:flutter_ui_kit/utils/app_color.dart';
 import 'package:flutter_ui_kit/utils/app_image.dart';
 
@@ -10,6 +11,16 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.delayed(Duration(seconds: 4),(){
+      Navigator.push(context, MaterialPageRoute(builder: (context)=>OnBoardingScreen()));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(

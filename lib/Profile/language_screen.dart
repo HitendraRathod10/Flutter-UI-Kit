@@ -16,6 +16,13 @@ class _LanguageScreenState extends State<LanguageScreen> {
   int? count;
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    count = 0;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
