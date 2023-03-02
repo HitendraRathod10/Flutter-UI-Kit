@@ -19,8 +19,8 @@ class _CommercialResultScreenState extends State<CommercialResultScreen> {
     return Scaffold(
         appBar: AppBar(
           title:
-          const Text("Commercial Spaces", style: TextStyle(color: AppColor.black)),
-          backgroundColor: AppColor.white,
+          Text("Commercial Spaces", style: Theme.of(context).textTheme.titleLarge?.copyWith(),),
+          // backgroundColor: AppColor.white,
           leading: InkWell(
               onTap: () {
                 Navigator.pop(context);
@@ -36,12 +36,12 @@ class _CommercialResultScreenState extends State<CommercialResultScreen> {
               children: <Widget>[
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>OverviewScreen()));
+                    // Navigator.push(context, MaterialPageRoute(builder: (context)=>OverviewScreen(1)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(10, 05, 10, 00),
                     child: Card(
-                      color: Colors.white.withOpacity(1.0),
+                      // color: Colors.white.withOpacity(1.0),
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(10, 10, 10, 00),
                         child: Column(

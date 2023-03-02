@@ -29,11 +29,23 @@ environment:
 dependencies:
 #  responsive_sizer: ^3.1.1
 #  responsive_framework: ^0.2.0
+  #Locatin
+#  flutter_google_places_hoc081098: ^1.2.0
+  location: ^4.4.0
+  google_maps_flutter: ^2.2.1
+  flutter_google_places: ^0.3.0
+
+  #Base
+  url_launcher: 6.1.5
   get: ^4.6.5
   google_nav_bar: ^5.0.6
   provider: ^6.0.4
-  google_maps_flutter: ^2.2.1
   shared_preferences: ^2.0.15
+  cached_network_image: ^3.2.3
+  shimmer: ^2.0.0
+  google_fonts: ^4.0.1
+  flutter_colorpicker:
+  flutter_material_color_picker:
   flutter:
     sdk: flutter
 

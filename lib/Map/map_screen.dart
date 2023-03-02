@@ -137,7 +137,8 @@ class _MapScreenState extends State<MapScreen> {
                       // focusNode: searchFocus,
                       decoration: InputDecoration(
                           filled: true,
-                          fillColor: Colors.white,
+                          contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
+                          // fillColor: Colors.white,
                           hintText: "Search Location",
                           // labelText: "Search Location",
                           // labelStyle: TextStyle(

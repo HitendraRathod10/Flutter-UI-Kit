@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Forgot%20password/forgot_password_screen.dart';
 import 'package:flutter_ui_kit/Home/bottom_navigation_bar_screen.dart';
+import 'package:flutter_ui_kit/Home/home_provider.dart';
 import 'package:flutter_ui_kit/Home/home_screen.dart';
 import 'package:flutter_ui_kit/Register/register_screen.dart';
+import 'package:provider/provider.dart';
 
 import '../utils/app_color.dart';
 
@@ -175,6 +177,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: const Center(
                               child: Text("Login",
                                 style: TextStyle(
+                                  color: Colors.black,
                                     fontWeight: FontWeight.w500,
                                     fontSize: 20),
                               )),
@@ -239,9 +242,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Text("Don't have an account yet?",style: TextStyle(color: AppColor.white),),
-                              Text(" SignUp Now",style: TextStyle(color: AppColor.white,fontWeight: FontWeight.bold),),
+                            children: [
+                              Text("Don't have an account yet?",style: Theme.of(context).textTheme.titleMedium?.copyWith(color: AppColor.white),),
+                              Text(" SignUp",style: Theme.of(context).textTheme.titleLarge?.copyWith(color: AppColor.white,fontWeight: FontWeight.bold,letterSpacing: 2)),
                             ],
                           )
                       ),

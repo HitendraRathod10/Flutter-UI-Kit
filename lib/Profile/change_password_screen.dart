@@ -12,33 +12,42 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      // backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        title: const Text("Change password",style: TextStyle(color: AppColor.black)),
-        backgroundColor: AppColor.white,
+        title: Text("Change password",style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+        // backgroundColor: AppColor.white,
         leading: InkWell(
             onTap: () {
               Navigator.pop(context);
             },
-            child: const Icon(Icons.arrow_back_ios, color: AppColor.black)),
+            child: Icon(Icons.arrow_back_ios, color: Theme.of(context).iconTheme.color)),
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 00),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text("Current Password",style: TextStyle(color: AppColor.black,fontWeight: FontWeight.w500),),
+            Text(" Current Password",style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),),
             const SizedBox(
               height: 10,
             ),
-            SizedBox(
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: Theme.of(context).primaryColorLight,
+                border: Border.all(
+                  color: Theme.of(context).primaryColorLight,
+                  width: 1.5,
+                ),
+              ),
               height: 50,
               child: TextFormField(
                 style: const TextStyle(color: AppColor.black),
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    // fillColor: Theme.of(context).hintColor,
                     hintText: "Type Current Password Here",
+                    contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
                     border:
                     OutlineInputBorder(borderSide: BorderSide.none)),
                 obscureText: true,
@@ -54,17 +63,26 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             const SizedBox(
               height: 25,
             ),
-            const Text("New Password",style: TextStyle(color: AppColor.black,fontWeight: FontWeight.w500),),
+            Text(" New Password",style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),),
             const SizedBox(
               height: 10,
             ),
-            SizedBox(
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: Theme.of(context).primaryColorLight,
+                border: Border.all(
+                  color: Theme.of(context).primaryColorLight,
+                  width: 1.5,
+                ),
+              ),
               height: 50,
               child: TextFormField(
                 style: const TextStyle(color: AppColor.black),
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    // fillColor: Theme.of(context).hintColor,
+                    contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
                     hintText: "Type New Password Here",
                     border:
                     OutlineInputBorder(borderSide: BorderSide.none)),
@@ -81,17 +99,26 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             const SizedBox(
               height: 25,
             ),
-            const Text("Confirm New Password",style: TextStyle(color: AppColor.black,fontWeight: FontWeight.w500),),
+            Text(" Confirm New Password",style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),),
             const SizedBox(
               height: 10,
             ),
-            SizedBox(
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: Theme.of(context).primaryColorLight,
+                border: Border.all(
+                  color: Theme.of(context).primaryColorLight,
+                  width: 1.5,
+                ),
+              ),
               height: 50,
               child: TextFormField(
                 style: const TextStyle(color: AppColor.black),
-                decoration: const InputDecoration(
+                decoration: InputDecoration(
                     filled: true,
-                    fillColor: Colors.white,
+                    // fillColor: Theme.of(context).hintColor,
+                    contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
                     hintText: "Type Confirm New Password Here",
                     border:
                     OutlineInputBorder(borderSide: BorderSide.none)),
@@ -113,11 +140,11 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               height: 50,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  color: AppColor.appBlueColor
+                  color: Theme.of(context).buttonTheme.colorScheme?.background
               ),
               child: const Center(
                   child: Text("Update Password",
-                    style: TextStyle(color: AppColor.white,fontSize: 25,fontWeight: FontWeight.w700),)),
+                    style: TextStyle(color: AppColor.white,fontSize: 20,fontWeight: FontWeight.w500),)),
             )
           ],
         ),

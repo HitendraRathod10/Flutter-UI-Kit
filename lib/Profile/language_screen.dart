@@ -26,14 +26,14 @@ class _LanguageScreenState extends State<LanguageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Choose Language",style: TextStyle(color: AppColor.black)),
-        backgroundColor: AppColor.white,
+        title: Text("Choose Language",style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+        // backgroundColor: AppColor.white,
         leading: InkWell(
             onTap: () {
               Navigator.pop(context);
             },
-            child: const Icon(Icons.arrow_back_ios, color: AppColor.black)),
-      ),
+            child: Icon(Icons.arrow_back_ios, color: Theme.of(context).iconTheme.color,),
+      )),
       body: ListView.builder(
         itemCount: languages.length,
           itemBuilder: (context,index){
@@ -57,7 +57,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                   padding: const EdgeInsets.fromLTRB(05, 00, 00, 00),
                   child: Row(
                     children: [
-                      Text(languages[index]),
+                      Text(languages[index],style: Theme.of(context).textTheme.titleMedium),
                       const Spacer(),
                       index == count ? const Icon(Icons.done) : const SizedBox.shrink()
                     ],

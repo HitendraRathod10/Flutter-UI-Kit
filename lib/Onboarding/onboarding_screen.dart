@@ -85,7 +85,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       return Text(
                         _controller.isLastPage ? '' : 'Skip',
                         textAlign: TextAlign.center,
-                        style: TextStyle(
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.w500, color: AppColor.white),
                       );
                     }))),
@@ -123,8 +123,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 return GestureDetector(
                   onTap: _controller.forwardAction,
                   child: Container(
-                      height: 30,
-                      width: 60,
+                      height: 40,
+                      width: 90,
                       decoration: BoxDecoration(
                           border: Border.all(color: AppColor.white, width: 02),
                           borderRadius: BorderRadius.circular(25)),
@@ -132,7 +132,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           child: Text(
                         _controller.isLastPage ? 'Start' : 'Next',
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             fontWeight: FontWeight.w500, color: AppColor.white),
                       ))),
                 );

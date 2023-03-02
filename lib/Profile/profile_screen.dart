@@ -5,9 +5,11 @@ import 'package:flutter_ui_kit/Profile/bookmarks_screen.dart';
 import 'package:flutter_ui_kit/Profile/change_password_screen.dart';
 import 'package:flutter_ui_kit/Profile/edit_profile_screen.dart';
 import 'package:flutter_ui_kit/Profile/language_screen.dart';
-import 'package:flutter_ui_kit/Profile/notification_screen.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../utils/app_color.dart';
+import '../utils/theme_controller.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -45,7 +47,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       child: TextButton(
           onPressed: () {
             // Navigator.pop(context);
-            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>LoginScreen()), (route) => false);
+            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> const LoginScreen()), (route) => false);
           },
           child:  const Padding(
             padding: EdgeInsets.only(
@@ -82,69 +84,75 @@ class _ProfileScreenState extends State<ProfileScreen> {
       },
     );
   }
+  ThemeController themeController = Get.put(ThemeController());
+  TextStyle fixedStyle = GoogleFonts.roboto(
+    color: Colors.white,
+  );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.white,
-        title: const Text(
-          "Profile",
-          style: TextStyle(color: AppColor.black),
+        // backgroundColor: AppColor.white,
+        title: Text(
+          "  Profile",
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(),
         ),
-        centerTitle: true,
+        automaticallyImplyLeading: false,
+        // centerTitle: true,
       ),
-      body: Column(
-        children: [
-          InkWell(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const EditProfileScreen()));
-            },
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 00),
-              child: Card(
-                color: Colors.grey.shade200,
-                  child: Padding(
-                padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                child: Row(
-                  children: const [
-                    Icon(Icons.person),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text("Edit Profile"),
-                    Spacer(),
-                    Icon(Icons.chevron_right)
-                  ],
-                ),
-              )),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const EditProfileScreen()));
+              },
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(10, 10, 10, 00),
+                child: Card(
+                  // color: Colors.grey.shade200,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.person),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text("Edit Profile",style: Theme.of(context).textTheme.titleMedium,),
+                          const Spacer(),
+                          const Icon(Icons.chevron_right)
+                        ],
+                      ),
+                    )),
+              ),
             ),
-          ),
-          InkWell(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const ChangePasswordScreen()));
-            },
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(10, 00, 10, 00),
-              child: Card(
-                  color: AppColor.white,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                    child: Row(
-                      children: const [
-                        Icon(Icons.password),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text("Change Password"),
-                        Spacer(),
-                        Icon(Icons.chevron_right)
-                      ],
-                    ),
-                  )),
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const ChangePasswordScreen()));
+              },
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(10, 00, 10, 00),
+                child: Card(
+                  // color: AppColor.white,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.password),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text("Change Password",style: Theme.of(context).textTheme.titleMedium,),
+                          const Spacer(),
+                          const Icon(Icons.chevron_right)
+                        ],
+                      ),
+                    )),
+              ),
             ),
-          ),
-          /*InkWell(
+            /*InkWell(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>const NotificationScreen()));
             },
@@ -168,103 +176,140 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   )),
             ),
           ),*/
-          InkWell(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const BookmarksScreen()));
-            },
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(10, 00, 10, 00),
-              child: Card(
-                  color: Colors.grey.shade200,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                    child: Row(
-                      children: const [
-                        Icon(Icons.bookmark),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text("Bookmarks"),
-                        Spacer(),
-                        Icon(Icons.chevron_right)
-                      ],
-                    ),
-                  )),
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const BookmarksScreen()));
+              },
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(10, 00, 10, 00),
+                child: Card(
+                  // color: Colors.grey.shade200,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.bookmark),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text("Bookmarks",style: Theme.of(context).textTheme.titleMedium),
+                          const Spacer(),
+                          const Icon(Icons.chevron_right)
+                        ],
+                      ),
+                    )),
+              ),
             ),
-          ),
-          InkWell(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const LanguageScreen()));
-            },
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const LanguageScreen()));
+              },
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(10, 00, 10, 00),
+                child: Card(
+                  // color: Colors.grey.shade200,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.language),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text("Language",style: Theme.of(context).textTheme.titleMedium),
+                          const Spacer(),
+                          const Icon(Icons.chevron_right)
+                        ],
+                      ),
+                    )),
+              ),
+            ),
+            /*InkWell(
+            onTap: ()=> themeController.changeThemeMode(ThemeMode.dark),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(10, 00, 10, 00),
               child: Card(
                   // color: Colors.grey.shade200,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                    child: Row(
-                      children: const [
-                        Icon(Icons.language),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text("Language"),
-                        Spacer(),
-                        Icon(Icons.chevron_right)
-                      ],
-                    ),
-                  )),
-            ),
-          ),
-          /*InkWell(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const AppSettingsScreen()));
-            },
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(10, 00, 10, 00),
-              child: Card(
-                  color: AppColor.white,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                    child: Row(
-                      children: const [
-                        Icon(Icons.settings),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text("App Settings"),
-                        Spacer(),
-                        Icon(Icons.chevron_right)
-                      ],
-                    ),
+                    child: Obx(
+                            () {
+                              return Row(
+                                children: [
+                                  Icon(
+                                    themeController.isDarkMode.value
+                                        ? Icons.wb_sunny_outlined
+                                        : Icons.nightlight_outlined,
+                                    color: themeController.isDarkMode.value ? Colors.white : Colors.black,
+                                  ),
+                                  const SizedBox(
+                                    width: 10,
+                                  ),
+                                  Text(
+                                      themeController.isDarkMode.value
+                                          ? 'Light Mode'
+                                          : 'Dark Mode',
+                                      style: themeController.isDarkMode.value ?
+                                      GoogleFonts.roboto(color: Colors.white)
+                                          : GoogleFonts.roboto(color: Colors.black)),
+                                  const Spacer(),
+                                  const Icon(Icons.chevron_right)
+                                ],
+                              );
+                            }),
                   )),
             ),
           ),*/
-          InkWell(
-            onTap: (){
-              showDeleteAlertDialog(context);
-            },
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(10, 00, 10, 00),
-              child: Card(
-                  color: Colors.grey.shade200,
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-                    child: Row(
-                      children: const [
-                        Icon(Icons.power_settings_new),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text("Logout"),
-                        // Spacer(),
-                        // Icon(Icons.chevron_right)
-                      ],
-                    ),
-                  )),
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const AppSettingsScreen()));
+              },
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(10, 00, 10, 00),
+                child: Card(
+                  // color: AppColor.white,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.settings),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text("App Settings",style: Theme.of(context).textTheme.titleMedium),
+                          const Spacer(),
+                          const Icon(Icons.chevron_right)
+                        ],
+                      ),
+                    )),
+              ),
             ),
-          ),
-        ],
+            InkWell(
+              onTap: (){
+                showDeleteAlertDialog(context);
+              },
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(10, 00, 10, 00),
+                child: Card(
+                  // color: Colors.grey.shade200,
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.power_settings_new),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text("Logout",style: Theme.of(context).textTheme.titleMedium),
+                          // Spacer(),
+                          // Icon(Icons.chevron_right)
+                        ],
+                      ),
+                    )),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

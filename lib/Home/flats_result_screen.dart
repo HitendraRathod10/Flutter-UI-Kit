@@ -19,13 +19,13 @@ class _FlatResultScreenState extends State<FlatResultScreen> {
     return Scaffold(
         appBar: AppBar(
           title:
-          const Text("Flats / Apartments", style: TextStyle(color: AppColor.black)),
-          backgroundColor: AppColor.white,
+          Text("Flats / Apartments", style: Theme.of(context).textTheme.titleLarge?.copyWith(),),
+          // backgroundColor: AppColor.white,
           leading: InkWell(
               onTap: () {
                 Navigator.pop(context);
               },
-              child: const Icon(Icons.arrow_back_ios, color: AppColor.black)),
+              child: Icon(Icons.arrow_back_ios, color: Theme.of(context).iconTheme.color)),
         ),
         body: ListView.builder(
           shrinkWrap: true,
@@ -36,12 +36,12 @@ class _FlatResultScreenState extends State<FlatResultScreen> {
               children: <Widget>[
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>OverviewScreen()));
+                    // Navigator.push(context, MaterialPageRoute(builder: (context)=>OverviewScreen(1)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(10, 05, 10, 00),
                     child: Card(
-                      color: Colors.white.withOpacity(1.0),
+                      // color: Colors.white.withOpacity(1.0),
                       child: Padding(
                         padding: const EdgeInsets.fromLTRB(10, 10, 10, 00),
                         child: Column(

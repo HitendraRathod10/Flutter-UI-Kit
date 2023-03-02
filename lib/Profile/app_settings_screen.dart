@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/Profile/theme_provider.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_ui_kit/Profile/display_theme_mode.dart';
+import 'package:get/get.dart';
+import '../utils/theme_controller.dart';
 
 class AppSettingsScreen extends StatefulWidget {
   const AppSettingsScreen({Key? key}) : super(key: key);
@@ -12,24 +13,61 @@ class AppSettingsScreen extends StatefulWidget {
 class _AppSettingsScreenState extends State<AppSettingsScreen> {
   @override
   Widget build(BuildContext context) {
-    // final themeChanger = Provider.of<ThemeChanger>(context);
+    ThemeController themeController = Get.put(ThemeController());
     return Scaffold(
       appBar: AppBar(
-        title: Text("App Settings Screen"),
+        title: Text("App Settings Screen", style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+        leading: InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.arrow_back_ios, color: Theme.of(context).iconTheme.color)),
       ),
       body: Column(
         children: [
-          // RadioListTile<ThemeMode>(
+          Card(child: ListTile(
+              onTap: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const DisplayThemeMode())),
+
+    // leading: Icon(
+              // themeController.isDarkMode.value
+              // ? Icons.wb_sunny_outlined
+              //     : Icons.nightlight_outlined,
+              // color: Colors.white,
+              // ),
+              title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      /*  themeController.isDarkMode.value
+    ? 'Light Mode'
+        : */'Display',
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 25,fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 5),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          /*  themeController.isDarkMode.value
+    ? 'Light Mode'
+        : */'Dark Mode',
+                          // style: fixedStyle,
+                        ),
+                        Icon(Icons.east_rounded)
+                      ],)
+                  ])
+          )),
+          // RadioListTile(
           //   title: const Text('Light Mode'),
-          //   groupValue: themeChanger.themeMode,
+          //   groupValue: themeController,
           //   value: ThemeMode.light,
-          //   onChanged: themeChanger.setTheme,
+          //   onChanged: (value) => themeController.changeThemeMode(value),
           // ),
-          // RadioListTile<ThemeMode>(
+          // RadioListTile(
           //   title: const Text('Dark Mode'),
-          //   groupValue: themeChanger.themeMode,
+          //   groupValue: 'male',
           //   value: ThemeMode.dark,
-          //   onChanged: themeChanger.setTheme,
+          //   onChanged: (value) => themeController.changeThemeMode(value),
           // )
         ],
       ),

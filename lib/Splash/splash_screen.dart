@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_ui_kit/Onboarding/onboarding_screen.dart';
+import 'package:flutter_ui_kit/Profile/display_theme_mode.dart';
 import 'package:flutter_ui_kit/utils/app_color.dart';
 import 'package:flutter_ui_kit/utils/app_image.dart';
+import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import '../utils/theme_controller.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -12,13 +18,28 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
+  ThemeController themeController = Get.put(ThemeController());
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    Future.delayed(Duration(seconds: 4),(){
+    setThemeButton();
+    Future.delayed(const Duration(seconds: 4),(){
       Navigator.push(context, MaterialPageRoute(builder: (context)=>OnBoardingScreen()));
     });
+  }
+  void setThemeButton() async {
+    var brightness = SchedulerBinding.instance.platformDispatcher.platformBrightness;
+    bool isDarkMode = brightness == Brightness.dark;
+    final prefs = await SharedPreferences.getInstance();
+    var themeMode = prefs.getString('themeMode') ?? ThemeMode.system;
+    if (themeMode == ThemeMode.system.toString()) {
+      prefs.setString('themeMode',themeMode.toString());
+      themeController.changeThemeMode(isDarkMode ? ThemeMode.dark : ThemeMode.light);
+    }else{
+      prefs.setString('themeMode',isDarkMode ? ThemeMode.dark.toString() : ThemeMode.light.toString());
+      themeController.changeThemeMode(isDarkMode ? ThemeMode.dark : ThemeMode.light);
+    }
   }
 
   @override

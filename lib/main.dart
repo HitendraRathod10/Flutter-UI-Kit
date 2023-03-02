@@ -1,15 +1,10 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/Onboarding/onboarding_screen.dart';
-import 'package:flutter_ui_kit/Register/register_screen.dart';
 import 'package:flutter_ui_kit/Splash/splash_screen.dart';
-import 'package:flutter_ui_kit/Splash/welcome_screen.dart';
-import 'package:flutter_ui_kit/utils/app_color.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:flutter_ui_kit/utils/pallete.dart';
+import 'package:flutter_ui_kit/utils/theme_controller.dart';
 import 'package:provider/provider.dart';
-
-import 'Home/bottom_navigation_bar_screen.dart';
+import 'package:get/get.dart';
 import 'Home/home_provider.dart';
 
 class MyHttpOverrides extends HttpOverrides {
@@ -30,15 +25,26 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => HomeProvider()),
-      ],
-      child: GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'UI Kit',
-        home: SplashScreen(),
-      ),
-    );
+    ThemeController themeController = Get.put(ThemeController());
+    return GetX<ThemeController>(
+        init: themeController,
+        builder: (context) {
+          print('themeController.isDarkMode.value ${themeController.isDarkMode.value}');
+          return MultiProvider(
+            providers: [
+              ChangeNotifierProvider(create: (context) => HomeProvider()),
+            ],
+            child: GetMaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: 'UI Kit',
+              home: const SplashScreen(),
+              theme: lightThemeData,
+              darkTheme: darkThemeData,
+              themeMode: themeController.isDarkMode.value
+                  ? ThemeMode.dark
+                  : ThemeMode.light,
+            ),
+          );
+        });
   }
 }

@@ -13,15 +13,15 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade200,
+      // backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        title: const Text("Edit profile",style: TextStyle(color: AppColor.black)),
-        backgroundColor: AppColor.white,
+        title: Text("Edit profile",style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+        // backgroundColor: AppColor.white,
         leading: InkWell(
             onTap: () {
               Navigator.pop(context);
             },
-            child: const Icon(Icons.arrow_back_ios, color: AppColor.black)),
+            child: Icon(Icons.arrow_back_ios, color: Theme.of(context).iconTheme.color)),
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(15, 00, 15, 00),
@@ -59,18 +59,26 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               const SizedBox(
                 height: 30,
               ),
-              SizedBox(
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Theme.of(context).primaryColorLight,
+                  border: Border.all(
+                    color: Theme.of(context).primaryColorLight,
+                    width: 1.5,
+                  ),
+                ),
                 height: 50,
                 child: TextFormField(
                   style: const TextStyle(color: AppColor.black),
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.white,
+                      // fillColor: Theme.of(context).hintColor,
                       hintText: "Username",
                       border:
                       OutlineInputBorder(borderSide: BorderSide.none),
                     contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
-                    prefixIcon: Icon(Icons.person,color: AppColor.black,),
+                    prefixIcon: Icon(Icons.person,color: Theme.of(context).iconTheme.color),
                     prefixIconColor: AppColor.black,
                   ),
                   cursorColor: AppColor.appBlueColor,
@@ -85,18 +93,26 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               const SizedBox(
                 height: 15,
               ),
-              SizedBox(
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Theme.of(context).primaryColorLight,
+                  border: Border.all(
+                    color: Theme.of(context).primaryColorLight,
+                    width: 1.5,
+                  ),
+                ),
                 height: 50,
                 child: TextFormField(
                   style: const TextStyle(color: AppColor.black),
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.white,
+                      // fillColor: Theme.of(context).hintColor,
                       hintText: "Email",
                       border:
                       OutlineInputBorder(borderSide: BorderSide.none),
                     contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
-                    prefixIcon: Icon(Icons.mail,color: AppColor.black,),
+                    prefixIcon: Icon(Icons.mail,color: Theme.of(context).iconTheme.color),
                     prefixIconColor: AppColor.black,
                   ),
                   cursorColor: AppColor.appBlueColor,
@@ -111,21 +127,29 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               const SizedBox(
                 height: 15,
               ),
-              SizedBox(
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5),
+                  color: Theme.of(context).primaryColorLight,
+                  border: Border.all(
+                    color: Theme.of(context).primaryColorLight,
+                    width: 1.5,
+                  ),
+                ),
                 height: 50,
                 child: TextFormField(
-                  style: const TextStyle(color: AppColor.black),
-                  decoration: const InputDecoration(
+                  // style: const TextStyle(color: AppColor.black),
+                  decoration: InputDecoration(
                       filled: true,
-                      fillColor: Colors.white,
+                      // fillColor: Theme.of(context).hintColor,
                       hintText: "Contact no.",
                       border:
                       OutlineInputBorder(borderSide: BorderSide.none),
                     contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
-                    prefixIcon: Icon(Icons.phone,color: AppColor.black,),
+                    prefixIcon: Icon(Icons.phone,color: Theme.of(context).iconTheme.color),
                     prefixIconColor: AppColor.black,
                   ),
-                  cursorColor: AppColor.appBlueColor,
+                  // cursorColor: AppColor.appBlueColor,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter required fields';
@@ -142,11 +166,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 height: 50,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: AppColor.appBlueColor
+                    color: Theme.of(context).buttonTheme.colorScheme?.background
                 ),
                 child: const Center(
                     child: Text("Save Changes",
-                      style: TextStyle(color: AppColor.white,fontSize: 25,fontWeight: FontWeight.w700),)),
+                      style: TextStyle(color: AppColor.white,fontSize: 20,fontWeight: FontWeight.w500),)),
               )
             ],
           ),

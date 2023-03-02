@@ -272,8 +272,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text("Already have an account?",style: TextStyle(color: AppColor.white),),
-                          const Text(" Login Now",style: TextStyle(color: AppColor.white,fontWeight: FontWeight.bold),),
+                          Text("Already have an account?",style: Theme.of(context).textTheme.titleMedium?.copyWith(color: AppColor.white),),
+                          Text(" Login",style: Theme.of(context).textTheme.titleLarge?.copyWith(color: AppColor.white,fontWeight: FontWeight.bold,letterSpacing: 2)),
                         ],
                       )
                   ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Register/register_screen.dart';
+import 'package:flutter_ui_kit/utils/app_color.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({Key? key}) : super(key: key);
@@ -30,16 +31,17 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             child: Padding(
               padding: const EdgeInsets.fromLTRB(20, 00, 20, 00),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: MediaQuery.of(context).size.height/8,),
-                  InkWell(
-                    child: const Icon(Icons.arrow_back_ios,color: Colors.white,),
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  const SizedBox(height: 30,),
+                  SizedBox(height: MediaQuery.of(context).size.height/4,),
+                  // InkWell(
+                  //   child: const Icon(Icons.arrow_back_ios,color: Colors.white,),
+                  //   onTap: () {
+                  //     Navigator.pop(context);
+                  //   },
+                  // ),
+                  // const SizedBox(height: 30,),
                   const Text(
                     "Reset Your Password",
                     style: TextStyle(
@@ -103,28 +105,34 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                             ],
                           ),
                           alignment: Alignment.center,
-                          child: const Text(
+                          child: Text(
                             "Reset Password",
-                            style: TextStyle(
+                            style: Theme.of(context).textTheme.titleMedium?.copyWith(
                                 fontSize: 20,
-                                fontWeight: FontWeight.w500
+                                fontWeight: FontWeight.w500,
+                              color: AppColor.black
                             ),
                           ))),
                   const SizedBox(height: 50,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text("Don't Have An Account Yet? ",
-                        style: TextStyle(
-                            color: Colors.white
+                      Text("Don't Have An Account Yet? ",
+                        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                            color: Colors.white,
+                          letterSpacing: 1,
+                          fontWeight: FontWeight.w400
                           // fontFamily: AppFont.regular
                         ),
                       ),
                       InkWell(
-                        child: const Text(
+                        child: Text(
                           "Signup",
-                          style: TextStyle(
-                              color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold
+                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            letterSpacing: 2
                             // fontFamily: AppFont.semiBold
                           ),
                         ),
