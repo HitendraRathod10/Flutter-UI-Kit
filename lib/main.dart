@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         init: themeController,
         builder: (context) {
           print('themeController.isDarkMode.value ${themeController.isDarkMode.value}');
-          print("laggg12 ::: ${themeController.name.value}");
+          print("laggg123 ::: ${themeController.name.value}");
           return MultiProvider(
             providers: [
               ChangeNotifierProvider(create: (context) => HomeProvider()),
