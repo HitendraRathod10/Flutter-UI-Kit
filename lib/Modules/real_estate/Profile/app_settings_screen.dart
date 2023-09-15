@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/Profile/display_theme_mode.dart';
 import 'package:get/get.dart';
 import '../utils/theme_controller.dart';
+import 'display_theme_mode.dart';
 
 class AppSettingsScreen extends StatefulWidget {
   const AppSettingsScreen({Key? key}) : super(key: key);

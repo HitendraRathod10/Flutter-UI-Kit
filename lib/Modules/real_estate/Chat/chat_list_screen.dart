@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/Chat/chat_screen.dart';
-import 'package:flutter_ui_kit/model/service_model.dart';
 import 'package:provider/provider.dart';
 
 import '../Home/home_provider.dart';
 import '../utils/app_color.dart';
 import '../utils/no_data_found_screen.dart';
+import 'chat_screen.dart';
+
 
 class ChatListScreen extends StatefulWidget {
   const ChatListScreen({Key? key}) : super(key: key);

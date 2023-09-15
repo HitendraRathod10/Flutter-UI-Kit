@@ -2,10 +2,10 @@
 // import 'package:employee_attendance_app/utils/app_colors.dart';
 // import 'package:employee_attendance_app/utils/app_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/utils/app_color.dart';
 import 'package:get/get.dart';
 // import 'login_screen.dart';
 import '../Login/login_screen.dart';
+import '../utils/app_color.dart';
 import 'onboarding_controller.dart';
 
 class OnBoardingScreen extends StatefulWidget {

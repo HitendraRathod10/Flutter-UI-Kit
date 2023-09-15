@@ -1,11 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/Overview/overview_screen.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../Home/home_provider.dart';
+import '../Overview/overview_screen.dart';
 import '../utils/app_color.dart';
 import '../utils/no_data_found_screen.dart';
 

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_ui_kit/Onboarding/onboarding_screen.dart';
-import 'package:flutter_ui_kit/Profile/display_theme_mode.dart';
-import 'package:flutter_ui_kit/utils/app_color.dart';
-import 'package:flutter_ui_kit/utils/app_image.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../Onboarding/onboarding_screen.dart';
+import '../utils/app_color.dart';
+import '../utils/app_image.dart';
 import '../utils/theme_controller.dart';
 
 class SplashScreen extends StatefulWidget {

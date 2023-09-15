@@ -1,16 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/Home/commercial_result_screen.dart';
-import 'package:flutter_ui_kit/Home/flats_result_screen.dart';
-import 'package:flutter_ui_kit/Home/house_result_screen.dart';
-import 'package:flutter_ui_kit/Home/residential_result_screen.dart';
-import 'package:flutter_ui_kit/Home/search_location_screen.dart';
-import 'package:flutter_ui_kit/Overview/overview_screen.dart';
-import 'package:flutter_ui_kit/utils/app_color.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/Home/search_location_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
+import '../Overview/overview_screen.dart';
 import '../model/service_model.dart';
+import '../utils/app_color.dart';
 import 'home_provider.dart';
+import 'house_result_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

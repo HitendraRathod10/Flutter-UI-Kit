@@ -1,14 +1,15 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/Splash/splash_screen.dart';
-import 'package:flutter_ui_kit/l10n/l10n.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_ui_kit/utils/pallete.dart';
-import 'package:flutter_ui_kit/utils/theme_controller.dart';
 import 'package:provider/provider.dart';
 import 'package:get/get.dart';
-import 'Home/home_provider.dart';
+
+import 'Modules/real_estate/Home/home_provider.dart';
+import 'Modules/real_estate/Splash/splash_screen.dart';
+import 'Modules/real_estate/l10n/l10n.dart';
+import 'Modules/real_estate/utils/pallete.dart';
+import 'Modules/real_estate/utils/theme_controller.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override

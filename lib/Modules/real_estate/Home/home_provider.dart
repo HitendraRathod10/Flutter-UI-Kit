@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/Chat/chat_list_screen.dart';
-import 'package:flutter_ui_kit/Home/home_screen.dart';
-import 'package:flutter_ui_kit/Map/map_screen.dart';
-import 'package:flutter_ui_kit/Profile/profile_screen.dart';
-import 'package:flutter_ui_kit/model/service_model.dart';
+
+import '../Chat/chat_list_screen.dart';
+import '../Map/map_screen.dart';
+import '../Profile/profile_screen.dart';
+import '../model/service_model.dart';
+import 'home_screen.dart';
+
 
 class HomeProvider extends ChangeNotifier {
   int selectedIndex = 0;

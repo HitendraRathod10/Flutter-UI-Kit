@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/Forgot%20password/forgot_password_screen.dart';
-import 'package:flutter_ui_kit/Home/bottom_navigation_bar_screen.dart';
-import 'package:flutter_ui_kit/Home/home_provider.dart';
-import 'package:flutter_ui_kit/Home/home_screen.dart';
-import 'package:flutter_ui_kit/Register/register_screen.dart';
 import 'package:provider/provider.dart';
 
+import '../Forgot password/forgot_password_screen.dart';
+import '../Home/bottom_navigation_bar_screen.dart';
+import '../Register/register_screen.dart';
 import '../utils/app_color.dart';
 
 class LoginScreen extends StatefulWidget {

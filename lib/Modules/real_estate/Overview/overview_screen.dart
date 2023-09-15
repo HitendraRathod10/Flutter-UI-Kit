@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/Chat/chat_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../Chat/chat_screen.dart';
 import '../Home/home_provider.dart';
 import '../model/service_model.dart';
 import '../utils/app_color.dart';

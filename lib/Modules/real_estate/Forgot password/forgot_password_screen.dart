@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/Register/register_screen.dart';
-import 'package:flutter_ui_kit/utils/app_color.dart';
+
+import '../Register/register_screen.dart';
+import '../utils/app_color.dart';
+
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({Key? key}) : super(key: key);

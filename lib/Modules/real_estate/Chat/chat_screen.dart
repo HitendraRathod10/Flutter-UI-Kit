@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/utils/app_color.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../Home/home_provider.dart';
 import '../model/service_model.dart';
+import '../utils/app_color.dart';
 
 class ChatScreen extends StatefulWidget {
   RealStateModel chatData;

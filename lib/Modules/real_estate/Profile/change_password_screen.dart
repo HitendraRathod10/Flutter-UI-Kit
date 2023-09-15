@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/utils/app_color.dart';
+
+import '../utils/app_color.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
   const ChangePasswordScreen({Key? key}) : super(key: key);

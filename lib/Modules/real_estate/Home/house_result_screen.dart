@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/model/service_model.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../Overview/overview_screen.dart';
+import '../model/service_model.dart';
 import '../utils/app_color.dart';
 import 'home_provider.dart';
 

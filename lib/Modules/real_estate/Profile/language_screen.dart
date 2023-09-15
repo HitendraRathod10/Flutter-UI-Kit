@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_ui_kit/utils/language_controller.dart';
-import 'package:flutter_ui_kit/utils/theme_controller.dart';
 import 'package:get/get.dart';
 import '../utils/app_color.dart';
+import '../utils/theme_controller.dart';
 
 class LanguageScreen extends StatefulWidget {
   const LanguageScreen({Key? key}) : super(key: key);

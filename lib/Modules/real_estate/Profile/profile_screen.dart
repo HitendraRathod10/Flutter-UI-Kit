@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_kit/Login/login_screen.dart';
-import 'package:flutter_ui_kit/Profile/app_settings_screen.dart';
-import 'package:flutter_ui_kit/Profile/bookmarks_screen.dart';
-import 'package:flutter_ui_kit/Profile/change_password_screen.dart';
-import 'package:flutter_ui_kit/Profile/edit_profile_screen.dart';
-import 'package:flutter_ui_kit/Profile/language_screen.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../Login/login_screen.dart';
 import '../utils/app_color.dart';
 import '../utils/theme_controller.dart';
+import 'app_settings_screen.dart';
+import 'bookmarks_screen.dart';
+import 'change_password_screen.dart';
+import 'edit_profile_screen.dart';
+import 'language_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
