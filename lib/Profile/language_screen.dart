@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_ui_kit/utils/language_controller.dart';
+import 'package:flutter_ui_kit/utils/theme_controller.dart';
+import 'package:get/get.dart';
 import '../utils/app_color.dart';
 
 class LanguageScreen extends StatefulWidget {
@@ -11,9 +14,16 @@ class LanguageScreen extends StatefulWidget {
 
 class _LanguageScreenState extends State<LanguageScreen> {
 
-  List languages = ['English','हिन्दी','ગુજરાતી','मराठी',"ਪੰਜਾਬੀ"];
+  Map lang = {
+    "English" : "en",
+    "हिन्दी" : "hi",
+    "ગુજરાતી" : "gu",
+    "मराठी" : "mr",
+    "ਪੰਜਾਬੀ" : "pa",
+  };
   bool isClick = false;
   int? count;
+  final storeController = Get.find<ThemeController>();
 
   @override
   void initState() {
@@ -26,7 +36,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Choose Language",style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+        title: Text(AppLocalizations.of(context)!.test,style: Theme.of(context).textTheme.titleLarge?.copyWith()),
         // backgroundColor: AppColor.white,
         leading: InkWell(
             onTap: () {
@@ -35,15 +45,21 @@ class _LanguageScreenState extends State<LanguageScreen> {
             child: Icon(Icons.arrow_back_ios, color: Theme.of(context).iconTheme.color,),
       )),
       body: ListView.builder(
-        itemCount: languages.length,
+        itemCount: lang.length,
           itemBuilder: (context,index){
+            String key = lang.keys.elementAt(index);
+            String value = lang.values.elementAt(index);
           return Padding(
             padding: const EdgeInsets.fromLTRB(15, 15, 15, 00),
             child: InkWell(
               onTap: (){
                 isClick = true;
                 count = index;
-                setState(() {});
+                storeController.changeLanguageName(value);
+                setState(() {
+
+                });
+                // Get.updateLocale(Locale(value));
               },
               child: Container(
                 alignment: Alignment.centerLeft,
@@ -57,7 +73,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                   padding: const EdgeInsets.fromLTRB(05, 00, 00, 00),
                   child: Row(
                     children: [
-                      Text(languages[index],style: Theme.of(context).textTheme.titleMedium),
+                      Text(key,style: Theme.of(context).textTheme.titleMedium),
                       const Spacer(),
                       index == count ? const Icon(Icons.done) : const SizedBox.shrink()
                     ],
