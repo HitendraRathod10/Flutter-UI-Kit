@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/languages.dart';
 import 'package:provider/provider.dart';
 import 'package:get/get.dart';
 
@@ -19,6 +20,7 @@ class MyHttpOverrides extends HttpOverrides {
           (X509Certificate cert, String host, int port) => true;
   }
 }
+
 void main() {
   runApp(const MyApp());
   HttpOverrides.global = MyHttpOverrides();
@@ -33,8 +35,6 @@ class MyApp extends StatelessWidget {
     return GetX<ThemeController>(
         init: themeController,
         builder: (context) {
-          print('themeController.isDarkMode.value ${themeController.isDarkMode.value}');
-          print("laggg123 ::: ${themeController.name.value}");
           return MultiProvider(
             providers: [
               ChangeNotifierProvider(create: (context) => HomeProvider()),
@@ -55,33 +55,11 @@ class MyApp extends StatelessWidget {
                 GlobalCupertinoLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate
               ],
-              // fallbackLocale: const Locale('en', 'US'),
-              // translations: Languages(),
+              fallbackLocale: const Locale('en', 'US'),
+              translations: Languages(),
               locale: Locale(themeController.name.value),
             ),
           );
         });
   }
-}
-
-
-class Languages extends Translations {
-  @override
-  Map<String, Map<String, String>> get keys => {
-    'hi': {
-      "test":"घर"
-    },
-    'gu': {
-      "test":"ઘર"
-    },
-    'en': {
-      "test":"Home"
-    },
-    'mr':{
-      "test":"मुख्यपृष्ठ"
-    },
-    'pa':{
-      "test":"ਘਰ"
-    }
-  };
 }

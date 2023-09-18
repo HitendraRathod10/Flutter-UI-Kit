@@ -95,7 +95,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         // backgroundColor: AppColor.white,
         title: Text(
-          "  Profile",
+          'profile'.tr,
           style: Theme.of(context).textTheme.titleLarge?.copyWith(),
         ),
         automaticallyImplyLeading: false,
