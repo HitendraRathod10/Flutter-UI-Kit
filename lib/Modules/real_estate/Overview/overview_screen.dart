@@ -303,7 +303,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                           alignment: Alignment.bottomCenter,
                           height: 24,
                           child: const Text(
-                            " month",
+                            " / month",
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.normal),
                           ))
