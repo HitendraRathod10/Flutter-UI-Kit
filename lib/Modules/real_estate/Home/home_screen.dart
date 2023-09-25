@@ -8,6 +8,7 @@ import '../model/service_model.dart';
 import '../utils/app_color.dart';
 import 'home_provider.dart';
 import 'house_result_screen.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   Text(
-                    "What are \nlooking for?",
+                    "what are \nlooking for?",
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge
@@ -64,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text("Current location",
+                          Text("current location".tr,
                               style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,
@@ -123,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           borderRadius: BorderRadius.circular(10)),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           Icon(
                             Icons.home,
                             size: 40,
@@ -132,14 +133,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 04,
                           ),
                           Text(
-                            "House",
+                            "house".tr,
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 16),
                           ),
                           SizedBox(
                             height: 01,
                           ),
-                          Text("2000+ results",
+                          Text("2000+ results".tr,
                               style: TextStyle(
                                   fontWeight: FontWeight.normal, fontSize: 14))
                         ],
@@ -169,7 +170,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           borderRadius: BorderRadius.circular(10)),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           Icon(
                             Icons.apartment_rounded,
                             size: 40,
@@ -178,14 +179,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 04,
                           ),
                           Text(
-                            "Flats / Apartments",
+                            "flats / apartments".tr,
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 16),
                           ),
                           SizedBox(
                             height: 01,
                           ),
-                          Text("5000+ results",
+                          Text("5000+ results".tr,
                               style: TextStyle(
                                   fontWeight: FontWeight.normal, fontSize: 14))
                         ],
@@ -230,15 +231,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           const SizedBox(
                             height: 04,
                           ),
-                          const Text(
-                            "Residential",
+                          Text(
+                            "residential".tr,
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 16),
                           ),
                           const SizedBox(
                             height: 01,
                           ),
-                          const Text("1000+ results",
+                          Text("1000+ results".tr,
                               style: TextStyle(
                                   fontWeight: FontWeight.normal, fontSize: 14))
                         ],
@@ -274,15 +275,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           const SizedBox(
                             height: 04,
                           ),
-                          const Text(
-                            "commercial",
+                          Text(
+                            "commercial".tr,
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 16),
                           ),
                           const SizedBox(
                             height: 01,
                           ),
-                          const Text("1000+ results",
+                          Text("1000+ results".tr,
                               style: TextStyle(
                                   fontWeight: FontWeight.normal, fontSize: 14))
                         ],
@@ -292,10 +293,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.fromLTRB(20, 20, 20, 00),
               child: Text(
-                "Recommend For You",
+                "recommend for you".tr,
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),

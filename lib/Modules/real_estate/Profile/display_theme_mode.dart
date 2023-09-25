@@ -41,7 +41,7 @@ class _DisplayThemeModeState extends State<DisplayThemeMode> {
     bool isDarkMode = brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Display Mode', style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+        title: Text('display mode'.tr, style: Theme.of(context).textTheme.titleLarge?.copyWith()),
         leading: InkWell(
             onTap: () {
               Navigator.pop(context);
@@ -55,10 +55,10 @@ class _DisplayThemeModeState extends State<DisplayThemeMode> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 40),
-              Text('Choose how your Flutter UI Kit experience looks for this device...',style: Theme.of(context).textTheme.headline3),
+              Text('choose how your flutter ui kit experience looks for this device...'.tr,style: Theme.of(context).textTheme.headline3),
               const SizedBox(height: 15),
               RadioListTile(
-                title: const Text('Device settings'),
+                title: Text('device settings'.tr),
                 groupValue: themeMode,
                 value: ThemeMode.system,
                 onChanged: (value) async{
@@ -70,7 +70,7 @@ class _DisplayThemeModeState extends State<DisplayThemeMode> {
                 }
               ),
               RadioListTile(
-                title: const Text('Dark Mode'),
+                title: Text('dark mode'.tr),
                 groupValue: themeMode,
                 value: ThemeMode.dark,
                 onChanged: (value) async{
@@ -82,7 +82,7 @@ class _DisplayThemeModeState extends State<DisplayThemeMode> {
                 }
               ),
               RadioListTile(
-                title: const Text('Light Mode'),
+                title: Text('light mode'.tr),
                 groupValue: themeMode,
                 value: ThemeMode.light,
                 onChanged: (value) async{
@@ -94,7 +94,7 @@ class _DisplayThemeModeState extends State<DisplayThemeMode> {
                 }
               ),
               const SizedBox(height: 15),
-              Text("If you cheese Device settings, this app will use the mode that's already selected in this device's settings.",style: Theme.of(context).textTheme.headline3),
+              Text("if you choose device settings, this app will use the mode that's already selected in this device's settings.".tr,style: Theme.of(context).textTheme.headline3),
             ]
         ),
       ),

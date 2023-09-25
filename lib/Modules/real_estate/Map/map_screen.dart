@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
+import 'package:get/get.dart';
 import '../utils/app_color.dart';
 
 class MapScreen extends StatefulWidget {
@@ -139,7 +139,7 @@ class _MapScreenState extends State<MapScreen> {
                           filled: true,
                           contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
                           // fillColor: Colors.white,
-                          hintText: "Search Location",
+                          hintText: 'search location'.tr,
                           // labelText: "Search Location",
                           // labelStyle: TextStyle(
                           //   color: AppColor.appBlueColor,

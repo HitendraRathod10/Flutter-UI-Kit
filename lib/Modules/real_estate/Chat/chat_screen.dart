@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -303,7 +304,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     decoration: InputDecoration(
                         filled: true,
                         // fillColor: Colors.white,
-                        hintText: "Type message here",
+                        hintText: "type message here".tr,
                         prefixIcon: Icon(Icons.attachment,
                             color: Theme.of(context).iconTheme.color),
                         suffixIcon: InkWell(

@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -53,7 +54,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                         }
                       },
                       child: Row(
-                        children: const [
+                        children: [
                           Icon(
                             Icons.call,
                             color: AppColor.white,
@@ -61,7 +62,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                           SizedBox(
                             width: 03,
                           ),
-                          Text("Call",
+                          Text("call".tr,
                               style: TextStyle(color: AppColor.white),
                               maxLines: 2,
                               textAlign: TextAlign.center),
@@ -81,7 +82,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                                   ChatScreen(widget.realStateData!)));
                     },
                     child: Row(
-                      children: const [
+                      children: [
                         Icon(
                           Icons.message,
                           color: AppColor.white,
@@ -90,7 +91,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                           width: 03,
                         ),
                         Text(
-                          "Chat",
+                          "chat".tr,
                           style: TextStyle(color: AppColor.white),
                         ),
                       ],
@@ -145,8 +146,8 @@ class _OverviewScreenState extends State<OverviewScreen> {
                                         ),
                                       )),
                                 )),
-                            const Text(
-                              "Details",
+                            Text(
+                              "details".tr,
                               style: TextStyle(
                                   color: AppColor.white,
                                   fontSize: 20,
@@ -302,14 +303,14 @@ class _OverviewScreenState extends State<OverviewScreen> {
                           ? Container(
                           alignment: Alignment.bottomCenter,
                           height: 24,
-                          child: const Text(
-                            " / month",
+                          child: Text(
+                            "month".tr,
                             style: TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.normal),
                           ))
                           : const SizedBox.shrink(),
                       widget.realStateData?.govtCharge == true
-                          ? Text(' + Govt. Charges',
+                          ? Text('govt. charges'.tr,
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium
@@ -360,12 +361,12 @@ class _OverviewScreenState extends State<OverviewScreen> {
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.fromLTRB(20, 20, 00, 00),
                   child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        "Description",
+                        "description".tr,
                         style:
                         TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                       )),
@@ -386,10 +387,10 @@ class _OverviewScreenState extends State<OverviewScreen> {
                       children: [
                         const Icon(Icons.calendar_month),
                         const SizedBox(width: 5),
-                        const Align(
+                        Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            "Published On",
+                            "published on".tr,
                             style: TextStyle(
                                 fontWeight: FontWeight.normal, fontSize: 22),
                           ),
@@ -411,10 +412,10 @@ class _OverviewScreenState extends State<OverviewScreen> {
                         const Icon(Icons.add_ic_call),
                         const SizedBox(width: 5),
                         const SizedBox(width: 5),
-                        const Align(
+                        Align(
                           alignment: Alignment.centerLeft,
                           child: Text(
-                            "Sales Enquiries",
+                            "sales enquiries".tr,
                             style: TextStyle(
                                 fontWeight: FontWeight.normal, fontSize: 22),
                           ),
