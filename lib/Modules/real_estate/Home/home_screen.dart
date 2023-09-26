@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Row(
                 children: [
                   Text(
-                    "what are \nlooking for?",
+                    "what are looking for?".tr,
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge
