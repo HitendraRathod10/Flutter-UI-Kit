@@ -66,6 +66,9 @@ class Languages extends Translations {
           "delete message": "संदेश को हटाएं",
           "are you sure want to delete this message from chat ?": "क्या आप वाकई इस संदेश को चैट से हटाना चाहते हैं ?",
           "cancel": "रद्द करना",
+          "bed": "बिस्तर",
+          "bath": "स्नानघर",
+          "sqft": "वर्ग. फुट",
         },
         'gu': {
           "choose language": "ભાષા પસંદ કરો",
@@ -130,6 +133,9 @@ class Languages extends Translations {
           "delete message": "સંદેશ કાઢી નાખો",
           "are you sure want to delete this message from chat ?": "શું તમે ખરેખર આ સંદેશને ચેટમાંથી કાઢી નાખવા માંગો છો ?",
           "cancel": "રદ કરો",
+          "bed": "પથારી",
+          "bath": "બાથરૂમ",
+          "sqft": "ચો.ફૂટ",
         },
         'en': {
           "choose language": "Choose Language",
@@ -194,6 +200,9 @@ class Languages extends Translations {
           "delete message": "Delete message",
           "are you sure want to delete this message from chat ?": "Are you sure want to delete this message from chat ?",
           "cancel": "Cancel",
+          "bed": "Bed",
+          "bath": "Bath",
+          "sqft": "SQ. FT.",
         },
         'he': {
           "choose language": "בחר שפה",
@@ -258,6 +267,9 @@ class Languages extends Translations {
           "delete message": "למחוק הודעה",
           "are you sure want to delete this message from chat ?": "האם אתה בטוח שברצונך למחוק הודעה זו מהצ'אט?",
           "cancel": "לְבַטֵל",
+          "bed": "מיטה",
+          "bath": "מֶרחָץ",
+          "sqft": "רגל רבוע",
         },
         'ar': {
           "choose language": "اختر اللغة",
@@ -322,6 +334,9 @@ class Languages extends Translations {
           "delete message": "حذف رسالة",
           "are you sure want to delete this message from chat ?": "هل أنت متأكد أنك تريد حذف هذه الرسالة من الدردشة؟",
           "cancel": "يلغي",
+          "bed": "سرير",
+          "bath": "حمام",
+          "sqft": "قدم مربع",
         }
       };
 }

@@ -334,8 +334,12 @@ class _OverviewScreenState extends State<OverviewScreen> {
                       children: [
                         const Icon(Icons.bedroom_parent),
                         Text(
-                          "${widget.realStateData?.bad}",
-                          style: Theme.of(context).textTheme.titleSmall,
+                          "${widget.realStateData?.bed}",
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        Text(
+                          "bed".tr,
+                          style: Theme.of(context).textTheme.bodyLarge,
                         ),
                         const VerticalDivider(
                             color: AppColor.grey,
@@ -347,6 +351,10 @@ class _OverviewScreenState extends State<OverviewScreen> {
                           "${widget.realStateData?.bath}",
                           style: Theme.of(context).textTheme.bodyLarge,
                         ),
+                        Text(
+                          "bath".tr,
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
                         const VerticalDivider(
                             color: AppColor.grey,
                             thickness: 1,
@@ -355,6 +363,10 @@ class _OverviewScreenState extends State<OverviewScreen> {
                         const Icon(Icons.space_bar),
                         Text(
                           "${widget.realStateData?.squared}",
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        ),
+                        Text(
+                          "sqft".tr,
                           style: Theme.of(context).textTheme.bodyLarge,
                         ),
                       ],

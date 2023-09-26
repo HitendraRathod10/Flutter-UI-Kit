@@ -6,7 +6,7 @@ class RealStateModel {
   bool? bookMark;
   String? overlooking;
   String? image;
-  String? bad;
+  String? bed;
   String? washroom;
   String? bath;
   String? age;
@@ -28,7 +28,7 @@ class RealStateModel {
       this.bookMark,
       this.overlooking,
       this.image,
-      this.bad,
+      this.bed,
       this.washroom,
       this.bath,
       this.age,
@@ -50,7 +50,7 @@ class RealStateModel {
     bookMark = json['bookMark'];
     overlooking = json['overlooking'];
     image = json['image'];
-    bad = json['bad'];
+    bed = json['bed'];
     washroom = json['washroom'];
     bath = json['bath'];
     age = json['age'];
@@ -79,7 +79,7 @@ class RealStateModel {
     data['bookMark'] = this.bookMark;
     data['overlooking'] = this.overlooking;
     data['image'] = this.image;
-    data['bad'] = this.bad;
+    data['bed'] = this.bed;
     data['washroom'] = this.washroom;
     data['bath'] = this.bath;
     data['age'] = this.age;
