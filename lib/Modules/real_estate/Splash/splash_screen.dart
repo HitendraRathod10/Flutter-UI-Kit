@@ -28,6 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
     });
   }
   void setThemeButton() async {
+    Get.updateLocale(Locale(await themeController.changeLanguageName()));
     var brightness = SchedulerBinding.instance.platformDispatcher.platformBrightness;
     bool isDarkMode = brightness == Brightness.dark;
     final prefs = await SharedPreferences.getInstance();

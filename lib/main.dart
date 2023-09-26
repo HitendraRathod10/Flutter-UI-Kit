@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -36,13 +37,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   ThemeController themeController = Get.put(ThemeController());
-  String lan = "";
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    getData();
   }
 
   @override
@@ -70,16 +68,9 @@ class _MyAppState extends State<MyApp> {
                 GlobalWidgetsLocalizations.delegate
               ],
               translations: Languages(),
-              locale: Locale(lan),
+              locale: Locale(themeController.name.value),
             ),
           );
         });
-  }
-
-  void getData() async {
-    String l1 = await themeController.changeLanguageName();
-    setState(() {
-      lan = l1;
-    });
   }
 }

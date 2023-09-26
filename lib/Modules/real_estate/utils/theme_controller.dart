@@ -13,8 +13,6 @@ class ThemeController extends GetxController {
           : false.obs;
 
   var name = 'en'.obs;
-  var data = 'en'.obs;
-
   changeThemeMode(Object? value) async {
     if (value == ThemeMode.dark) {
       isDarkMode.value = true;
