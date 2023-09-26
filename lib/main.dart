@@ -5,6 +5,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/languages.dart';
 import 'package:provider/provider.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'Modules/real_estate/Home/home_provider.dart';
 import 'Modules/real_estate/Splash/splash_screen.dart';
@@ -26,12 +27,26 @@ void main() {
   HttpOverrides.global = MyHttpOverrides();
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  ThemeController themeController = Get.put(ThemeController());
+  String lan = "";
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getData();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    ThemeController themeController = Get.put(ThemeController());
     return GetX<ThemeController>(
         init: themeController,
         builder: (context) {
@@ -48,18 +63,23 @@ class MyApp extends StatelessWidget {
               themeMode: themeController.isDarkMode.value
                   ? ThemeMode.dark
                   : ThemeMode.light,
-              supportedLocales: L10n.allLanguages,
               localizationsDelegates: const [
                 AppLocalizations.delegate,
                 GlobalMaterialLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate
               ],
-              fallbackLocale: const Locale('en', 'US'),
               translations: Languages(),
-              locale: Locale(themeController.name.value),
+              locale: Locale(lan),
             ),
           );
         });
+  }
+
+  void getData() async {
+    String l1 = await themeController.changeLanguageName();
+    setState(() {
+      lan = l1;
+    });
   }
 }
