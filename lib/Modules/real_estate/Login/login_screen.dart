@@ -225,7 +225,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           backgroundColor: Colors.white,
                           child: Padding(
                             padding: const EdgeInsets.all(7.0),
-                            child: Image.network("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/800px-Twitter-logo.svg.png"),
+                            child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdNSylcAQc1_Qu3F3zS-HMyxOs38NbUUDlPQ&usqp=CAU"),
                           ),)
                       ],
                     ),

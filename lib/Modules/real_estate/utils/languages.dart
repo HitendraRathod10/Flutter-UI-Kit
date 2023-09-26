@@ -60,9 +60,12 @@ class Languages extends Translations {
           "recent searches": "हाल की खोजें",
           "view more": "और देखें",
           "type message here": "यहां संदेश टाइप करें",
-          "are you sure want to logout ?": "क्या आप वाकई लॉगआउट करना चाहते हैं?",
+          "are you sure want to logout ?": "क्या आप वाकई लॉगआउट करना चाहते हैं ?",
           "no": "नहीं",
           "yes": "हाँ",
+          "delete message": "संदेश को हटाएं",
+          "are you sure want to delete this message from chat ?": "क्या आप वाकई इस संदेश को चैट से हटाना चाहते हैं ?",
+          "cancel": "रद्द करना",
         },
         'gu': {
           "choose language": "ભાષા પસંદ કરો",
@@ -121,9 +124,12 @@ class Languages extends Translations {
           "recent searches": "તાજેતરની શોધ",
           "view more": "વધુ જોવો",
           "type message here": "અહીં સંદેશ લખો",
-          "are you sure want to logout ?": "શું તમે ખરેખર લૉગઆઉટ કરવા માંગો છો?",
+          "are you sure want to logout ?": "શું તમે ખરેખર લૉગઆઉટ કરવા માંગો છો ?",
           "no": "ના",
           "yes": "હા",
+          "delete message": "સંદેશ કાઢી નાખો",
+          "are you sure want to delete this message from chat ?": "શું તમે ખરેખર આ સંદેશને ચેટમાંથી કાઢી નાખવા માંગો છો ?",
+          "cancel": "રદ કરો",
         },
         'en': {
           "choose language": "Choose Language",
@@ -185,6 +191,9 @@ class Languages extends Translations {
           "are you sure want to logout ?": "Are you sure want to logout ?",
           "no": "No",
           "yes": "Yes",
+          "delete message": "Delete message",
+          "are you sure want to delete this message from chat ?": "Are you sure want to delete this message from chat ?",
+          "cancel": "Cancel",
         },
         'he': {
           "choose language": "בחר שפה",
@@ -246,6 +255,9 @@ class Languages extends Translations {
           "are you sure want to logout ?": "האם אתה בטוח רוצה להתנתק?",
           "no": "לא",
           "yes": "כן",
+          "delete message": "למחוק הודעה",
+          "are you sure want to delete this message from chat ?": "האם אתה בטוח שברצונך למחוק הודעה זו מהצ'אט?",
+          "cancel": "לְבַטֵל",
         },
         'ar': {
           "choose language": "اختر اللغة",
@@ -307,6 +319,9 @@ class Languages extends Translations {
           "are you sure want to logout ?": "هل أنت متأكد أنك تريد تسجيل الخروج؟",
           "no": "لا",
           "yes": "نعم",
+          "delete message": "حذف رسالة",
+          "are you sure want to delete this message from chat ?": "هل أنت متأكد أنك تريد حذف هذه الرسالة من الدردشة؟",
+          "cancel": "يلغي",
         }
       };
 }
