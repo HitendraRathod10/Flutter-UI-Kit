@@ -242,7 +242,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text("Don't have an account yet?",style: Theme.of(context).textTheme.titleMedium?.copyWith(color: AppColor.white),),
-                              Text(" SignUp",style: Theme.of(context).textTheme.titleLarge?.copyWith(color: AppColor.white,fontWeight: FontWeight.bold,letterSpacing: 2)),
+                              Text(" SignUp",style: Theme.of(context).textTheme.titleLarge?.copyWith(color: AppColor.white,fontWeight: FontWeight.bold,fontSize: 18)),
                             ],
                           )
                       ),

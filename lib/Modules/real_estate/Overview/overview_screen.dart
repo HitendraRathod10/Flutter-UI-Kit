@@ -55,15 +55,15 @@ class _OverviewScreenState extends State<OverviewScreen> {
                       },
                       child: Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.call,
                             color: AppColor.white,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 03,
                           ),
                           Text("call".tr,
-                              style: TextStyle(color: AppColor.white),
+                              style: const TextStyle(color: AppColor.white),
                               maxLines: 2,
                               textAlign: TextAlign.center),
                         ],
@@ -83,16 +83,16 @@ class _OverviewScreenState extends State<OverviewScreen> {
                     },
                     child: Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.message,
                           color: AppColor.white,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 03,
                         ),
                         Text(
                           "chat".tr,
-                          style: TextStyle(color: AppColor.white),
+                          style: const TextStyle(color: AppColor.white),
                         ),
                       ],
                     ),
@@ -148,7 +148,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                                 )),
                             Text(
                               "details".tr,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: AppColor.white,
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold),
@@ -305,7 +305,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                           height: 24,
                           child: Text(
                             "month".tr,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 18, fontWeight: FontWeight.normal),
                           ))
                           : const SizedBox.shrink(),
@@ -330,57 +330,77 @@ class _OverviewScreenState extends State<OverviewScreen> {
                         color: Theme.of(context).cardColor,
                         borderRadius: BorderRadius.circular(10)),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Icon(Icons.bedroom_parent),
-                        Text(
-                          "${widget.realStateData?.bed}",
-                          style: Theme.of(context).textTheme.bodyLarge,
-                        ),
-                        Text(
-                          "bed".tr,
-                          style: Theme.of(context).textTheme.bodyLarge,
-                        ),
-                        const VerticalDivider(
-                            color: AppColor.grey,
-                            thickness: 1,
-                            indent: 20,
-                            endIndent: 20),
-                        const Icon(Icons.bathroom_outlined),
-                        Text(
-                          "${widget.realStateData?.bath}",
-                          style: Theme.of(context).textTheme.bodyLarge,
-                        ),
-                        Text(
-                          "bath".tr,
-                          style: Theme.of(context).textTheme.bodyLarge,
+                        const SizedBox(),
+                        Row(
+                          children: [
+                            const Icon(Icons.bedroom_parent),
+                            const SizedBox(width: 5,),
+                            Text(
+                              "${widget.realStateData?.bed}",
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                            const SizedBox(width: 5,),
+                            Text(
+                              "bed".tr,
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                          ],
                         ),
                         const VerticalDivider(
                             color: AppColor.grey,
                             thickness: 1,
                             indent: 20,
                             endIndent: 20),
-                        const Icon(Icons.space_bar),
-                        Text(
-                          "${widget.realStateData?.squared}",
-                          style: Theme.of(context).textTheme.bodyLarge,
+                        Row(
+                          children: [
+                            const Icon(Icons.bathroom_outlined),
+                            const SizedBox(width: 5,),
+                            Text(
+                              "${widget.realStateData?.bath}",
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                            const SizedBox(width: 5,),
+                            Text(
+                              "bath".tr,
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                          ],
                         ),
-                        Text(
-                          "sqft".tr,
-                          style: Theme.of(context).textTheme.bodyLarge,
+                        const VerticalDivider(
+                            color: AppColor.grey,
+                            thickness: 1,
+                            indent: 20,
+                            endIndent: 20),
+                        Row(
+                          children: [
+                            const Icon(Icons.space_bar),
+                            const SizedBox(width: 5,),
+                            Text(
+                              "${widget.realStateData?.squared}",
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                            const SizedBox(width: 5,),
+                            Text(
+                              "sqft".tr,
+                              style: Theme.of(context).textTheme.bodyLarge,
+                            ),
+                          ],
                         ),
+                        const SizedBox(),
                       ],
                     ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.fromLTRB(20, 20, 00, 00),
+                  padding: const EdgeInsets.fromLTRB(20, 20, 00, 00),
                   child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         "description".tr,
                         style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                        const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
                       )),
                 ),
                 Padding(
@@ -403,7 +423,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                           alignment: Alignment.centerLeft,
                           child: Text(
                             "published on".tr,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontWeight: FontWeight.normal, fontSize: 22),
                           ),
                         ),
@@ -428,7 +448,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                           alignment: Alignment.centerLeft,
                           child: Text(
                             "sales enquiries".tr,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontWeight: FontWeight.normal, fontSize: 22),
                           ),
                         ),

@@ -132,9 +132,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           "Signup",
                           style: Theme.of(context).textTheme.titleLarge?.copyWith(
                               color: Colors.white,
-                              fontSize: 20,
+                              fontSize: 18,
                               fontWeight: FontWeight.bold,
-                            letterSpacing: 2
                             // fontFamily: AppFont.semiBold
                           ),
                         ),
