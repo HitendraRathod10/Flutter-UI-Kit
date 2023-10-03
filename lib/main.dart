@@ -10,6 +10,7 @@ import 'Modules/real_estate/Splash/splash_screen.dart';
 import 'Modules/real_estate/l10n/l10n.dart';
 import 'Modules/real_estate/utils/pallete.dart';
 import 'Modules/real_estate/utils/theme_controller.dart';
+import 'module_list.dart';
 
 class MyHttpOverrides extends HttpOverrides {
   @override
@@ -41,8 +42,14 @@ class MyApp extends StatelessWidget {
             ],
             child: GetMaterialApp(
               debugShowCheckedModeBanner: false,
+              // builder: (context, child) {
+              //   return MediaQuery(
+              //     child: child!,
+              //     data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+              //   );
+              // },
               title: 'UI Kit',
-              home: const SplashScreen(),
+              home: Module_list(),
               theme: lightThemeData,
               darkTheme: darkThemeData,
               themeMode: themeController.isDarkMode.value

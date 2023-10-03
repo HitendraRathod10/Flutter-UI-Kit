@@ -55,6 +55,11 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  carousel_slider: ^4.2.1
+  dots_indicator: ^3.0.0
+  curved_navigation_bar: ^1.0.3
+  flutter_statusbarcolor_ns: ^0.5.0
+  flutter_html: ^2.2.1
 
 dev_dependencies:
   flutter_test:
@@ -80,6 +85,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/images_medicalModule/
 
   # To add assets to your application, add an assets section, like this:
   # assets:
