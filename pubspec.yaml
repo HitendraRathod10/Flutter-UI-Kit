@@ -44,6 +44,7 @@ dependencies:
   cached_network_image: ^3.2.3
   shimmer: ^2.0.0
   google_fonts: ^4.0.1
+  flutter_rating_bar: ^4.0.1
   flutter_colorpicker:
   flutter_material_color_picker:
   intl:

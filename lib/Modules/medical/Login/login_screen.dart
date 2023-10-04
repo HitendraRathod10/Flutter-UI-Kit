@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/medical/Forgot%20password/forgot_password_screen.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
 
@@ -177,10 +178,15 @@ class _Login_ScreenState extends State<Login_Screen>
                           child: Row(
                             children: [
                               Spacer(),
-                              Text(
-                                "Forget Your Password?",
-                                style:
-                                    TextStyle(color: Colors.grey, fontSize: 15),
+                              InkWell(
+                                onTap: (){
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const ForgotPasswordScreen()));
+                                },
+                                child: Text(
+                                  "Forget Your Password?",
+                                  style:
+                                      TextStyle(color: Colors.grey, fontSize: 15),
+                                ),
                               )
                             ],
                           ),
