@@ -111,7 +111,7 @@ class _Home_WidgetState extends State<Home_Widget> {
                     height: 20,
                   ),
                   const Text(
-                    "Book My Appoitment",
+                    "Book My Appointment",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   )
                 ],

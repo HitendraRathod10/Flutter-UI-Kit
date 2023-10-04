@@ -60,6 +60,9 @@ dependencies:
   curved_navigation_bar: ^1.0.3
   flutter_statusbarcolor_ns: ^0.5.0
   flutter_html: ^2.2.1
+  awesome_dialog: ^3.1.0
+  flutter_rating_bar: ^4.0.1
+
 
 dev_dependencies:
   flutter_test:
