@@ -247,7 +247,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       backgroundColor: Colors.white,
                       child: Padding(
                         padding: const EdgeInsets.all(7.0),
-                        child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrUD4aUMSFm_MCu10W2kV0arxuOqScLZedEQ&usqp=CAU"),
+                        child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpmRUoTYCySOUlIBKXiayaFeknzNzusP_LmA&usqp=CAU"),
                       ),),
                     const SizedBox(
                       width: 10,
@@ -256,7 +256,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       backgroundColor: Colors.white,
                       child: Padding(
                         padding: const EdgeInsets.all(7.0),
-                        child: Image.network("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Twitter-logo.svg/800px-Twitter-logo.svg.png"),
+                        child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn8RXi6i8DyMBuaoQEuEYqSBjMEXOeYFqe3Q&usqp=CAU"),
                       ),)
                   ],
                 ),
