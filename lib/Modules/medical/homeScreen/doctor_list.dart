@@ -47,6 +47,7 @@ class _Doctor_listState extends State<Doctor_list> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFE4ECF0),
       appBar: AppBar(
         title: Text("DOCTORS",style: TextStyle(color: Colors.white),),
         backgroundColor: AppColor.primary_color,

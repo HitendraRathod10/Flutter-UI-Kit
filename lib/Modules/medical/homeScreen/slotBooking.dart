@@ -57,6 +57,7 @@ String selectedSlot = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFE4ECF0),
       bottomNavigationBar: Container(
         height: 80,
         // color: Colors.grey,

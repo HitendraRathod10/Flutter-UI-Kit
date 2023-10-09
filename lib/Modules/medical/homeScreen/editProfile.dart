@@ -1,26 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
-import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
 
-import '../Login/login_screen.dart';
+import '../Forgot password/forgot_password_screen.dart';
 
-class Profile extends StatefulWidget {
-  const Profile({super.key});
+class EditProfile extends StatefulWidget {
+  const EditProfile({super.key});
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<EditProfile> createState() => _EditProfileState();
 }
 
-class _ProfileState extends State<Profile> {
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
-
+class _EditProfileState extends State<EditProfile> {
   @override
   Widget build(BuildContext context) {
-    print("${MediaQuery.of(context).size.width}");
     return Scaffold(
       backgroundColor: const Color(0xFFE4ECF0),
       body: Container(
@@ -58,11 +50,16 @@ class _ProfileState extends State<Profile> {
                                 SizedBox(
                                   height: 10,
                                 ),
-                                CircleAvatar(
-                                  radius:
+                                Stack(
+                                  children: [
+                                    CircleAvatar(
+                                      radius:
                                       MediaQuery.of(context).size.width / 5.088,
-                                  backgroundImage: NetworkImage(
-                                      "https://img.freepik.com/free-photo/attractive-young-male-nutriologist-lab-coat-smiling-against-white-background_662251-2960.jpg"),
+                                      backgroundImage: NetworkImage(
+                                          "https://img.freepik.com/free-photo/attractive-young-male-nutriologist-lab-coat-smiling-against-white-background_662251-2960.jpg"),
+                                    ),
+                                    Positioned(child: Icon(Icons.edit))
+                                  ],
                                 )
                               ],
                             )),
@@ -76,7 +73,6 @@ class _ProfileState extends State<Profile> {
                   right: 20,
                   child: Container(
                     width: MediaQuery.of(context).size.width,
-
                     margin: const EdgeInsets.symmetric(vertical: 15),
                     // padding:const EdgeInsets.symmetric(horizontal: 15,vertical: 12),
                     child: Padding(
@@ -84,21 +80,21 @@ class _ProfileState extends State<Profile> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          con(icon: Icons.person, name: "Jigar Ghodasara"),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          con(
-                              icon: Icons.email_outlined,
-                              name: "jigargodasara@elsner.com"),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          con(icon: Icons.calendar_month, name: "21/11/2001"),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          con(icon: Icons.phone, name: "+91 6355962307"),
+                          // con(icon: Icons.person, name: "Jigar Ghodasara"),
+                          // SizedBox(
+                          //   height: 20,
+                          // ),
+                          // con(
+                          //     icon: Icons.email_outlined,
+                          //     name: "jigargodasara@elsner.com"),
+                          // SizedBox(
+                          //   height: 20,
+                          // ),
+                          // con(icon: Icons.calendar_month, name: "21/11/2001"),
+                          // SizedBox(
+                          //   height: 20,
+                          // ),
+                          // con(icon: Icons.phone, name: "+91 6355962307"),
                           SizedBox(
                             height: 50,
                           ),
@@ -114,12 +110,12 @@ class _ProfileState extends State<Profile> {
                                     width: MediaQuery.of(context).size.width,
                                     child: Center(
                                         child: Text(
-                                      "Edit",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                    )),
+                                          "Edit",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
+                                        )),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(8),
                                         gradient: LinearGradient(colors: [
@@ -149,12 +145,12 @@ class _ProfileState extends State<Profile> {
                                     width: MediaQuery.of(context).size.width,
                                     child: Center(
                                         child: Text(
-                                      "Logout",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.bold),
-                                    )),
+                                          "Logout",
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold),
+                                        )),
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(8),
                                         gradient: LinearGradient(colors: [
@@ -184,32 +180,6 @@ class _ProfileState extends State<Profile> {
         ),
       ),
     );
-  }
 
-  Widget con({required IconData icon, required String name}) {
-    return Container(
-      decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: [
-            BoxShadow(
-              color: AppColor.primary_color.withAlpha(50),
-              offset: const Offset(0, -5),
-              blurRadius: 12,
-            )
-          ]),
-      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
-      child: Row(
-        children: [
-          Icon(icon),
-          SizedBox(
-            width: 10,
-          ),
-          Expanded(
-              child: Text(name,
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w300)))
-        ],
-      ),
-    );
   }
 }
