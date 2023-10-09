@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/medical/Login/login_screen.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
 import 'package:get/get.dart';
@@ -155,6 +156,20 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                             )),
                           ),
                         ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        GestureDetector(
+                            onTap: () {
+                              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>Login_Screen()), (route) => false);
+                            },
+                            child: const Text(
+                              "Back to login",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  decoration: TextDecoration.underline,
+                                  color: AppColor.appBlueColor),
+                            ))
                       ],
                     ),
                   ),
