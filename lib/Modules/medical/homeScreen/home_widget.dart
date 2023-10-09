@@ -5,6 +5,7 @@ import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/articleDetail.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/doctor_list.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/packages_overview.dart';
+import 'package:flutter_ui_kit/Modules/medical/homeScreen/video_consultation_symptoms_screen.dart';
 
 class Home_Widget extends StatefulWidget {
   const Home_Widget({super.key});
@@ -119,24 +120,30 @@ class _Home_WidgetState extends State<Home_Widget> {
               ),
               Column(
                 children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height / 8,
-                    width: MediaQuery.of(context).size.width / 4,
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: AppColor.primary_color,
-                        boxShadow: [
-                          BoxShadow(
-                              color: AppColor.primary_color.withAlpha(80),
-                              offset: const Offset(0, -5),
-                              blurRadius: 12,
-                              spreadRadius: 4)
-                        ]),
-                    child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: Image.asset(
-                        AppImage.medical_video,
-                        color: Colors.white,
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const VideoConsultationSymptomsScreen()));
+                    },
+                    child: Container(
+                      height: MediaQuery.of(context).size.height / 8,
+                      width: MediaQuery.of(context).size.width / 4,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: AppColor.primary_color,
+                          boxShadow: [
+                            BoxShadow(
+                                color: AppColor.primary_color.withAlpha(80),
+                                offset: const Offset(0, -5),
+                                blurRadius: 12,
+                                spreadRadius: 4)
+                          ]),
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Image.asset(
+                          AppImage.medical_video,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                   ),
@@ -144,7 +151,7 @@ class _Home_WidgetState extends State<Home_Widget> {
                     height: 20,
                   ),
                   const Text(
-                    "Video Consulation",
+                    "Video Consultation",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   )
                 ],

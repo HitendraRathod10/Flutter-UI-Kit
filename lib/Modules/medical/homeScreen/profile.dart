@@ -99,6 +99,33 @@ class _ProfileState extends State<Profile> {
                             height: 20,
                           ),
                           con(icon: Icons.phone, name: "+91 6355962307"),
+
+                          SizedBox(height: 50,),
+
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>const Login_Screen()), (route) => false);
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.symmetric(horizontal: 100,vertical: 15),
+                              padding: const EdgeInsets.symmetric(vertical: 18.0),
+                              width: MediaQuery.of(context).size.width,
+                              child: Center(child: Text("Logout",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),)),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  gradient: LinearGradient(colors: [
+                                    AppColor.primary_color,
+                                    AppColor.primary_color.withAlpha(80),
+                                  ]),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: AppColor.primary_color.withAlpha(20),
+                                        blurRadius: 10,
+                                        offset: Offset(3, 10)
+                                    )
+                                  ]
+                              ),
+                            ),
                           SizedBox(
                             height: 50,
                           ),
