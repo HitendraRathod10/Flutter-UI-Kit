@@ -94,6 +94,9 @@ con(icon: Icons.calendar_month, name: "21/11/2001"),
                           SizedBox(height: 50,),
 
                           GestureDetector(
+                            onTap: (){
+                              Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>const Login_Screen()), (route) => false);
+                            },
                             child: Container(
                               margin: const EdgeInsets.symmetric(horizontal: 100,vertical: 15),
                               padding: const EdgeInsets.symmetric(vertical: 18.0),
