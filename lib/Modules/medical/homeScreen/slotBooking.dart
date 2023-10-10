@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SlotBooking extends StatefulWidget {
   const SlotBooking({super.key});
@@ -61,32 +62,45 @@ String selectedSlot = "";
       bottomNavigationBar: Container(
         height: 80,
         // color: Colors.grey,
-        child: Container(
-          margin: EdgeInsets.symmetric(
-              horizontal: 20, vertical: 15),
-          padding: const EdgeInsets.symmetric(vertical: 18.0),
-          width: MediaQuery.of(context).size.width,
-          child: Center(
-              child: Text(
-                "BOOK NOW",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold),
-              )),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              gradient: LinearGradient(colors: [
-                AppColor.primary_color,
-                AppColor.primary_color.withAlpha(80),
-              ]),
-              boxShadow: [
-                BoxShadow(
-                    color:
-                    AppColor.primary_color.withAlpha(20),
-                    blurRadius: 10,
-                    offset: Offset(3, 10))
-              ]),
+        child: GestureDetector(
+          onTap: (){
+            Fluttertoast.showToast(
+                msg:
+                "Your appointment has been booked successfully.",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.CENTER,
+                backgroundColor: Colors.green,
+                textColor: Colors.white,
+                fontSize: 16.0);
+            Navigator.of(context).pop();
+          },
+          child: Container(
+            margin: EdgeInsets.symmetric(
+                horizontal: 20, vertical: 15),
+            padding: const EdgeInsets.symmetric(vertical: 18.0),
+            width: MediaQuery.of(context).size.width,
+            child: Center(
+                child: Text(
+                  "BOOK NOW",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                )),
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                gradient: LinearGradient(colors: [
+                  AppColor.primary_color,
+                  AppColor.primary_color.withAlpha(80),
+                ]),
+                boxShadow: [
+                  BoxShadow(
+                      color:
+                      AppColor.primary_color.withAlpha(20),
+                      blurRadius: 10,
+                      offset: Offset(3, 10))
+                ]),
+          ),
         ),
       ),
       appBar: AppBar(

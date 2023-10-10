@@ -103,9 +103,9 @@ class _HomeScreenState extends State<HomeScreen> {
               height: 20,
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 00, 20, 00),
+              padding: const EdgeInsets.fromLTRB(13, 00, 13, 00),
               child: Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   InkWell(
                     onTap: () {
@@ -117,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: Container(
                       height: 120,
-                      width: MediaQuery.of(context).size.width / 2.3,
+                      width: MediaQuery.of(context).size.width/2.2,
                       decoration: BoxDecoration(
                           color: AppColor.grey.withOpacity(0.3),
                           borderRadius: BorderRadius.circular(10)),
@@ -163,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: Container(
                       height: 120,
-                      width: MediaQuery.of(context).size.width / 2.3,
+                      width: MediaQuery.of(context).size.width/2.2,
                       decoration: BoxDecoration(
                           color: AppColor.grey.withOpacity(0.3),
                           borderRadius: BorderRadius.circular(10)),
@@ -196,9 +196,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(20, 05, 20, 00),
+              padding: const EdgeInsets.fromLTRB(13, 05, 13, 00),
               child: Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   InkWell(
                     onTap: () {
@@ -214,7 +214,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: Container(
                       height: 120,
-                      width: MediaQuery.of(context).size.width / 2.3,
+                      width: MediaQuery.of(context).size.width / 2.2,
                       decoration: BoxDecoration(
                           color: AppColor.grey.withOpacity(0.3),
                           borderRadius: BorderRadius.circular(10)),
@@ -258,7 +258,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     child: Container(
                       height: 120,
-                      width: MediaQuery.of(context).size.width / 2.3,
+                      width: MediaQuery.of(context).size.width / 2.2,
                       decoration: BoxDecoration(
                           color: AppColor.grey.withOpacity(0.3),
                           borderRadius: BorderRadius.circular(10)),

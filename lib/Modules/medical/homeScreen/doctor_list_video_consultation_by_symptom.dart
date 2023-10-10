@@ -151,138 +151,147 @@ class _DoctorListVideoConsultationBySymptomState
       body: ListView.builder(
           itemCount: 14,
           itemBuilder: (context, index) {
-            return Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-              margin: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-              height: 130,
-              decoration: BoxDecoration(
-                  color: AppColor.primary_color.withOpacity(0.3),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                elevation: 10,
+                shadowColor: AppColor.grey,shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+                child: Container(
+                  padding: EdgeInsets.all(10),
+                  height: 130,
+                  decoration: BoxDecoration(
+                    color: AppColor.primary_color.withOpacity(0.3),
+                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                  ),
+                  child: Row(
                     children: [
-                      CircleAvatar(
-                        backgroundColor: AppColor.white,
-                        radius: 30,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: AppColor.white,
+                            radius: 30,
+                            child: Image.network(
+                              "https://cdn-icons-png.flaticon.com/128/4751/4751166.png",
+                              scale: 2.5,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          const Text(
+                            'Dr. John Deo',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(
+                            height: 3,
+                          ),
+                          Row(
+                            children: const [
+                              Text(
+                                'Exp. - ',
+                                style: TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.bold),
+                              ),
+                              Text(
+                                '8 years',
+                                style: TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.bold),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        width: 25,
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              Image.network(
+                                "https://cdn-icons-png.flaticon.com/128/2309/2309912.png",
+                                scale: 5.5,
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              const Text(
+                                "SVP Hospital",
+                                style: TextStyle(fontSize: 16),
+                              )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                            children: [
+                              Image.network(
+                                "https://cdn-icons-png.flaticon.com/128/4147/4147093.png",
+                                scale: 5.5,
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              const Text(
+                                "10 Minutes",
+                                style: TextStyle(fontSize: 16),
+                              )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                            children: const [
+                              Icon(Icons.currency_rupee),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                "500",
+                                style: TextStyle(fontSize: 16),
+                              )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Row(
+                            children: [
+                              Image.network(
+                                "https://cdn-icons-png.flaticon.com/128/2889/2889312.png",
+                                scale: 5.5,
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              const Text(
+                                "English, Hindi",
+                                style: TextStyle(fontSize: 16),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      const Spacer(),
+                      InkWell(
+                        onTap: () {
+                          showDataAlert();
+                        },
                         child: Image.network(
-                          "https://cdn-icons-png.flaticon.com/128/4751/4751166.png",
-                          scale: 2.5,
+                          "https://cdn-icons-png.flaticon.com/128/4343/4343381.png",
+                          scale: 1.7,
                         ),
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      const Text(
-                        'Dr. John Deo',
-                        style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(
-                        height: 3,
-                      ),
-                      Row(
-                        children: const [
-                          Text(
-                            'Exp. - ',
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            '8 years',
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
-                          ),
-                        ],
-                      ),
+                      )
                     ],
                   ),
-                  const SizedBox(
-                    width: 25,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Image.network(
-                            "https://cdn-icons-png.flaticon.com/128/2309/2309912.png",
-                            scale: 5.5,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          const Text(
-                            "SVP Hospital",
-                            style: TextStyle(fontSize: 16),
-                          )
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Row(
-                        children: [
-                          Image.network(
-                            "https://cdn-icons-png.flaticon.com/128/4147/4147093.png",
-                            scale: 5.5,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          const Text(
-                            "10 Minutes",
-                            style: TextStyle(fontSize: 16),
-                          )
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Row(
-                        children: const [
-                          Icon(Icons.currency_rupee),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            "500",
-                            style: TextStyle(fontSize: 16),
-                          )
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Row(
-                        children: [
-                          Image.network(
-                            "https://cdn-icons-png.flaticon.com/128/2889/2889312.png",
-                            scale: 5.5,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          const Text(
-                            "English, Hindi",
-                            style: TextStyle(fontSize: 16),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-                  const Spacer(),
-                  InkWell(
-                    onTap: () {
-                      showDataAlert();
-                    },
-                    child: Image.network(
-                      "https://cdn-icons-png.flaticon.com/128/4343/4343381.png",
-                      scale: 1.7,
-                    ),
-                  )
-                ],
+                ),
               ),
             );
           }),
