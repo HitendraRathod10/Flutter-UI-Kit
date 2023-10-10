@@ -26,7 +26,7 @@ class _Module_listState extends State<Module_list> {
             height: 15,
           ),
           moduleWidget(
-              name: "RealeState APP",
+              name: "Real Estate APP",
               onTap: () => Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => SplashScreen()))),
           moduleWidget(
