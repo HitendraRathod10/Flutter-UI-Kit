@@ -50,23 +50,37 @@ class _Home_WidgetState extends State<Home_Widget> {
                 disableCenter: true,
                 onPageChanged: (index, reason) {}),
             items: [
-              AppImage.medical_banner1,
-              AppImage.medical_banner2,
-              AppImage.medical_banner3
+              "https://media.istockphoto.com/id/1385192967/vector/world-health-day-vector-illustration.jpg?s=612x612&w=0&k=20&c=c8ReEaTOY0stUzCe9HpR_AvGJDVNJWxImWGB6OEYP7Q=",
+              "https://media.istockphoto.com/id/1219007911/vector/coronavirus-covid-19-with-map-pin-locator-vector.jpg?s=612x612&w=0&k=20&c=mL8ovVFnWyPaLa0I2w_ZDRjA-TNFCG0G3dzbtaspbng=",
+              "https://media.istockphoto.com/id/1258121364/vector/thank-you-doctors-and-nurses-24-7-support-again-corona-virus.jpg?s=612x612&w=0&k=20&c=8T9U88jEVYqp7V20bOFDKNq8FzIuUrow0Bf2IGE40Pc="
             ].map((i) {
               return Builder(
                 builder: (BuildContext context) {
                   return Container(
                       width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.grey,
+                          blurRadius: 10, // soften the shadow
+                          spreadRadius: 5, //extend the shadow
+                          offset: Offset(
+                            0.0, // Move to right 5  horizontally
+                            0.0, // Move to bottom 5 Vertically
+                          ),
+                        )
+                      ],
+                    ),
                       margin: const EdgeInsets.symmetric(
                           horizontal: 10.0, vertical: 15),
-                      decoration: BoxDecoration(
-                          color: Colors.amber,
-                          borderRadius: BorderRadius.circular(15)),
+                      // decoration: BoxDecoration(
+                      //     color: Colors.amber,
+                      //     borderRadius: BorderRadius.circular(15)),
                       child: ClipRRect(
                           borderRadius: BorderRadius.circular(15),
                           child: Image(
-                            image: AssetImage(i),
+                            image: NetworkImage(i),
                             fit: BoxFit.fill,
                           )));
                 },
@@ -104,7 +118,7 @@ class _Home_WidgetState extends State<Home_Widget> {
                         child: Image.asset(
                           AppImage.medical_calander,
                           color: Colors.white,
-                          scale: 5,
+                          scale: 10,
                         ),
                       ),
                     ),
@@ -143,6 +157,7 @@ class _Home_WidgetState extends State<Home_Widget> {
                         child: Image.asset(
                           AppImage.medical_video,
                           color: Colors.white,
+                          scale: 8,
                         ),
                       ),
                     ),
