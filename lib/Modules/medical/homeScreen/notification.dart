@@ -14,7 +14,8 @@ class _NotificationState extends State<Notification_widget> {
     return Scaffold(
       backgroundColor: const Color(0xFFE4ECF0),
       appBar: AppBar(
-        title: Text("Notification"),
+        title: Text("Notification",style: TextStyle(color: AppColor.white),),
+        backgroundColor: AppColor.primary_color,
         centerTitle: true,
         automaticallyImplyLeading: false,
         elevation: 0,

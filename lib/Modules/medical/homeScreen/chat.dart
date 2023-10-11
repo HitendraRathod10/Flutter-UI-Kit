@@ -24,18 +24,16 @@ class _ChatState extends State<Chat> {
         backgroundColor: const Color(0xFFE4ECF0),
         //Colors.grey.shade200,
         appBar: AppBar(
+          backgroundColor: AppColor.primary_color,
           title: Text(widget.data["DoctorName"],
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge
-                  ?.copyWith() /* style: TextStyle(color: AppColor.black)*/),
+              style: TextStyle(color: AppColor.white)),
           // backgroundColor: AppColor.white,
           leading: InkWell(
               onTap: () {
                 Navigator.pop(context);
               },
               child: Icon(Icons.arrow_back_ios,
-                  color: Theme.of(context).iconTheme.color)),
+                  color: AppColor.white)),
           actions: [
             GestureDetector(
                 onTap: () async {
@@ -48,11 +46,11 @@ class _ChatState extends State<Chat> {
                 },
                 child: CircleAvatar(
                     radius: 17,
-                    backgroundColor: AppColor.appBlueColor,
+                    backgroundColor: AppColor.white,
                     child: Icon(
                       Icons.call,
                       size: 20,
-                      color: AppColor.white,
+                      color: AppColor.primary_color,
                     ))),
             SizedBox(
               width: 10,

@@ -16,7 +16,12 @@ class _PackagesOverviewState extends State<PackagesOverview> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Health Package"),
+        title: Text("Health Package",style: TextStyle(color: Colors.white),),
+        backgroundColor: AppColor.primary_color,
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: Colors.white, //change your color here
+        ),
       ),
       body: SingleChildScrollView(
         child: Container(

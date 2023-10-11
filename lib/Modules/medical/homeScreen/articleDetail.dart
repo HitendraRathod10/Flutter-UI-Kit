@@ -288,16 +288,18 @@ class _ArticalsDetailState extends State<ArticalsDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
 appBar: AppBar(
-  backgroundColor: AppColor.primary_color,
-  foregroundColor: Colors.white,
   title: Text("Knee Pain",style: TextStyle(color: Colors.white),),
+  backgroundColor: AppColor.primary_color,
   elevation: 0,
+  iconTheme: IconThemeData(
+    color: Colors.white, //change your color here
+  ),
 ),
       body: ListView(
         children: [
           Image.network("https://burjeel.com/wp-content/uploads/2022/06/Knee-Pain.jpg"),
           SizedBox(height: 10,),
-          Text("data"),
+          // Text("data"),
           Html(data: htmlData)
         ],
       ),

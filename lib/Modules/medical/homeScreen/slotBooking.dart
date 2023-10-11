@@ -46,10 +46,11 @@ String selectedSlot = "";
     super.initState();
 
     selectedDay = now.day;
-// print("Day --> ${now.day}");
-// print("Day --> ${now.month}");
-// print("Day --> ${now.weekday}");
-// print("Day --> ${now.year}");
+    // print("Total days ---> ${DateTime(now.year,now.month+1,0).day}");
+    // print("previous days --> ${now.day - 1}");
+    // print("output days --> ${DateTime(now.year,now.month+1,0).day - (now.day - 1)}");
+    // print("Day --> ${now.month}");
+    // print("Day --> ${now.year}");
 //     DateTime lastDayOfMonth = new DateTime(2023, 10, 1);
 //     print("Week Day --> ${lastDayOfMonth.weekday}");
 
@@ -104,7 +105,12 @@ String selectedSlot = "";
         ),
       ),
       appBar: AppBar(
-        title: Text("Book Your Appointment"),
+        title: Text("Book Your Appointment",style: TextStyle(color: Colors.white),),
+        backgroundColor: AppColor.primary_color,
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: Colors.white, //change your color here
+        ),
       ),
       body: ListView(
         children: [
