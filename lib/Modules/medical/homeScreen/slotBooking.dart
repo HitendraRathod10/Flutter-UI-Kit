@@ -3,6 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:intl/intl.dart';
 
 class SlotBooking extends StatefulWidget {
   const SlotBooking({super.key});
@@ -12,62 +13,70 @@ class SlotBooking extends StatefulWidget {
 }
 
 class _SlotBookingState extends State<SlotBooking> {
-List<String> weekday = [
-  "Mon",
-  "Tue",
-  "Wed",
-  "Thu",
-  "Fri",
-  "Sat",
-  "Sun"
-];
-List<String> morningSlot = [
- "09:00 AM To 10:00 AM",
- "10:00 AM To 11:00 AM",
- "11:00 AM To 12:00 PM",
-];
-List<String> afternoonSlot = [
-  "02:00 PM To 03:00 PM",
-  "03:00 PM To 04:00 PM",
+  final currentDate = DateTime.now();
+  DateTime? date;
+  List<String> weekday = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  List<String> morningSlot = [
+    "09:00 AM To 10:00 AM",
+    "10:00 AM To 11:00 AM",
+    "11:00 AM To 12:00 PM",
+  ];
+  List<String> afternoonSlot = [
+    "02:00 PM To 03:00 PM",
+    "03:00 PM To 04:00 PM",
+  ];
+  List<String> eveningSlot = [
+    "04:00 PM To 05:00 PM",
+    "05:00 PM To 06:00 PM",
+    "06:00 PM To 07:00 PM",
+    "07:00 PM To 08:00 PM",
+  ];
+  List dates = [];
+  DateTime now = DateTime.now();
+  late int selectedDay;
+  String selectedSlot = "";
+  String? selectedDayForTiming;
+  String? selectedDayForWeekday;
+  final dayFormatter = DateFormat('dd');
+  final monthFormatter = DateFormat('MMM');
+  final weekDayFormatter = DateFormat('EEE');
 
-];
-List<String> eveningSlot = [
-  "04:00 PM To 05:00 PM",
-  "05:00 PM To 06:00 PM",
-  "06:00 PM To 07:00 PM",
-  "07:00 PM To 08:00 PM",
-];
-DateTime now = new DateTime.now();
-late int selectedDay;
-String selectedSlot = "";
+  methodForDate() {
+    // print("Total days ---> ${DateTime(now.year, now.month + 1, 0).day}");
+    // print("previous days --> ${now.day - 1}");
+    // print(
+    //     "output days --> ${DateTime(now.year, now.month + 1, 0).day - (now.day - 1)}");
+    for (var i = 0;
+        i < DateTime(now.year, now.month + 1, 0).day - (now.day - 1);
+        i++) {
+      date = currentDate.add(Duration(days: i));
+      setState(() {
+        dates.add(date);
+      });
+    }
+    // print("Dates length :: ${dates}");
+  }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-
+    methodForDate();
     selectedDay = now.day;
-    // print("Total days ---> ${DateTime(now.year,now.month+1,0).day}");
-    // print("previous days --> ${now.day - 1}");
-    // print("output days --> ${DateTime(now.year,now.month+1,0).day - (now.day - 1)}");
-    // print("Day --> ${now.month}");
-    // print("Day --> ${now.year}");
-//     DateTime lastDayOfMonth = new DateTime(2023, 10, 1);
-//     print("Week Day --> ${lastDayOfMonth.weekday}");
-
+    // print("selectedDay $selectedDay");
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFE4ECF0),
-      bottomNavigationBar: Container(
+      bottomNavigationBar: SizedBox(
         height: 80,
         // color: Colors.grey,
         child: GestureDetector(
-          onTap: (){
+          onTap: () {
             Fluttertoast.showToast(
-                msg:
-                "Your appointment has been booked successfully.",
+                msg: "Your appointment has been booked successfully.",
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.CENTER,
                 backgroundColor: Colors.green,
@@ -76,18 +85,17 @@ String selectedSlot = "";
             Navigator.of(context).pop();
           },
           child: Container(
-            margin: EdgeInsets.symmetric(
-                horizontal: 20, vertical: 15),
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             padding: const EdgeInsets.symmetric(vertical: 18.0),
             width: MediaQuery.of(context).size.width,
-            child: Center(
+            child: const Center(
                 child: Text(
-                  "BOOK NOW",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold),
-                )),
+              "BOOK NOW",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold),
+            )),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 gradient: LinearGradient(colors: [
@@ -96,19 +104,21 @@ String selectedSlot = "";
                 ]),
                 boxShadow: [
                   BoxShadow(
-                      color:
-                      AppColor.primary_color.withAlpha(20),
+                      color: AppColor.primary_color.withAlpha(20),
                       blurRadius: 10,
-                      offset: Offset(3, 10))
+                      offset: const Offset(3, 10))
                 ]),
           ),
         ),
       ),
       appBar: AppBar(
-        title: Text("Book Your Appointment",style: TextStyle(color: Colors.white),),
+        title: const Text(
+          "Book Your Appointment",
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: AppColor.primary_color,
         elevation: 0,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white, //change your color here
         ),
       ),
@@ -120,19 +130,19 @@ String selectedSlot = "";
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   backgroundImage: AssetImage(AppImage.medical_doctor),
                   radius: 50,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                       const Text(
                         "DR. SURYAKANT PANKAJ",
                         style: TextStyle(
@@ -143,12 +153,12 @@ String selectedSlot = "";
                       const SizedBox(
                         height: 10,
                       ),
-                      Text(
+                      const Text(
                         "DR. SURYAKANT PANKAJ",
-                        style:
-                            TextStyle(fontSize: 15, fontWeight: FontWeight.w700),
+                        style: TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.w700),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       RatingBar.builder(
@@ -158,7 +168,7 @@ String selectedSlot = "";
                         minRating: 1,
                         direction: Axis.horizontal,
                         itemCount: 5,
-                        itemBuilder: (context, _) => Icon(
+                        itemBuilder: (context, _) => const Icon(
                           Icons.star,
                           color: Colors.amber,
                         ),
@@ -166,117 +176,187 @@ String selectedSlot = "";
                           print(rating);
                         },
                       ),
-                    
-                  ],
-                ),
-                    ))
+                    ],
+                  ),
+                ))
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 8),
-            child: Text("Choose Your Appointment date",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 8),
+            child: Text(
+              "Choose Your Appointment date",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           SizedBox(
             height: 100,
-            child:   ListView.builder(itemCount: DateTime(now.year,now.month+1,0).day,scrollDirection: Axis.horizontal,itemBuilder: (context,index){
-              return GestureDetector(
-                onTap: (){
-
-                  if(index+1 < now.day){
-
-                  }else{
-                    setState(() {
-                      selectedDay = index+1;
-                    });
-                  }
-
-                },
-                child: Container(
-                  margin: EdgeInsets.only(left: 8,right:DateTime(now.year,now.month+1,0).day-1 == index ?8:0 ),
-                  child: Column(
-                    children: [
-                      Text(weekday[DateTime(now.year, now.month, index+1).weekday-1],style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold,color: AppColor.primary_color),),
-                      SizedBox(height: 10,),
-                      Container(
-                        height: 50,
-                        width: 50,
-                        padding: EdgeInsets.all(8),
-                        decoration:BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            border: Border.all(color:selectedDay == index+1 ?AppColor.primary_color: Colors.grey),
-                            color: selectedDay == index+1 ? AppColor.primary_color :index+1 < now.day ? Colors.grey: Colors.white
-                        ),
-                        child: Center(child: Text((index+1).toString(),style: TextStyle(fontSize: 25,color: selectedDay == index+1 ? AppColor.white :index+1 < now.day ? Colors.black: AppColor.primary_color),)),
-                      )
-                    ],
+            child: ListView.builder(
+                itemCount: dates.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedDay = index + 1;
+                      });
+                      selectedDayForTiming =
+                          weekDayFormatter.format(dates[index]);
+                      selectedDayForWeekday = dayFormatter.format(dates[index]);
+                      print("selectedDayForTiming $selectedDayForWeekday");
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(
+                          left: 8, right: index == dates.length - 1 ? 8 : 0),
+                      child: Column(
+                        children: [
+                          Text(
+                            weekday[DateTime(
+                                        now.year,
+                                        now.month,
+                                        int.parse(
+                                            dayFormatter.format(dates[index])))
+                                    .weekday -
+                                1],
+                            style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: AppColor.primary_color),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                            height: 50,
+                            width: 100,
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                    color: selectedDay == index + 1
+                                        ? AppColor.primary_color
+                                        : AppColor.white),
+                                color: selectedDay == index + 1
+                                    ? AppColor.primary_color
+                                    : AppColor.white),
+                            child: Center(
+                                child: Text(
+                              "${dayFormatter.format(dates[index])} ${monthFormatter.format(dates[index])}",
+                              style: TextStyle(
+                                  fontSize: 25,
+                                  color: selectedDay == index + 1
+                                      ? AppColor.white
+                                      : AppColor.black),
+                            )),
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                }),
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 15),
+            child: Text(
+              "Morning",
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                direction: Axis.horizontal,
+                children: List.generate(
+                    morningSlot.length,
+                    (index) => slot(
+                        text: morningSlot[index],
+                        onTap: () => setState(() {
+                              selectedSlot = morningSlot[index];
+                            })))),
+          ),
+          selectedDayForTiming == "Sunday"
+              ? const SizedBox()
+              : const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 15),
+                  child: Text(
+                    "Afternoon",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                   ),
                 ),
-              );
-            }),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 15),
-            child: Text("Morning",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              direction: Axis.horizontal,
-              children: List.generate(morningSlot.length, (index) => slot(text: morningSlot[index], onTap: ()=>setState(() {
-                selectedSlot = morningSlot[index];
-              })))
-            ),
-          ),
-         DateTime(now.year, now.month, selectedDay).weekday == 7 ? SizedBox() : const Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12.0,vertical: 15),
-            child: Text("Afternoon",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
-          ),
-         DateTime(now.year, now.month, selectedDay).weekday == 7 ? SizedBox() : Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                direction: Axis.horizontal,
-                children: List.generate(afternoonSlot.length, (index) => slot(text: afternoonSlot[index], onTap: ()=>setState(() {
-                  selectedSlot = afternoonSlot[index];
-                })))
-            ),
-          ),
-        DateTime(now.year, now.month, selectedDay).weekday == 7 ? SizedBox() :  const Padding(
-            padding:  EdgeInsets.symmetric(horizontal: 12.0,vertical: 15),
-            child: Text("Evening",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
-          ),
-        DateTime(now.year, now.month, selectedDay).weekday == 7 ? SizedBox() :  Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                direction: Axis.horizontal,
-                children: List.generate(eveningSlot.length, (index) => slot(text: eveningSlot[index], onTap: ()=>setState(() {
-                  selectedSlot = eveningSlot[index];
-                })))
-            ),
-          )
+          selectedDayForTiming == "Sunday"
+              ? const SizedBox()
+              : Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Wrap(
+                      spacing: 8,
+                      runSpacing: 8,
+                      direction: Axis.horizontal,
+                      children: List.generate(
+                          afternoonSlot.length,
+                          (index) => slot(
+                              text: afternoonSlot[index],
+                              onTap: () => setState(() {
+                                    selectedSlot = afternoonSlot[index];
+                                  })))),
+                ),
+          selectedDayForTiming == "Sunday"
+              ? const SizedBox()
+              : const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 15),
+                  child: Text(
+                    "Evening",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  ),
+                ),
+          selectedDayForTiming == "Sunday"
+              ? const SizedBox()
+              : Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: Wrap(
+                      spacing: 8,
+                      runSpacing: 8,
+                      direction: Axis.horizontal,
+                      children: List.generate(
+                          eveningSlot.length,
+                          (index) => slot(
+                              text: eveningSlot[index],
+                              onTap: () => setState(() {
+                                    selectedSlot = eveningSlot[index];
+                                  })))),
+                )
         ],
       ),
     );
   }
-  Widget slot({required String text,required GestureTapCallback onTap}){
-    return       GestureDetector(
+
+  Widget slot({required String text, required GestureTapCallback onTap}) {
+    return GestureDetector(
       onTap: onTap,
       child: Container(
         width: 150,
-        padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
-        decoration:BoxDecoration(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(color:selectedSlot == text ?AppColor.primary_color: Colors.grey),
-            color: selectedSlot == text ?AppColor.primary_color : Colors.white
+            border: Border.all(
+                color: selectedSlot == text
+                    ? AppColor.primary_color
+                    : Colors.grey),
+            color:
+                selectedSlot == text ? AppColor.primary_color : Colors.white),
+        child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.w700,
+                color: selectedSlot == text ? Colors.white : Colors.black),
+          ),
         ),
-        child: Center(child: Text(text,style: TextStyle(fontSize: 15,fontWeight: FontWeight.w700,color:selectedSlot == text ?Colors.white:Colors.black),),),
       ),
     );
   }
