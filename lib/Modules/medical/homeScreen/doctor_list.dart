@@ -81,9 +81,10 @@ class _Doctor_listState extends State<Doctor_list> {
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.withAlpha(50),
+                    color: AppColor.grey.withOpacity(0.7),
                     offset: Offset(0, 2),
-                    blurRadius: 12
+                    blurRadius: 10,
+                    spreadRadius: 2
                   )
                 ]
               ),

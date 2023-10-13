@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
@@ -16,10 +17,13 @@ class _PackagesOverviewState extends State<PackagesOverview> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Health Package",style: TextStyle(color: Colors.white),),
+        title: const Text(
+          "Health Package",
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: AppColor.primary_color,
         elevation: 0,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white, //change your color here
         ),
       ),
@@ -160,87 +164,122 @@ class _PackagesOverviewState extends State<PackagesOverview> {
           ),
         ),
       ),
-      bottomSheet: Container(
-        height: 40,
-        decoration: const BoxDecoration(color: AppColor.primary_color),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              child: InkWell(
-                onTap: () async {
-                  var url = Uri.parse('tel:9876543210');
-                  if (await canLaunchUrl(url)) {
-                    await launchUrl(url);
-                  } else {
-                    throw 'Could not launch $url';
-                  }
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text(
-                      "Call",
-                      style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: AppColor.white),
-                    ),
-                    SizedBox(
-                      width: 2,
-                    ),
-                    Icon(Icons.call, size: 17, color: AppColor.white),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              width: 1,
-              color: AppColor.white,
-            ),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "Chat",
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: AppColor.white),
-                  ),
-                  SizedBox(
-                    width: 2,
-                  ),
-                  Icon(Icons.chat_rounded, size: 17, color: AppColor.white),
-                ],
-              ),
-            ),
-            Container(
-              width: 1,
-              color: AppColor.white,
-            ),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text(
-                    "Buy Now",
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: AppColor.white),
-                  ),
-                  SizedBox(
-                    width: 2,
-                  ),
-                  Icon(Icons.add_circle_outline,
-                      size: 17, color: AppColor.white),
-                ],
-              ),
-            ),
-          ],
-        ),
+      // bottomSheet: Container(
+      //   height: 40,
+      //   decoration: const BoxDecoration(color: AppColor.primary_color),
+      //   child: Row(
+      //     mainAxisAlignment: MainAxisAlignment.center,
+      //     children: [
+      //       Expanded(
+      //         child: InkWell(
+      //           onTap: () async {
+      //             var url = Uri.parse('tel:9876543210');
+      //             if (await canLaunchUrl(url)) {
+      //               await launchUrl(url);
+      //             } else {
+      //               throw 'Could not launch $url';
+      //             }
+      //           },
+      //           child: Row(
+      //             mainAxisAlignment: MainAxisAlignment.center,
+      //             children: const [
+      //               Text(
+      //                 "Call",
+      //                 style: TextStyle(
+      //                     fontSize: 15,
+      //                     fontWeight: FontWeight.bold,
+      //                     color: AppColor.white),
+      //               ),
+      //               SizedBox(
+      //                 width: 2,
+      //               ),
+      //               Icon(Icons.call, size: 17, color: AppColor.white),
+      //             ],
+      //           ),
+      //         ),
+      //       ),
+      //       Container(
+      //         width: 1,
+      //         color: AppColor.white,
+      //       ),
+      //       Expanded(
+      //         child: Row(
+      //           mainAxisAlignment: MainAxisAlignment.center,
+      //           children: const [
+      //             Text(
+      //               "Chat",
+      //               style: TextStyle(
+      //                   fontSize: 15,
+      //                   fontWeight: FontWeight.bold,
+      //                   color: AppColor.white),
+      //             ),
+      //             SizedBox(
+      //               width: 2,
+      //             ),
+      //             Icon(Icons.chat_rounded, size: 17, color: AppColor.white),
+      //           ],
+      //         ),
+      //       ),
+      //       Container(
+      //         width: 1,
+      //         color: AppColor.white,
+      //       ),
+      //       Expanded(
+      //         child: Row(
+      //           mainAxisAlignment: MainAxisAlignment.center,
+      //           children: const [
+      //             Text(
+      //               "Buy Now",
+      //               style: TextStyle(
+      //                   fontSize: 15,
+      //                   fontWeight: FontWeight.bold,
+      //                   color: AppColor.white),
+      //             ),
+      //             SizedBox(
+      //               width: 2,
+      //             ),
+      //             Icon(Icons.add_circle_outline,
+      //                 size: 17, color: AppColor.white),
+      //           ],
+      //         ),
+      //       ),
+      //     ],
+      //   ),
+      // ),
+      floatingActionButtonLocation: ExpandableFab.location,
+      floatingActionButton: ExpandableFab(
+        type: ExpandableFabType.up,
+        distance: 50,
+        children: [
+          FloatingActionButton.extended(
+            heroTag: null,
+            label: const Text("Call"),
+            elevation: 15,
+            icon: const Icon(Icons.headset_mic_outlined),
+            onPressed: () async {
+              var url = Uri.parse('tel:9876543210');
+              if (await canLaunchUrl(url)) {
+                await launchUrl(url);
+              } else {
+                throw 'Could not launch $url';
+              }
+            },
+          ),
+          FloatingActionButton.extended(
+            heroTag: null,
+            label: const Text("Chat"),
+            elevation: 15,
+            icon: const Icon(Icons.chat),
+            onPressed: () {},
+          ),
+          FloatingActionButton.extended(
+            heroTag: null,
+            label: const Text("Buy now"),
+            elevation: 15,
+            icon: const Icon(Icons.add_circle),
+            onPressed: () {},
+          ),
+        ],
       ),
     );
   }
