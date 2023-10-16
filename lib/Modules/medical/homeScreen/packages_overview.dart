@@ -249,10 +249,24 @@ class _PackagesOverviewState extends State<PackagesOverview> {
       floatingActionButtonLocation: ExpandableFab.location,
       floatingActionButton: ExpandableFab(
         type: ExpandableFabType.up,
-        distance: 50,
+        distance: 57,
+        openButtonBuilder: RotateFloatingActionButtonBuilder(
+          child: const Icon(Icons.add),
+          fabSize: ExpandableFabSize.small,
+          foregroundColor: AppColor.primary_color,
+          backgroundColor: AppColor.offWhite,
+        ),
+        closeButtonBuilder: RotateFloatingActionButtonBuilder(
+          child: const Icon(Icons.close),
+          fabSize: ExpandableFabSize.small,
+          foregroundColor: AppColor.primary_color,
+          backgroundColor: AppColor.offWhite,
+        ),
         children: [
           FloatingActionButton.extended(
             heroTag: null,
+            backgroundColor: AppColor.offWhite,
+            foregroundColor: AppColor.primary_color,
             label: const Text("Call"),
             elevation: 15,
             icon: const Icon(Icons.headset_mic_outlined),
@@ -267,6 +281,8 @@ class _PackagesOverviewState extends State<PackagesOverview> {
           ),
           FloatingActionButton.extended(
             heroTag: null,
+            backgroundColor: AppColor.offWhite,
+            foregroundColor: AppColor.primary_color,
             label: const Text("Chat"),
             elevation: 15,
             icon: const Icon(Icons.chat),
@@ -274,6 +290,8 @@ class _PackagesOverviewState extends State<PackagesOverview> {
           ),
           FloatingActionButton.extended(
             heroTag: null,
+            backgroundColor: AppColor.offWhite,
+            foregroundColor: AppColor.primary_color,
             label: const Text("Buy now"),
             elevation: 15,
             icon: const Icon(Icons.add_circle),
