@@ -30,13 +30,13 @@ class _Module_listState extends State<Module_list> {
             height: 15,
           ),
           moduleWidget(
-              name: "Real Estate APP",
+              name: "Real Estate",
               networkImage:
                   "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const SplashScreen()))),
           moduleWidget(
-              name: "Medical APP",
+              name: "Medical",
               networkImage:
                   "https://images.unsplash.com/photo-1664902273556-600a6e50beda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjM4fHxob3NwaXRhbCUyMGRyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
               onTap: () {

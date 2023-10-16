@@ -15,6 +15,16 @@ class Home_Widget extends StatefulWidget {
 }
 
 class _Home_WidgetState extends State<Home_Widget> {
+
+  List articleImages = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW_zcgq_veTV_uQ60JLSd2dIB63jsv1dIf3A&usqp=CAU",
+    "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFydGljbGVzJTIwb24lMjBoZWFsdGh8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1498604214351-227898deb373?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGFydGljbGVzJTIwb24lMjBoZWFsdGh8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1583947582886-f40ec95dd752?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fGFydGljbGVzJTIwb24lMjBoZWFsdGh8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1430163393927-3dab9af7ea38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fGFydGljbGVzJTIwb24lMjBoZWFsdGh8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+    "https://images.unsplash.com/photo-1487956382158-bb926046304a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTN8fGFydGljbGVzJTIwb24lMjBoZWFsdGh8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,20 +68,20 @@ class _Home_WidgetState extends State<Home_Widget> {
                 builder: (BuildContext context) {
                   return Container(
                       width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 10, // soften the shadow
-                          spreadRadius: 5, //extend the shadow
-                          offset: Offset(
-                            0.0, // Move to right 5  horizontally
-                            0.0, // Move to bottom 5 Vertically
-                          ),
-                        )
-                      ],
-                    ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        boxShadow: const [
+                          BoxShadow(
+                            color: Colors.grey,
+                            blurRadius: 10, // soften the shadow
+                            spreadRadius: 5, //extend the shadow
+                            offset: Offset(
+                              0.0, // Move to right 5  horizontally
+                              0.0, // Move to bottom 5 Vertically
+                            ),
+                          )
+                        ],
+                      ),
                       margin: const EdgeInsets.symmetric(
                           horizontal: 10.0, vertical: 15),
                       // decoration: BoxDecoration(
@@ -92,6 +102,7 @@ class _Home_WidgetState extends State<Home_Widget> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(
                 children: [
@@ -105,19 +116,19 @@ class _Home_WidgetState extends State<Home_Widget> {
                       width: MediaQuery.of(context).size.width / 4,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppColor.primary_color,
+                          color: AppColor.offWhite,
+                          border: Border.all(color: AppColor.white),
                           boxShadow: [
                             BoxShadow(
                                 color: AppColor.primary_color.withAlpha(80),
-                                offset: const Offset(0, -5),
-                                blurRadius: 12,
-                                spreadRadius: 4)
+                                blurRadius: 5,
+                                spreadRadius: 5)
                           ]),
                       child: Padding(
                         padding: const EdgeInsets.all(15.0),
                         child: Image.asset(
                           AppImage.medical_calander,
-                          color: Colors.white,
+                          color: AppColor.primary_color,
                           scale: 10,
                         ),
                       ),
@@ -126,9 +137,25 @@ class _Home_WidgetState extends State<Home_Widget> {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
-                    "Book My Appointment",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  Center(
+                    child: Column(
+                      children: const [
+                        Text(
+                          "Book my",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          "appointment",
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),
@@ -137,36 +164,37 @@ class _Home_WidgetState extends State<Home_Widget> {
                   GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const VideoConsultationSymptomsScreen()));
+                          builder: (context) =>
+                              const VideoConsultationSymptomsScreen()));
                     },
                     child: Container(
                       height: MediaQuery.of(context).size.height / 8,
                       width: MediaQuery.of(context).size.width / 4,
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: AppColor.primary_color,
+                          color: AppColor.offWhite,
+                          border: Border.all(color: AppColor.white),
                           boxShadow: [
                             BoxShadow(
                                 color: AppColor.primary_color.withAlpha(80),
-                                offset: const Offset(0, -5),
-                                blurRadius: 12,
-                                spreadRadius: 4)
+                                blurRadius: 5,
+                                spreadRadius: 5)
                           ]),
                       child: Padding(
                         padding: const EdgeInsets.all(15.0),
                         child: Image.asset(
                           AppImage.medical_video,
-                          color: Colors.white,
+                          color: AppColor.primary_color,
                           scale: 8,
                         ),
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 25,
                   ),
                   const Text(
-                    "Video Consultation",
+                    "Video consultation",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   )
                 ],
@@ -189,13 +217,15 @@ class _Home_WidgetState extends State<Home_Widget> {
               itemCount: 3,
               itemBuilder: (context, index) => Container(
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: AppColor.offWhite,
                         borderRadius: BorderRadius.circular(15),
+                        border: Border.all(color: AppColor.white),
                         boxShadow: [
                           BoxShadow(
                             color: AppColor.primary_color.withAlpha(80),
-                            offset: const Offset(0, -5),
-                            blurRadius: 12,
+                            offset: const Offset(5, 10),
+                            blurRadius: 5,
+                            spreadRadius: 3
                           )
                         ]),
                     margin: const EdgeInsets.symmetric(
@@ -316,7 +346,7 @@ class _Home_WidgetState extends State<Home_Widget> {
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.network(
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW_zcgq_veTV_uQ60JLSd2dIB63jsv1dIf3A&usqp=CAU",
+                          articleImages[index],
                           fit: BoxFit.fill,
                         )),
                   ),
