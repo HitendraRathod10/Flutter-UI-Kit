@@ -198,13 +198,15 @@ class _ProfileState extends State<Profile> {
   Widget con({required IconData icon, required String name}) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColor.offWhite,
           borderRadius: BorderRadius.circular(15),
-          boxShadow: [
+          border: Border.all(color: AppColor.white),
+          boxShadow: const [
             BoxShadow(
-              color: AppColor.primary_color.withAlpha(50),
-              offset: const Offset(0, -5),
-              blurRadius: 12,
+              color: AppColor.primary_color,
+              offset: Offset(4, 4),
+              blurRadius: 2,
+              spreadRadius: 1
             )
           ]),
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
