@@ -44,7 +44,15 @@ class _VideoConsultationSymptomsScreenState
             height: MediaQuery.of(context).size.height / 2.5,
             width: double.infinity,
             decoration: BoxDecoration(
-                color: AppColor.primary_color.withOpacity(0.4),
+                color: AppColor.offWhite,
+                boxShadow: [
+                  BoxShadow(
+                      color: AppColor.primary_color.withAlpha(80),
+                      blurRadius: 1,
+                      offset: const Offset(2, 4),
+                      spreadRadius: 2)
+                ],
+                border: Border.all(color: AppColor.white),
                 borderRadius: BorderRadius.circular(25)),
             child: Image.network(
                 "https://virtualsteth.com/assets/images/login-img.png"),
@@ -55,9 +63,9 @@ class _VideoConsultationSymptomsScreenState
                     maxCrossAxisExtent: 200,
                     childAspectRatio: 4 / 2,
                     crossAxisSpacing: 10,
-                    mainAxisSpacing: 10),
+                    mainAxisSpacing: 20),
                 itemCount: details.length,
-                padding: const EdgeInsets.fromLTRB(10, 00, 10, 20),
+                padding: const EdgeInsets.fromLTRB(10, 10, 10, 20),
                 itemBuilder: (BuildContext ctx, index) {
                   return GestureDetector(
                     onTap: () {
@@ -68,9 +76,18 @@ class _VideoConsultationSymptomsScreenState
                     child: Container(
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
-                          color: AppColor.primary_color.withOpacity(0.4),
+                          color: AppColor.offWhite,
+                          boxShadow: [
+                            BoxShadow(
+                                color: AppColor.primary_color.withAlpha(80),
+                                blurRadius: 3,
+                                offset: const Offset(5, 10),
+                                spreadRadius: 1)
+                          ],
+                          border: Border.all(color: AppColor.white),
                           borderRadius: BorderRadius.circular(15)),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Image.network(
                             details.entries.toList()[index].value,

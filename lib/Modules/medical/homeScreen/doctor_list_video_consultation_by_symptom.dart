@@ -24,17 +24,19 @@ class _DoctorListVideoConsultationBySymptomState
                 ),
               ),
             ),
-            contentPadding: const EdgeInsets.only(
-              top: 10,
+            insetPadding: EdgeInsets.zero,
+            title: Container(
+              color: AppColor.offWhite,
+              child: const Text(
+                "Request for online consultation",
+                style: TextStyle(fontSize: 24.0),
+              ),
             ),
-            title: const Text(
-              "Request for online consultation",
-              style: TextStyle(fontSize: 24.0),
-            ),
-            content: SizedBox(
-              height: 500,
+            titlePadding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+            content: Container(
+              color: AppColor.offWhite,
               child: SingleChildScrollView(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -133,6 +135,7 @@ class _DoctorListVideoConsultationBySymptomState
                 ),
               ),
             ),
+            contentPadding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
           );
         });
   }
@@ -154,16 +157,17 @@ class _DoctorListVideoConsultationBySymptomState
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
-                elevation: 10,
-                shadowColor: AppColor.grey,shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
+                elevation: 7,
+                shadowColor: AppColor.primary_color,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
                 child: Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   height: 130,
-                  decoration: BoxDecoration(
-                    color: AppColor.primary_color.withOpacity(0.3),
-                    borderRadius: const BorderRadius.all(Radius.circular(10)),
+                  decoration: const BoxDecoration(
+                    color: AppColor.offWhite,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                   child: Row(
                     children: [
@@ -171,7 +175,8 @@ class _DoctorListVideoConsultationBySymptomState
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CircleAvatar(
-                            backgroundColor: AppColor.white,
+                            backgroundColor:
+                                AppColor.primary_color.withOpacity(0.4),
                             radius: 30,
                             child: Image.network(
                               "https://cdn-icons-png.flaticon.com/128/4751/4751166.png",
