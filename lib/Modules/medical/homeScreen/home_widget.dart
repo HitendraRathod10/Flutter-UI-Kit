@@ -51,8 +51,8 @@ class _Home_WidgetState extends State<Home_Widget> {
                 onPageChanged: (index, reason) {}),
             items: [
               "https://media.istockphoto.com/id/1385192967/vector/world-health-day-vector-illustration.jpg?s=612x612&w=0&k=20&c=c8ReEaTOY0stUzCe9HpR_AvGJDVNJWxImWGB6OEYP7Q=",
-              "https://media.istockphoto.com/id/1219007911/vector/coronavirus-covid-19-with-map-pin-locator-vector.jpg?s=612x612&w=0&k=20&c=mL8ovVFnWyPaLa0I2w_ZDRjA-TNFCG0G3dzbtaspbng=",
-              "https://media.istockphoto.com/id/1258121364/vector/thank-you-doctors-and-nurses-24-7-support-again-corona-virus.jpg?s=612x612&w=0&k=20&c=8T9U88jEVYqp7V20bOFDKNq8FzIuUrow0Bf2IGE40Pc="
+              "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzJ8fG1lZGljYWwlMjBtb2R1bGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+              "https://img.freepik.com/free-vector/smart-healthcare-technology-template-vector_53876-110859.jpg?size=626&ext=jpg&ga=GA1.1.1867966305.1696929754&semt=sph"
             ].map((i) {
               return Builder(
                 builder: (BuildContext context) {

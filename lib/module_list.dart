@@ -16,25 +16,33 @@ class _Module_listState extends State<Module_list> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Modules"),
+        title: const Text(
+          "Modules",
+          style: TextStyle(color: AppColor.white),
+        ),
         centerTitle: true,
         automaticallyImplyLeading: false,
+        backgroundColor: AppColor.appGrey,
       ),
       body: ListView(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 15,
           ),
           moduleWidget(
               name: "Real Estate APP",
-              onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => SplashScreen()))),
+              networkImage:
+                  "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cmVhbCUyMGVzdGF0ZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SplashScreen()))),
           moduleWidget(
               name: "Medical APP",
+              networkImage:
+                  "https://images.unsplash.com/photo-1664902273556-600a6e50beda?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjM4fHxob3NwaXRhbCUyMGRyfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
               onTap: () {
                 FlutterStatusbarcolor.setStatusBarColor(AppColor.primary_color);
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => Splash_Screen()));
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const Splash_Screen()));
               }),
         ],
       ),
@@ -42,31 +50,35 @@ class _Module_listState extends State<Module_list> {
   }
 
   Widget moduleWidget(
-      {required String name, required GestureTapCallback onTap}) {
+      {required String name,
+      required GestureTapCallback onTap,
+      required String networkImage}) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+        padding: const EdgeInsets.fromLTRB(0, 100, 0, 100),
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColor.white,
             borderRadius: BorderRadius.circular(10),
+            image: DecorationImage(
+              image: NetworkImage(networkImage),
+              fit: BoxFit.fill,
+              colorFilter: ColorFilter.mode(
+                  AppColor.black.withOpacity(0.6), BlendMode.colorBurn),
+            ),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withAlpha(50),
-                blurRadius: 46,
-                offset: const Offset(-2, 8),
+                color: AppColor.appGrey.withOpacity(0.5),
+                blurRadius: 10,
+                spreadRadius: 3,
+                offset: const Offset(5, 10),
               )
             ]),
-        child: Row(
-          children: [
-            Text(
-              name,
-              style: TextStyle(fontSize: 18),
-            ),
-            Spacer(),
-            Icon(Icons.keyboard_arrow_right)
-          ],
+        child: Text(
+          name,
+          textAlign: TextAlign.center,
+          style: const TextStyle(fontSize: 18, color: AppColor.white),
         ),
       ),
     );
