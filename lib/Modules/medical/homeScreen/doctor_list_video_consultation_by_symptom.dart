@@ -87,8 +87,8 @@ class _DoctorListVideoConsultationBySymptomState
                             msg:
                                 "Your request has been submitted.Kindly wait for 24 hours.",
                             toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.CENTER,
-                            backgroundColor: Colors.green,
+                            gravity: ToastGravity.BOTTOM,
+                            backgroundColor: AppColor.primary_color,
                             textColor: Colors.white,
                             fontSize: 16.0);
                       },

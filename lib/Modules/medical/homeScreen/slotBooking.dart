@@ -78,8 +78,8 @@ class _SlotBookingState extends State<SlotBooking> {
             Fluttertoast.showToast(
                 msg: "Your appointment has been booked successfully.",
                 toastLength: Toast.LENGTH_SHORT,
-                gravity: ToastGravity.CENTER,
-                backgroundColor: Colors.green,
+                gravity: ToastGravity.BOTTOM,
+                backgroundColor: AppColor.primary_color,
                 textColor: Colors.white,
                 fontSize: 16.0);
             Navigator.of(context).pop();
