@@ -15,7 +15,6 @@ class Home_Widget extends StatefulWidget {
 }
 
 class _Home_WidgetState extends State<Home_Widget> {
-
   List articleImages = [
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW_zcgq_veTV_uQ60JLSd2dIB63jsv1dIf3A&usqp=CAU",
     "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGFydGljbGVzJTIwb24lMjBoZWFsdGh8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
@@ -191,11 +190,23 @@ class _Home_WidgetState extends State<Home_Widget> {
                     ),
                   ),
                   const SizedBox(
-                    height: 25,
+                    height: 20,
                   ),
-                  const Text(
-                    "Video consultation",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  Center(
+                    child: Column(
+                      children: const [
+                        Text(
+                          "Video",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "consultation",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
                   )
                 ],
               ),
@@ -222,11 +233,10 @@ class _Home_WidgetState extends State<Home_Widget> {
                         border: Border.all(color: AppColor.white),
                         boxShadow: [
                           BoxShadow(
-                            color: AppColor.primary_color.withAlpha(80),
-                            offset: const Offset(5, 10),
-                            blurRadius: 5,
-                            spreadRadius: 3
-                          )
+                              color: AppColor.primary_color.withAlpha(80),
+                              offset: const Offset(5, 10),
+                              blurRadius: 5,
+                              spreadRadius: 3)
                         ]),
                     margin: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 15),
