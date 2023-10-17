@@ -17,7 +17,7 @@ class _Module_listState extends State<Module_list> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Modules",
+          "UI Kit",
           style: TextStyle(color: AppColor.white),
         ),
         centerTitle: true,
@@ -78,7 +78,7 @@ class _Module_listState extends State<Module_list> {
         child: Text(
           name,
           textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 18, color: AppColor.white),
+          style: const TextStyle(fontSize: 30, color: AppColor.white),
         ),
       ),
     );

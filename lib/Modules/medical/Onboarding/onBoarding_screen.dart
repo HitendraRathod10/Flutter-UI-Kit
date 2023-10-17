@@ -118,13 +118,13 @@ Padding(
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>Login_Screen()));
                     },
                     child: Container(
-                      padding: EdgeInsets.symmetric(horizontal: 22,vertical: 8.0),
+                      padding: EdgeInsets.symmetric(horizontal: 24,vertical: 10),
                       decoration: BoxDecoration(
                         color: onBoardinControllar.currentIndex.value == 2 ? AppColor.primary_color : Colors.white,
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(color:AppColor.primary_color)
                       ),
-                      child: Text(onBoardinControllar.currentIndex.value == 2 ?"Next":"Skip",style: TextStyle(color:onBoardinControllar.currentIndex.value == 2 ? Colors.white : AppColor.primary_color,fontWeight: FontWeight.bold),),
+                      child: Text(onBoardinControllar.currentIndex.value == 2 ?"Next":"Skip",style: TextStyle(color:onBoardinControllar.currentIndex.value == 2 ? Colors.white : AppColor.primary_color,fontWeight: FontWeight.bold,fontSize: 17),),
                     ),
                   )
                 ],
