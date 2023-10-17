@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../Home/home_provider.dart';
@@ -28,7 +29,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "  Chats",
+            "chats".tr,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(),
           ),
           automaticallyImplyLeading: false,
@@ -59,7 +60,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                     decoration: InputDecoration(
                         filled: true,
                         // fillColor: Theme.of(context).backgroundColor,
-                        hintText: "Search by name",
+                        hintText: "search by name".tr,
                         contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
                         suffixIcon: snap.searchResult.isEmpty ? Icon(Icons.search,
                             color: Theme.of(context).iconTheme.color) : IconButton(onPressed: ()=> snap.clearText(), icon: Icon(Icons.clear,color: Theme.of(context).iconTheme.color)) ,

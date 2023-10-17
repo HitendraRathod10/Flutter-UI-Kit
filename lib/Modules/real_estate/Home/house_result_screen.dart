@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 
@@ -33,7 +34,7 @@ class _HouseResultScreenState extends State<HouseResultScreen> {
     final providerData = Provider.of<HomeProvider>(context, listen: false);
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.screenName,
+          title: Text(widget.screenName == "House" ? "house".tr : widget.screenName ==  "Flat" ? "flats / apartments".tr : widget.screenName ==  "Residential" ? "residential".tr : widget.screenName ==  "Commercial" ? "commercial".tr : widget.screenName,
               style: Theme.of(context).textTheme.titleLarge?.copyWith()),
           // backgroundColor: AppColor.white,
           leading: InkWell(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import '../utils/app_color.dart';
 
 class ChangePasswordScreen extends StatefulWidget {
@@ -15,7 +15,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     return Scaffold(
       // backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        title: Text("Change password",style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+        title: Text("change password".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith()),
         // backgroundColor: AppColor.white,
         leading: InkWell(
             onTap: () {
@@ -28,7 +28,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(" Current Password",style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),),
+            Text("current password".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),),
             const SizedBox(
               height: 10,
             ),
@@ -47,7 +47,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 decoration: InputDecoration(
                     filled: true,
                     // fillColor: Theme.of(context).hintColor,
-                    hintText: "Type Current Password Here",
+                    hintText: "type current password here".tr,
                     contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
                     border:
                     OutlineInputBorder(borderSide: BorderSide.none)),
@@ -64,7 +64,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             const SizedBox(
               height: 25,
             ),
-            Text(" New Password",style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),),
+            Text("new password".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),),
             const SizedBox(
               height: 10,
             ),
@@ -84,7 +84,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     filled: true,
                     // fillColor: Theme.of(context).hintColor,
                     contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
-                    hintText: "Type New Password Here",
+                    hintText: "type new password here".tr,
                     border:
                     OutlineInputBorder(borderSide: BorderSide.none)),
                 obscureText: true,
@@ -100,7 +100,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             const SizedBox(
               height: 25,
             ),
-            Text(" Confirm New Password",style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),),
+            Text("confirm new password".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),),
             const SizedBox(
               height: 10,
             ),
@@ -120,7 +120,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     filled: true,
                     // fillColor: Theme.of(context).hintColor,
                     contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
-                    hintText: "Type Confirm New Password Here",
+                    hintText: "type confirm new password here".tr,
                     border:
                     OutlineInputBorder(borderSide: BorderSide.none)),
                 obscureText: true,
@@ -143,8 +143,8 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   borderRadius: BorderRadius.circular(10),
                   color: Theme.of(context).buttonTheme.colorScheme?.background
               ),
-              child: const Center(
-                  child: Text("Update Password",
+              child: Center(
+                  child: Text("update password".tr,
                     style: TextStyle(color: AppColor.white,fontSize: 20,fontWeight: FontWeight.w500),)),
             )
           ],

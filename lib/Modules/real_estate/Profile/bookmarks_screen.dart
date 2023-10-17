@@ -30,7 +30,7 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Bookmarks", style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+          title: Text("bookmarks".tr, style: Theme.of(context).textTheme.titleLarge?.copyWith()),
           // backgroundColor: AppColor.white,
           leading: InkWell(
               onTap: () {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -33,13 +34,13 @@ class _ChatScreenState extends State<ChatScreen> {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Padding(
+          child: Padding(
             padding: EdgeInsets.only(
               left: 10,
               right: 10,
             ),
             child: Text(
-              'Cancel',
+              'cancel'.tr,
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           )),
@@ -52,13 +53,13 @@ class _ChatScreenState extends State<ChatScreen> {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: const Padding(
+          child: Padding(
             padding: EdgeInsets.only(
               left: 30,
               right: 30,
             ),
             child: Text(
-              'Yes',
+              'yes'.tr,
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           )),
@@ -66,12 +67,12 @@ class _ChatScreenState extends State<ChatScreen> {
     AlertDialog alert = AlertDialog(
       backgroundColor: AppColor.white,
       titleTextStyle: const TextStyle(color: AppColor.black, fontSize: 18),
-      title: const Text(
-        "Delete message",
+      title: Text(
+        "delete message".tr,
         style: TextStyle(fontSize: 25),
       ),
-      content: const Text(
-          "Are you sure want to delete this message from chat ?",
+      content: Text(
+          "are you sure want to delete this message from chat ?".tr,
           style: TextStyle(color: AppColor.black, fontSize: 20)),
       actions: [
         cancelButton,
@@ -303,7 +304,7 @@ class _ChatScreenState extends State<ChatScreen> {
                     decoration: InputDecoration(
                         filled: true,
                         // fillColor: Colors.white,
-                        hintText: "Type message here",
+                        hintText: "type message here".tr,
                         prefixIcon: Icon(Icons.attachment,
                             color: Theme.of(context).iconTheme.color),
                         suffixIcon: InkWell(

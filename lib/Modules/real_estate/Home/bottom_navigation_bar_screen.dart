@@ -60,22 +60,22 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
               onTabChange: snapshot.onItemTapped,
               selectedIndex: snapshot.selectedIndex,
               textStyle: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AppColor.white),
-              tabs: const [
+              tabs: [
                 GButton(
                   icon: Icons.home,
-                  text: 'Home',
+                  text: 'home'.tr,
                 ),
                 GButton(
                   icon: Icons.location_on_outlined,
-                  text: 'Location',
+                  text: 'location'.tr,
                 ),
                 GButton(
                   icon: Icons.chat,
-                  text: "chat",
+                  text: "chat".tr,
                 ),
                 GButton(
                   icon: Icons.person,
-                  text: 'Profile',
+                  text: 'profile'.tr,
                 )
               ]
           );

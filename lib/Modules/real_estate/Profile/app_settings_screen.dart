@@ -16,7 +16,7 @@ class _AppSettingsScreenState extends State<AppSettingsScreen> {
     ThemeController themeController = Get.put(ThemeController());
     return Scaffold(
       appBar: AppBar(
-        title: Text("App Settings Screen", style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+        title: Text("app settings screen".tr, style: Theme.of(context).textTheme.titleLarge?.copyWith()),
         leading: InkWell(
             onTap: () {
               Navigator.pop(context);
@@ -40,7 +40,7 @@ class _AppSettingsScreenState extends State<AppSettingsScreen> {
                     Text(
                       /*  themeController.isDarkMode.value
     ? 'Light Mode'
-        : */'Display',
+        : */'display'.tr,
                       style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 25,fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 5),
@@ -50,7 +50,7 @@ class _AppSettingsScreenState extends State<AppSettingsScreen> {
                         Text(
                           /*  themeController.isDarkMode.value
     ? 'Light Mode'
-        : */'Dark Mode',
+        : */'dark mode'.tr,
                           // style: fixedStyle,
                         ),
                         Icon(Icons.east_rounded)

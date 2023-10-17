@@ -29,13 +29,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
           onPressed: () {
             Navigator.pop(context);
           },
-          child:  const Padding(
+          child: Padding(
             padding: EdgeInsets.only(
               left: 10,
               right: 10,
             ),
             child: Text(
-              'No',
+              'no'.tr,
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           )),
@@ -49,13 +49,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
             // Navigator.pop(context);
             Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> const LoginScreen()), (route) => false);
           },
-          child:  const Padding(
+          child: Padding(
             padding: EdgeInsets.only(
               left: 30,
               right: 30,
             ),
             child: Text(
-              'Yes',
+              'yes'.tr,
               style: TextStyle(color: Colors.white, fontSize: 20),
             ),
           )),
@@ -63,8 +63,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
     AlertDialog alert = AlertDialog(
       backgroundColor: AppColor.white,
       titleTextStyle: const TextStyle(color: AppColor.black,fontSize: 18),
-      title: const Text("Logout",style: TextStyle(fontSize: 25),),
-      content: const Text("Are you sure want to logout ?",style: TextStyle(color: AppColor.black,fontSize: 20)),
+      title: Text("logout".tr,style: TextStyle(fontSize: 25),),
+      content: Text("are you sure want to logout ?".tr,style: TextStyle(color: AppColor.black,fontSize: 20)),
       actions: [
         cancelButton,
         const SizedBox(
@@ -95,7 +95,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         // backgroundColor: AppColor.white,
         title: Text(
-          "  Profile",
+          'profile'.tr,
           style: Theme.of(context).textTheme.titleLarge?.copyWith(),
         ),
         automaticallyImplyLeading: false,
@@ -120,7 +120,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text("Edit Profile",style: Theme.of(context).textTheme.titleMedium,),
+                          Text("edit profile".tr,style: Theme.of(context).textTheme.titleMedium,),
                           const Spacer(),
                           const Icon(Icons.chevron_right)
                         ],
@@ -144,7 +144,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text("Change Password",style: Theme.of(context).textTheme.titleMedium,),
+                          Text("change password".tr,style: Theme.of(context).textTheme.titleMedium,),
                           const Spacer(),
                           const Icon(Icons.chevron_right)
                         ],
@@ -192,7 +192,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text("Bookmarks",style: Theme.of(context).textTheme.titleMedium),
+                          Text("bookmarks".tr,style: Theme.of(context).textTheme.titleMedium),
                           const Spacer(),
                           const Icon(Icons.chevron_right)
                         ],
@@ -216,7 +216,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text("Language",style: Theme.of(context).textTheme.titleMedium),
+                          Text("language".tr,style: Theme.of(context).textTheme.titleMedium),
                           const Spacer(),
                           const Icon(Icons.chevron_right)
                         ],
@@ -276,7 +276,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text("App Settings",style: Theme.of(context).textTheme.titleMedium),
+                          Text("app settings".tr,style: Theme.of(context).textTheme.titleMedium),
                           const Spacer(),
                           const Icon(Icons.chevron_right)
                         ],
@@ -300,7 +300,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text("Logout",style: Theme.of(context).textTheme.titleMedium),
+                          Text("logout".tr,style: Theme.of(context).textTheme.titleMedium),
                           // Spacer(),
                           // Icon(Icons.chevron_right)
                         ],

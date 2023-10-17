@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
 import '../utils/app_color.dart';
@@ -52,9 +53,9 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
                         child: TextFormField(
                           style: const TextStyle(color: AppColor.black),
                           controller: locationController,
-                          decoration: const InputDecoration(
+                          decoration: InputDecoration(
                             filled: true,
-                            hintText: "Search by street/area/city",
+                            hintText: "search by street/area/city".tr,
                             border:
                                 OutlineInputBorder(borderSide: BorderSide.none),
                             contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
@@ -93,7 +94,7 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
                           size: 25,
                         ),
                         const SizedBox(width: 15),
-                        Text('Use My current location',
+                        Text('use my current location'.tr,
                             style: Theme.of(context)
                                 .textTheme
                                 .headline3
@@ -112,7 +113,7 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
                     height: 2,
                   ),
                   const SizedBox(height: 20),
-                  Text('RECENT SEARCHES',
+                  Text('recent searches'.tr,
                       style: Theme.of(context)
                           .textTheme
                           .bodyLarge
@@ -195,7 +196,7 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
             child: GestureDetector(
               child: Wrap(
                 children: [
-                  Text('View more ',
+                  Text('view more'.tr,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.w700,
                           color: Colors.deepOrangeAccent)),
