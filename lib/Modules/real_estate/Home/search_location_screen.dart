@@ -23,19 +23,20 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
     final providerData = Provider.of<HomeProvider>(context, listen: false);
     return Consumer<HomeProvider>(builder: (BuildContext context, snap, child) {
       return Scaffold(
-          // appBar: AppBar(
-          //   elevation: 0,
-          //   title: Text("Search location", style: Theme.of(context).textTheme.titleLarge?.copyWith()),
-          //   // backgroundColor: AppColor.white,
-          //   leading: InkWell(
-          //       onTap: () {
-          //         Navigator.pop(context);
-          //       },
-          //       child: Icon(Icons.arrow_back_ios_new, color: Theme.of(context).iconTheme.color)),
-          // ),
+          appBar: AppBar(
+            elevation: 0,
+            title: Text("Search location",
+                style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+            leading: InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Icon(Icons.arrow_back_ios_new,
+                    color: Theme.of(context).iconTheme.color)),
+          ),
           body: Container(
               // height: MediaQuery.of(context).size.height,
-              padding: const EdgeInsets.fromLTRB(20, 25, 15, 10),
+              padding: const EdgeInsets.fromLTRB(20, 5, 15, 10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -78,8 +79,14 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
                   GestureDetector(
                     onTap: () {
                       print('On Tap Click');
-                      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>BottomNavigationBarScreen()), (route) => false);
-                      Provider.of<HomeProvider>(context,listen: false).onItemTapped(1);
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  BottomNavigationBarScreen()),
+                          (route) => false);
+                      Provider.of<HomeProvider>(context, listen: false)
+                          .onItemTapped(1);
                       // Navigator.of(context).pop();
                       // snap.onItemTapped(1);
                       // snap.buildScreen[1];

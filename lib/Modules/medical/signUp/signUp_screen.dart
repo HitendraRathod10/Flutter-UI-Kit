@@ -245,7 +245,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("Don't have an account yet?",style: Theme.of(context).textTheme.titleMedium?.copyWith(),),
+                                  Text("Already have an account ?",style: Theme.of(context).textTheme.titleMedium?.copyWith(),),
                                   Text(" Login",style: Theme.of(context).textTheme.titleLarge?.copyWith(color: AppColor.primary_color,fontWeight: FontWeight.bold,fontSize: 18)),
                                 ],
                               )

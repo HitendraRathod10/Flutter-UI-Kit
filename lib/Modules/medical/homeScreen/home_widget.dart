@@ -140,14 +140,14 @@ class _Home_WidgetState extends State<Home_Widget> {
                     child: Column(
                       children: const [
                         Text(
-                          "Book my",
+                          "Book",
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         Text(
-                          "appointment",
+                          "my appointment",
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
