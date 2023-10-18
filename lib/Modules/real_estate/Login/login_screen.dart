@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:flutter_ui_kit/module_list.dart';
 import 'package:provider/provider.dart';
 
@@ -54,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     text: const TextSpan(
                       style: TextStyle(
                           fontSize: 35,
-                          fontWeight: FontWeight.bold,
+                          fontFamily: AppFont.bold,
                           color: Colors.white),
                       children: [
                         TextSpan(
@@ -67,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         TextSpan(
                             text: "In the real estate world !",
                             style: TextStyle(
-                                fontSize: 25, fontWeight: FontWeight.normal))
+                                fontSize: 25, fontFamily: AppFont.medium))
                       ],
                     ),
                   ),
@@ -85,6 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         labelStyle: const TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,
+                          fontFamily: AppFont.regular
                           // fontWeight: FontWeight.normal,
                         ),
                         border: OutlineInputBorder(
@@ -129,6 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         labelStyle: const TextStyle(
                           color: Colors.white,
                           fontSize: 20.0,
+                          fontFamily: AppFont.regular
                           // fontWeight: FontWeight.bold,
                         ),
                         border: OutlineInputBorder(
@@ -179,7 +182,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               "Forgot password?",
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontWeight: FontWeight.w500,
+                                  fontFamily: AppFont.medium,
                                   fontSize: 17),
                             ))),
                   ),
@@ -216,7 +219,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           "Login",
                           style: TextStyle(
                               color: Colors.black,
-                              fontWeight: FontWeight.w500,
+                              fontFamily: AppFont.medium,
                               fontSize: 20),
                         )),
                       ),
@@ -235,7 +238,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       const Text(
                         "  Or Login with  ",
-                        style: TextStyle(color: Colors.white, fontSize: 15),
+                        style: TextStyle(color: Colors.white, fontSize: 15, fontFamily: AppFont.medium,),
                       ),
                       Container(
                         height: 01,
@@ -300,11 +303,11 @@ class _LoginScreenState extends State<LoginScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              "Don't have an account yet?",
+                              "Don't have an account yet ?",
                               style: Theme.of(context)
                                   .textTheme
                                   .titleMedium
-                                  ?.copyWith(color: AppColor.white),
+                                  ?.copyWith(color: AppColor.white,fontFamily: AppFont.medium,),
                             ),
                             Text(" SignUp",
                                 style: Theme.of(context)
@@ -312,7 +315,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     .titleLarge
                                     ?.copyWith(
                                         color: AppColor.white,
-                                        fontWeight: FontWeight.bold,
+                                        fontFamily: AppFont.medium,
                                         letterSpacing: 2)),
                           ],
                         )),

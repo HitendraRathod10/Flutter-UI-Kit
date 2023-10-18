@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/Splash/splash_screen.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 
 import 'Modules/medical/Splash/splash_screen.dart';
 
@@ -18,7 +19,7 @@ class _Module_listState extends State<Module_list> {
       appBar: AppBar(
         title: const Text(
           "UI Kit",
-          style: TextStyle(color: AppColor.white),
+          style: TextStyle(color: AppColor.white,fontFamily: AppFont.extraBold,fontSize: 22),
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
@@ -78,7 +79,7 @@ class _Module_listState extends State<Module_list> {
         child: Text(
           name,
           textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 30, color: AppColor.white),
+          style: const TextStyle(fontSize: 30, color: AppColor.white, fontFamily: AppFont.bold,),
         ),
       ),
     );

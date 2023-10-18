@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 
 import '../Login/login_screen.dart';
 import '../utils/app_color.dart';
@@ -45,7 +46,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   text: const TextSpan(
                     style: TextStyle(
                         fontSize: 35,
-                        fontWeight: FontWeight.bold,
+                        fontFamily: AppFont.bold,
                         color: Colors.white),
                     children: [
                       TextSpan(
@@ -58,7 +59,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       TextSpan(
                           text: "To get started now !",
                           style: TextStyle(
-                              fontSize: 30, fontWeight: FontWeight.normal))
+                              fontSize: 30, fontFamily: AppFont.medium,))
                     ],
                   ),
                 ),
@@ -74,7 +75,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       labelStyle: const TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        fontFamily: AppFont.medium,
                       ),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -115,7 +116,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       labelStyle: const TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        fontFamily: AppFont.medium,
                       ),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -158,7 +159,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       labelStyle: const TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        fontFamily: AppFont.medium,
                       ),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -209,7 +210,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         child: Text(
                       "Sign Up",
                       style: TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 20),
+                          color: AppColor.appBlueColor,
+                          fontFamily: AppFont.medium,
+                          fontSize: 20),
                     )),
                   ),
                 ),
@@ -222,7 +225,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       color: Colors.white,
                       width: MediaQuery.of(context).size.width/4,
                     ),
-                    const Text("  Or Sign Up with  ",style: TextStyle(color: Colors.white,fontSize: 15),),
+                    const Text("  Or Sign Up with  ",style: TextStyle(color: Colors.white,fontSize: 15,fontFamily: AppFont.medium,),),
                     Container(
                       height: 01,
                       color: Colors.white,
@@ -272,8 +275,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text("Already have an account?",style: Theme.of(context).textTheme.titleMedium?.copyWith(color: AppColor.white),),
-                          Text(" Login",style: Theme.of(context).textTheme.titleLarge?.copyWith(color: AppColor.white,fontWeight: FontWeight.bold,letterSpacing: 2)),
+                          Text("Already have an account ?",style: Theme.of(context).textTheme.titleMedium?.copyWith(color: AppColor.white,fontFamily: AppFont.medium,),),
+                          Text(" Login",style: Theme.of(context).textTheme.titleLarge?.copyWith(color: AppColor.white,fontFamily: AppFont.medium,letterSpacing: 2)),
                         ],
                       )
                   ),

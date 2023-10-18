@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 
 import '../Register/register_screen.dart';
 import '../utils/app_color.dart';
@@ -47,8 +48,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   const Text(
                     "Reset Your Password",
                     style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.white
+                      fontSize: 25,
+                      color: Colors.white,
+                      fontFamily: AppFont.bold,
                       // fontFamily: AppFont.semiBold
                     ),
                   ),
@@ -62,7 +64,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       labelStyle: const TextStyle(
                         color: Colors.white,
                         fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
+                        fontFamily: AppFont.medium,
                       ),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
@@ -109,33 +111,36 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                           alignment: Alignment.center,
                           child: Text(
                             "Reset Password",
-                            style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500,
-                              color: AppColor.black
-                            ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium
+                                ?.copyWith(
+                                    fontSize: 20,
+                                    fontFamily: AppFont.medium,
+                                    color: AppColor.black),
                           ))),
                   const SizedBox(height: 50,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Don't Have An Account Yet? ",
+                      Text("Don't Have An Account Yet ?",
                         style: Theme.of(context).textTheme.titleMedium?.copyWith(
                             color: Colors.white,
                           letterSpacing: 1,
-                          fontWeight: FontWeight.w400
+                          fontFamily: AppFont.medium,
                           // fontFamily: AppFont.regular
                         ),
                       ),
                       InkWell(
                         child: Text(
-                          "Signup",
-                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            // fontFamily: AppFont.semiBold
-                          ),
+                          " Signup",
+                          style:
+                              Theme.of(context).textTheme.titleLarge?.copyWith(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontFamily: AppFont.medium,
+                                    // fontFamily: AppFont.semiBold
+                                  ),
                         ),
                         onTap: () {
                           Navigator.push(

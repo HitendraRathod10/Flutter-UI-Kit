@@ -2,6 +2,7 @@
 // import 'package:employee_attendance_app/utils/app_colors.dart';
 // import 'package:employee_attendance_app/utils/app_fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 // import 'login_screen.dart';
 import '../Login/login_screen.dart';
@@ -53,7 +54,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                             fontSize: 24,
-                            fontWeight: FontWeight.w500,
+                            fontFamily: AppFont.semiBold,
                             color: AppColor.white),
                       ),
                       const SizedBox(height: 10),
@@ -64,7 +65,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           textAlign: TextAlign.center,
                           style: const TextStyle(
                               fontSize: 18,
-                              fontWeight: FontWeight.normal,
+                              fontFamily: AppFont.regular,
                               color: AppColor.white),
                         ),
                       ),
@@ -86,7 +87,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         _controller.isLastPage ? '' : 'Skip',
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.w500, color: AppColor.white),
+                            fontFamily: AppFont.medium, color: AppColor.white),
                       );
                     }))),
               ),
@@ -133,7 +134,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         _controller.isLastPage ? 'Start' : 'Next',
                         textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.w500, color: AppColor.white),
+                            fontFamily: AppFont.medium, color: AppColor.white),
                       ))),
                 );
               }),

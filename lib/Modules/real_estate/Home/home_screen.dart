@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/Home/search_location_screen.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 import '../Overview/overview_screen.dart';
@@ -42,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge
-                        ?.copyWith(fontSize: 25, fontWeight: FontWeight.bold),
+                        ?.copyWith(fontSize: 23, fontFamily: AppFont.medium,),
                   ),
                   const Spacer(),
                   InkWell(
@@ -68,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text("current location".tr,
                               style: TextStyle(
                                   fontSize: 15,
-                                  fontWeight: FontWeight.w500,
+                                  fontFamily: AppFont.medium,
                                   color: AppColor.grey)),
                           const SizedBox(height: 04),
                           Row(
@@ -85,10 +86,14 @@ class _HomeScreenState extends State<HomeScreen> {
                               const SizedBox(
                                 width: 02,
                               ),
-                              const Text(
-                                "New ranip, Ahmedabad",
-                                style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.w500),
+                              SizedBox(
+                                width: MediaQuery.of(context).size.width/2.5,
+                                child: const Text(
+                                  "New ranip, Ahmedabad",
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                      fontSize: 15, fontFamily: AppFont.medium,),
+                                ),
                               ),
                               // Icon(Icons.arrow_drop_down)
                             ],
@@ -135,14 +140,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             "house".tr,
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
+                                fontFamily: AppFont.semiBold, fontSize: 16),
                           ),
                           SizedBox(
                             height: 01,
                           ),
                           Text("2000+ results".tr,
                               style: TextStyle(
-                                  fontWeight: FontWeight.normal, fontSize: 14))
+                                  fontFamily: AppFont.medium, fontSize: 14))
                         ],
                       ),
                     ),
@@ -179,16 +184,16 @@ class _HomeScreenState extends State<HomeScreen> {
                             height: 04,
                           ),
                           Text(
-                            "flats / apartments".tr,
+                            "flats/Apartments".tr,
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
+                                fontFamily: AppFont.semiBold, fontSize: 16),
                           ),
                           SizedBox(
                             height: 01,
                           ),
                           Text("5000+ results".tr,
                               style: TextStyle(
-                                  fontWeight: FontWeight.normal, fontSize: 14))
+                                  fontFamily: AppFont.medium, fontSize: 14))
                         ],
                       ),
                     ),
@@ -234,14 +239,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             "residential".tr,
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
+                                fontFamily: AppFont.semiBold, fontSize: 16),
                           ),
                           const SizedBox(
                             height: 01,
                           ),
                           Text("1000+ results".tr,
                               style: TextStyle(
-                                  fontWeight: FontWeight.normal, fontSize: 14))
+                                  fontFamily: AppFont.medium, fontSize: 14))
                         ],
                       ),
                     ),
@@ -278,14 +283,14 @@ class _HomeScreenState extends State<HomeScreen> {
                           Text(
                             "commercial".tr,
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
+                                fontFamily: AppFont.semiBold, fontSize: 16),
                           ),
                           const SizedBox(
                             height: 01,
                           ),
                           Text("1000+ results".tr,
                               style: TextStyle(
-                                  fontWeight: FontWeight.normal, fontSize: 14))
+                                  fontFamily: AppFont.medium, fontSize: 14))
                         ],
                       ),
                     ),
@@ -297,7 +302,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.fromLTRB(20, 20, 20, 00),
               child: Text(
                 "recommend for you".tr,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 20, fontFamily: AppFont.medium,),
               ),
             ),
             Padding(
@@ -365,7 +370,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ' ${realStateRecommanedData.title}',
                         style: Theme.of(context).textTheme.titleLarge?.copyWith(
                               fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                              fontFamily: AppFont.regular,
                             ),
                       )),
                       Consumer<HomeProvider>(
@@ -400,7 +405,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Text(
                         " ${realStateRecommanedData.address}",
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            fontWeight: FontWeight.normal, fontSize: 15),
+                            fontFamily: AppFont.medium, fontSize: 15),
                         overflow: TextOverflow.ellipsis,
                       )),
                     ],
@@ -414,7 +419,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       Expanded(
                           child: Text(
                         ' ${realStateRecommanedData.type}',
-                        style: Theme.of(context).textTheme.bodySmall,
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(fontFamily: AppFont.medium,),
                       )),
                     ],
                   )
