@@ -50,6 +50,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 20),
                       ),
+                      SizedBox(height: 5),
                       Text(
                         "By Dr. John Deo",
                         style: TextStyle(
@@ -73,6 +74,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
                   )
                 ],
               ),
+              const SizedBox(height: 5),
               const Text(
                 "Family Doctor",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),

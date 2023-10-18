@@ -27,7 +27,7 @@ class _Home_WidgetState extends State<Home_Widget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE4ECF0),
+      backgroundColor: AppColor.primary_color.withOpacity(0),
       appBar: AppBar(
         title: Padding(
           padding: const EdgeInsets.only(left: 15.0),
@@ -60,7 +60,7 @@ class _Home_WidgetState extends State<Home_Widget> {
                 onPageChanged: (index, reason) {}),
             items: [
               "https://media.istockphoto.com/id/1385192967/vector/world-health-day-vector-illustration.jpg?s=612x612&w=0&k=20&c=c8ReEaTOY0stUzCe9HpR_AvGJDVNJWxImWGB6OEYP7Q=",
-              "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzJ8fG1lZGljYWwlMjBtb2R1bGV8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+              "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGVhbHRoY2FyZSUyMG1hbmFnZW1lbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
               "https://img.freepik.com/free-vector/smart-healthcare-technology-template-vector_53876-110859.jpg?size=626&ext=jpg&ga=GA1.1.1867966305.1696929754&semt=sph"
             ].map((i) {
               return Builder(
@@ -90,7 +90,7 @@ class _Home_WidgetState extends State<Home_Widget> {
                           borderRadius: BorderRadius.circular(15),
                           child: Image(
                             image: NetworkImage(i),
-                            fit: BoxFit.fill,
+                            fit: BoxFit.cover,
                           )));
                 },
               );
@@ -351,13 +351,13 @@ class _Home_WidgetState extends State<Home_Widget> {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.black,
+                        color: AppColor.offWhite,
                         borderRadius: BorderRadius.circular(8)),
                     child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.network(
                           articleImages[index],
-                          fit: BoxFit.fill,
+                          fit: BoxFit.cover,
                         )),
                   ),
                 );

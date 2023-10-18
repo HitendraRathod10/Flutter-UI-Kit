@@ -26,12 +26,11 @@ class _Login_ScreenState extends State<Login_Screen>
     controller = new AnimationController(
       duration: const Duration(seconds: 3),
       vsync: this,
-    )..repeat();
+    );
     _characterCount = new StepTween(begin: 0, end: _currentString.length)
         .animate(new CurvedAnimation(parent: controller, curve: Curves.easeIn));
 
-    controller.forward().then((value) =>
-        Future.delayed(Duration(milliseconds: 500), () => controller.repeat()));
+    controller.forward();
 
     // controller.addListener(() {
     //   if (controller.isCompleted) {

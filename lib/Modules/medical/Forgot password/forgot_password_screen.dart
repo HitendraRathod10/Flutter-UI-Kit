@@ -25,11 +25,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
       duration: const Duration(seconds: 3),
       vsync: this,
     );
-    _characterCount = StepTween(begin: 0, end: _currentString.length + 1)
+    _characterCount = StepTween(begin: 0, end: _currentString.length)
         .animate(CurvedAnimation(parent: controller, curve: Curves.easeIn));
-    controller.forward().then((value) {
-      controller.repeat();
-    });
+    controller.forward();
   }
 
   @override

@@ -67,7 +67,7 @@ class _NotificationState extends State<Notification_widget> {
                           spreadRadius: 1)
                     ]),
                 margin:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
                 child: Row(

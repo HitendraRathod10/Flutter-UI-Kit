@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/home_screen.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../Forgot password/forgot_password_screen.dart';
 
@@ -11,7 +15,20 @@ class EditProfile extends StatefulWidget {
   State<EditProfile> createState() => _EditProfileState();
 }
 
+enum ImageSourceType { gallery, camera }
+
 class _EditProfileState extends State<EditProfile> {
+  var _image;
+  var imagePicker;
+  var type;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    imagePicker = ImagePicker();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,10 +65,14 @@ class _EditProfileState extends State<EditProfile> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  GestureDetector(onTap: (){
-                                    Navigator.pop(context);
-                                  },
-                                      child: const Icon(Icons.arrow_back,color: AppColor.white,)),
+                                  GestureDetector(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: const Icon(
+                                        Icons.arrow_back,
+                                        color: AppColor.white,
+                                      )),
                                   // Padding(
                                   //   padding: EdgeInsets.only(left: 15.0),
                                   //   child: Text("Profile",style: TextStyle(color: AppColor.white,fontWeight: FontWeight.bold,fontSize: 30),textAlign: TextAlign.center,),
@@ -61,22 +82,51 @@ class _EditProfileState extends State<EditProfile> {
                                   ),
                                   Stack(
                                     children: [
-                                      CircleAvatar(
-                                        radius:
-                                            MediaQuery.of(context).size.width /
-                                                5.088,
-                                        backgroundImage: const NetworkImage(
-                                            "https://cdn.pixabay.com/photo/2017/11/02/14/27/model-2911332_640.jpg"),
-                                      ),
-                                      const Positioned(
+                                      _image != null
+                                          ? ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(80),
+                                              child: Image.file(
+                                                _image,
+                                                height: 160,
+                                                width: 160,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            )
+                                          : CircleAvatar(
+                                              radius: MediaQuery.of(context)
+                                                      .size
+                                                      .width /
+                                                  5.088,
+                                              backgroundImage: const NetworkImage(
+                                                  "https://cdn.pixabay.com/photo/2017/11/02/14/27/model-2911332_640.jpg"),
+                                            ),
+                                      Positioned(
                                           bottom: 0,
                                           right: 10,
-                                          child: CircleAvatar(
-                                              radius: 20,
-                                              child: Icon(
-                                                Icons.edit,
-                                                color: AppColor.white,
-                                              )))
+                                          child: GestureDetector(
+                                            onTap: () async {
+                                              var source =
+                                                  type == ImageSourceType.camera
+                                                      ? ImageSource.camera
+                                                      : ImageSource.gallery;
+                                              XFile image =
+                                                  await imagePicker.pickImage(
+                                                      source: source,
+                                                      imageQuality: 50,
+                                                      preferredCameraDevice:
+                                                          CameraDevice.front);
+                                              setState(() {
+                                                _image = File(image.path);
+                                              });
+                                            },
+                                            child: const CircleAvatar(
+                                                radius: 20,
+                                                child: Icon(
+                                                  Icons.edit,
+                                                  color: AppColor.white,
+                                                )),
+                                          ))
                                     ],
                                   )
                                 ],
@@ -138,6 +188,13 @@ class _EditProfileState extends State<EditProfile> {
                           Center(
                             child: GestureDetector(
                               onTap: () {
+                                Fluttertoast.showToast(
+                                    msg: "Profile updated successfully.",
+                                    toastLength: Toast.LENGTH_SHORT,
+                                    gravity: ToastGravity.BOTTOM,
+                                    backgroundColor: AppColor.primary_color,
+                                    textColor: Colors.white,
+                                    fontSize: 16.0);
                                 Navigator.of(context).pushAndRemoveUntil(
                                     MaterialPageRoute(
                                         builder: (context) =>

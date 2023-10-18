@@ -17,6 +17,8 @@ class _DoctorListVideoConsultationBySymptomState
         context: context,
         builder: (context) {
           return AlertDialog(
+            backgroundColor: AppColor.offWhite,
+            elevation: 20,
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
                 Radius.circular(

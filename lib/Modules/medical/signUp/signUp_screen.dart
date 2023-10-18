@@ -21,14 +21,14 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
   void initState() {
     // TODO: implement initState
     super.initState();
-    controller = new AnimationController(
+    controller = AnimationController(
       duration: const Duration(seconds: 3),
       vsync: this,
-    )..repeat();
-    _characterCount = new StepTween(begin: 0, end: _currentString.length)
-        .animate(new CurvedAnimation(parent: controller, curve: Curves.easeIn));
+    );
+    _characterCount = StepTween(begin: 0, end: _currentString.length)
+        .animate(CurvedAnimation(parent: controller, curve: Curves.easeIn));
 
-    controller.forward().then((value) => Future.delayed(Duration(milliseconds: 500),()=>controller.repeat()));
+    controller.forward();
 
     // controller.addListener(() {
     //   if (controller.isCompleted) {
