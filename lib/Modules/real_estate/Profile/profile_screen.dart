@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/Home/home_provider.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -47,7 +48,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             child: Text(
               'no'.tr,
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: TextStyle(color: Colors.white, fontSize: 20, fontFamily: AppFont.medium,),
             ),
           )),
     );
@@ -71,15 +72,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             child: Text(
               'yes'.tr,
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: TextStyle(color: Colors.white, fontSize: 20, fontFamily: AppFont.medium,),
             ),
           )),
     );
     AlertDialog alert = AlertDialog(
       backgroundColor: AppColor.white,
       titleTextStyle: const TextStyle(color: AppColor.black,fontSize: 18),
-      title: Text("logout".tr,style: TextStyle(fontSize: 25),),
-      content: Text("are you sure want to logout ?".tr,style: TextStyle(color: AppColor.black,fontSize: 20)),
+      title: Text("logout".tr,style: TextStyle(fontSize: 25, fontFamily: AppFont.medium,),),
+      content: Text("are you sure want to logout ?".tr,style: TextStyle(color: AppColor.black,fontSize: 20, fontFamily: AppFont.medium,)),
       actions: [
         cancelButton,
         const SizedBox(
@@ -111,7 +112,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         // backgroundColor: AppColor.white,
         title: Text(
           'profile'.tr,
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(),
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.semiBold,),
         ),
         automaticallyImplyLeading: false,
         // centerTitle: true,
@@ -135,7 +136,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text("edit profile".tr,style: Theme.of(context).textTheme.titleMedium,),
+                          Text("edit profile".tr,style: Theme.of(context).textTheme.titleMedium?.copyWith(fontFamily: AppFont.medium,),),
                           const Spacer(),
                           const Icon(Icons.chevron_right)
                         ],
@@ -159,7 +160,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text("change password".tr,style: Theme.of(context).textTheme.titleMedium,),
+                          Text("change password".tr,style: Theme.of(context).textTheme.titleMedium?.copyWith(fontFamily: AppFont.medium,),),
                           const Spacer(),
                           const Icon(Icons.chevron_right)
                         ],
@@ -207,7 +208,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text("bookmarks".tr,style: Theme.of(context).textTheme.titleMedium),
+                          Text("bookmarks".tr,style: Theme.of(context).textTheme.titleMedium?.copyWith(fontFamily: AppFont.medium,)),
                           const Spacer(),
                           const Icon(Icons.chevron_right)
                         ],
@@ -231,7 +232,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text("language".tr,style: Theme.of(context).textTheme.titleMedium),
+                          Text("language".tr,style: Theme.of(context).textTheme.titleMedium?.copyWith(fontFamily: AppFont.medium,)),
                           const Spacer(),
                           const Icon(Icons.chevron_right)
                         ],
@@ -291,7 +292,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text("app settings".tr,style: Theme.of(context).textTheme.titleMedium),
+                          Text("app settings".tr,style: Theme.of(context).textTheme.titleMedium?.copyWith(fontFamily: AppFont.medium,)),
                           const Spacer(),
                           const Icon(Icons.chevron_right)
                         ],
@@ -315,7 +316,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text("logout".tr,style: Theme.of(context).textTheme.titleMedium),
+                          Text("logout".tr,style: Theme.of(context).textTheme.titleMedium?.copyWith(fontFamily: AppFont.medium,)),
                           // Spacer(),
                           // Icon(Icons.chevron_right)
                         ],

@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
@@ -30,7 +31,7 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("bookmarks".tr, style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+          title: Text("bookmarks".tr, style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.semiBold)),
           // backgroundColor: AppColor.white,
           leading: InkWell(
               onTap: () {
@@ -96,7 +97,7 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
                                     child: Text(
                                       '${snap.realStateBookmarkData[index].title}',
                                       style: const TextStyle(
-                                          color: Colors.white, fontSize: 27, fontWeight: FontWeight.w700),
+                                          color: Colors.white, fontSize: 27, fontFamily: AppFont.medium),
                                       overflow: TextOverflow.ellipsis,
                                       maxLines: 2,
                                     )
@@ -183,7 +184,7 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
                                       child: Text(
                                         "${snap.realStateBookmarkData[index].address}",
                                         style: const TextStyle(
-                                          // fontFamily: AppFont.regular,
+                                            fontFamily: AppFont.medium,
                                             fontSize: 17),
                                         overflow: TextOverflow.ellipsis,
                                       ))
@@ -213,7 +214,7 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
                                   SizedBox(
                                     width: 150,
                                     child: Text("${snap.realStateBookmarkData[index].type}",
-                                        style: Theme.of(context).textTheme.titleMedium,
+                                        style: Theme.of(context).textTheme.titleMedium?.copyWith(fontFamily: AppFont.medium),
                                         overflow: TextOverflow.ellipsis),
                                   )
                                 ],
@@ -242,8 +243,8 @@ class _BookmarksScreenState extends State<BookmarksScreen> {
                                     MediaQuery.of(context).size.width / 1.4,
                                     child: Text("${snap.realStateBookmarkData[index].price}",
                                         style: const TextStyle(
-                                          // fontFamily: AppFont.regular,
-                                            fontSize: 17),
+                                            fontFamily: AppFont.medium,
+                                            fontSize: 16),
                                         overflow: TextOverflow.ellipsis),
                                   )
                                 ],

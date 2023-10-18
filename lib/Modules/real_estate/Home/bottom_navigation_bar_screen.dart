@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
@@ -64,18 +65,22 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
                 GButton(
                   icon: Icons.home,
                   text: 'home'.tr,
+                  textStyle: const TextStyle(fontFamily: AppFont.medium,color: AppColor.white,fontSize: 17),
                 ),
                 GButton(
                   icon: Icons.location_on_outlined,
                   text: 'location'.tr,
+                  textStyle: const TextStyle(fontFamily: AppFont.medium,color: AppColor.white,fontSize: 17),
                 ),
                 GButton(
                   icon: Icons.chat,
                   text: "chat".tr,
+                  textStyle: const TextStyle(fontFamily: AppFont.medium,color: AppColor.white,fontSize: 17),
                 ),
                 GButton(
                   icon: Icons.person,
                   text: 'profile'.tr,
+                  textStyle: const TextStyle(fontFamily: AppFont.medium,color: AppColor.white,fontSize: 17),
                 )
               ]
           );

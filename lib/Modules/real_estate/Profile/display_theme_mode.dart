@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -41,7 +42,7 @@ class _DisplayThemeModeState extends State<DisplayThemeMode> {
     bool isDarkMode = brightness == Brightness.dark;
     return Scaffold(
       appBar: AppBar(
-        title: Text('display mode'.tr, style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+        title: Text('display mode'.tr, style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.semiBold)),
         leading: InkWell(
             onTap: () {
               Navigator.pop(context);
@@ -55,10 +56,10 @@ class _DisplayThemeModeState extends State<DisplayThemeMode> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 40),
-              Text('choose how your flutter ui kit experience looks for this device...'.tr,style: Theme.of(context).textTheme.headline3),
+              Text('choose how your flutter ui kit experience looks for this device...'.tr,style: Theme.of(context).textTheme.headline3?.copyWith(fontFamily: AppFont.medium)),
               const SizedBox(height: 15),
               RadioListTile(
-                title: Text('device settings'.tr),
+                title: Text('device settings'.tr,style: TextStyle(fontFamily: AppFont.medium),),
                 groupValue: themeMode,
                 value: ThemeMode.system,
                 onChanged: (value) async{
@@ -70,7 +71,7 @@ class _DisplayThemeModeState extends State<DisplayThemeMode> {
                 }
               ),
               RadioListTile(
-                title: Text('dark mode'.tr),
+                title: Text('dark mode'.tr,style: TextStyle(fontFamily: AppFont.medium),),
                 groupValue: themeMode,
                 value: ThemeMode.dark,
                 onChanged: (value) async{
@@ -82,7 +83,7 @@ class _DisplayThemeModeState extends State<DisplayThemeMode> {
                 }
               ),
               RadioListTile(
-                title: Text('light mode'.tr),
+                title: Text('light mode'.tr,style: TextStyle(fontFamily: AppFont.medium),),
                 groupValue: themeMode,
                 value: ThemeMode.light,
                 onChanged: (value) async{
@@ -94,7 +95,7 @@ class _DisplayThemeModeState extends State<DisplayThemeMode> {
                 }
               ),
               const SizedBox(height: 15),
-              Text("if you choose device settings, this app will use the mode that's already selected in this device's settings.".tr,style: Theme.of(context).textTheme.headline3),
+              Text("if you choose device settings, this app will use the mode that's already selected in this device's settings.".tr,style: Theme.of(context).textTheme.headline3?.copyWith(fontFamily: AppFont.medium)),
             ]
         ),
       ),

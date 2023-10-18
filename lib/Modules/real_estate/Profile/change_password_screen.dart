@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 import '../utils/app_color.dart';
 
@@ -15,7 +16,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     return Scaffold(
       // backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        title: Text("change password".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+        title: Text("change password".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.semiBold)),
         // backgroundColor: AppColor.white,
         leading: InkWell(
             onTap: () {
@@ -28,7 +29,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("current password".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),),
+            Text("current password".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.medium),),
             const SizedBox(
               height: 10,
             ),
@@ -48,6 +49,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     filled: true,
                     // fillColor: Theme.of(context).hintColor,
                     hintText: "type current password here".tr,
+                    hintStyle: TextStyle(fontFamily: AppFont.medium),
                     contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
                     border:
                     OutlineInputBorder(borderSide: BorderSide.none)),
@@ -64,7 +66,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             const SizedBox(
               height: 25,
             ),
-            Text("new password".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),),
+            Text("new password".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.medium),),
             const SizedBox(
               height: 10,
             ),
@@ -85,6 +87,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     // fillColor: Theme.of(context).hintColor,
                     contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
                     hintText: "type new password here".tr,
+                    hintStyle: TextStyle(fontFamily: AppFont.medium),
                     border:
                     OutlineInputBorder(borderSide: BorderSide.none)),
                 obscureText: true,
@@ -100,7 +103,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             const SizedBox(
               height: 25,
             ),
-            Text("confirm new password".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.w500),),
+            Text("confirm new password".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.medium),),
             const SizedBox(
               height: 10,
             ),
@@ -121,6 +124,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     // fillColor: Theme.of(context).hintColor,
                     contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
                     hintText: "type confirm new password here".tr,
+                    hintStyle: TextStyle(fontFamily: AppFont.medium),
                     border:
                     OutlineInputBorder(borderSide: BorderSide.none)),
                 obscureText: true,
@@ -145,7 +149,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               ),
               child: Center(
                   child: Text("update password".tr,
-                    style: TextStyle(color: AppColor.white,fontSize: 20,fontWeight: FontWeight.w500),)),
+                    style: TextStyle(color: AppColor.white,fontSize: 20,fontFamily: AppFont.medium),)),
             )
           ],
         ),

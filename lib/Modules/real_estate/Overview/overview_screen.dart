@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
@@ -60,10 +61,10 @@ class _OverviewScreenState extends State<OverviewScreen> {
                             color: AppColor.white,
                           ),
                           const SizedBox(
-                            width: 03,
+                            width: 5,
                           ),
                           Text("call".tr,
-                              style: const TextStyle(color: AppColor.white),
+                              style: const TextStyle(color: AppColor.white, fontFamily: AppFont.medium,fontSize: 15),
                               maxLines: 2,
                               textAlign: TextAlign.center),
                         ],
@@ -88,11 +89,11 @@ class _OverviewScreenState extends State<OverviewScreen> {
                           color: AppColor.white,
                         ),
                         const SizedBox(
-                          width: 03,
+                          width: 5,
                         ),
                         Text(
                           "chat".tr,
-                          style: const TextStyle(color: AppColor.white),
+                          style: const TextStyle(color: AppColor.white, fontFamily: AppFont.medium,fontSize: 15),
                         ),
                       ],
                     ),
@@ -151,7 +152,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                               style: const TextStyle(
                                   color: AppColor.white,
                                   fontSize: 20,
-                                  fontWeight: FontWeight.bold),
+                                  fontFamily: AppFont.regular,),
                             ),
                             bookmarkWidget(),
                           ],
@@ -233,7 +234,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                                   .textTheme
                                   .titleMedium
                                   ?.copyWith(
-                                fontWeight: FontWeight.w700,
+                                fontFamily: AppFont.semiBold,
                                 color: AppColor.white,
                                 fontSize: 30,
                               ),
@@ -252,7 +253,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                                   "${widget.realStateData?.address}",
                                   maxLines: 2,
                                   style: const TextStyle(
-                                      fontWeight: FontWeight.normal,
+                                      fontFamily: AppFont.medium,
                                       fontSize: 20,
                                       color: AppColor.white),
                                   overflow: TextOverflow.ellipsis,
@@ -297,7 +298,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                       Text(
                         "${widget.realStateData?.price}",
                         style: const TextStyle(
-                            fontSize: 30, fontWeight: FontWeight.bold),
+                            fontSize: 30, fontFamily: AppFont.regular,),
                       ),
                       widget.realStateData?.rent == true
                           ? Container(
@@ -306,7 +307,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                           child: Text(
                             "month".tr,
                             style: const TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.normal),
+                                fontSize: 18, fontFamily: AppFont.regular,),
                           ))
                           : const SizedBox.shrink(),
                       widget.realStateData?.govtCharge == true
@@ -317,7 +318,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                               ?.copyWith(
                               color: Colors.blue,
                               fontSize: 18,
-                              fontWeight: FontWeight.normal))
+                              fontFamily: AppFont.regular,))
                           : const SizedBox.shrink()
                     ],
                   ),
@@ -339,12 +340,12 @@ class _OverviewScreenState extends State<OverviewScreen> {
                             const SizedBox(width: 5,),
                             Text(
                               "${widget.realStateData?.bed}",
-                              style: Theme.of(context).textTheme.bodyLarge,
+                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
                             ),
                             const SizedBox(width: 5,),
                             Text(
                               "bed".tr,
-                              style: Theme.of(context).textTheme.bodyLarge,
+                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
                             ),
                           ],
                         ),
@@ -359,12 +360,12 @@ class _OverviewScreenState extends State<OverviewScreen> {
                             const SizedBox(width: 5,),
                             Text(
                               "${widget.realStateData?.bath}",
-                              style: Theme.of(context).textTheme.bodyLarge,
+                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
                             ),
                             const SizedBox(width: 5,),
                             Text(
                               "bath".tr,
-                              style: Theme.of(context).textTheme.bodyLarge,
+                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
                             ),
                           ],
                         ),
@@ -379,12 +380,12 @@ class _OverviewScreenState extends State<OverviewScreen> {
                             const SizedBox(width: 5,),
                             Text(
                               "${widget.realStateData?.squared}",
-                              style: Theme.of(context).textTheme.bodyLarge,
+                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
                             ),
                             const SizedBox(width: 5,),
                             Text(
                               "sqft".tr,
-                              style: Theme.of(context).textTheme.bodyLarge,
+                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
                             ),
                           ],
                         ),
@@ -400,7 +401,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                       child: Text(
                         "description".tr,
                         style:
-                        const TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+                        const TextStyle(fontFamily: AppFont.medium, fontSize: 22),
                       )),
                 ),
                 Padding(
@@ -410,7 +411,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                       child: Text(
                         '${widget.realStateData?.description}',
                         style: const TextStyle(
-                            fontWeight: FontWeight.normal, fontSize: 18),
+                            fontFamily: AppFont.regular, fontSize: 18),
                       )),
                 ),
                 Padding(
@@ -424,7 +425,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                           child: Text(
                             "published on".tr,
                             style: const TextStyle(
-                                fontWeight: FontWeight.normal, fontSize: 22),
+                                fontFamily: AppFont.medium, fontSize: 20),
                           ),
                         ),
                         const SizedBox(width: 5),
@@ -432,7 +433,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                           "${widget.realStateData?.published}",
                           maxLines: 2,
                           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              fontWeight: FontWeight.normal, fontSize: 20),
+                              fontFamily: AppFont.regular, fontSize: 18),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ],
@@ -449,14 +450,14 @@ class _OverviewScreenState extends State<OverviewScreen> {
                           child: Text(
                             "sales enquiries".tr,
                             style: const TextStyle(
-                                fontWeight: FontWeight.normal, fontSize: 22),
+                                fontFamily: AppFont.medium, fontSize: 20),
                           ),
                         ),
                         Text(
                           " ${widget.realStateData?.mobile}",
                           maxLines: 2,
                           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              fontWeight: FontWeight.normal, fontSize: 20),
+                              fontFamily: AppFont.regular, fontSize: 18),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ],

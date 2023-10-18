@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -41,7 +42,7 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             child: Text(
               'cancel'.tr,
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: TextStyle(color: Colors.white, fontSize: 20, fontFamily: AppFont.medium,),
             ),
           )),
     );
@@ -60,7 +61,7 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             child: Text(
               'yes'.tr,
-              style: TextStyle(color: Colors.white, fontSize: 20),
+              style: TextStyle(color: Colors.white, fontSize: 20, fontFamily: AppFont.medium,),
             ),
           )),
     );
@@ -69,11 +70,11 @@ class _ChatScreenState extends State<ChatScreen> {
       titleTextStyle: const TextStyle(color: AppColor.black, fontSize: 18),
       title: Text(
         "delete message".tr,
-        style: TextStyle(fontSize: 25),
+        style: TextStyle(fontSize: 25, fontFamily: AppFont.semiBold,),
       ),
       content: Text(
           "are you sure want to delete this message from chat ?".tr,
-          style: TextStyle(color: AppColor.black, fontSize: 20)),
+          style: TextStyle(color: AppColor.black, fontSize: 20, fontFamily: AppFont.medium,)),
       actions: [
         cancelButton,
         const SizedBox(
@@ -104,7 +105,7 @@ class _ChatScreenState extends State<ChatScreen> {
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge
-                    ?.copyWith() /* style: TextStyle(color: AppColor.black)*/),
+                    ?.copyWith(fontFamily: AppFont.medium,) /* style: TextStyle(color: AppColor.black)*/),
             // backgroundColor: AppColor.white,
             leading: InkWell(
                 onTap: () {
@@ -191,7 +192,8 @@ class _ChatScreenState extends State<ChatScreen> {
                                                         .bodyLarge
                                                         ?.copyWith(
                                                         color:
-                                                        AppColor.black),
+                                                        AppColor.black,
+                                                      fontFamily: AppFont.medium,),
                                                   ),
                                                 ),
                                               ],
@@ -212,7 +214,8 @@ class _ChatScreenState extends State<ChatScreen> {
                                                         .bodyMedium
                                                         ?.copyWith(
                                                         color:
-                                                        AppColor.black),
+                                                        AppColor.black,
+                                                      fontFamily: AppFont.medium,),
                                                     textAlign: TextAlign.end,
                                                   ),
                                                 ),
@@ -261,7 +264,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                                 style: Theme.of(context)
                                                     .textTheme
                                                     .bodyLarge
-                                                    ?.copyWith(),
+                                                    ?.copyWith(fontFamily: AppFont.medium,color: AppColor.white),
                                               ),
                                             ),
                                           ],
@@ -280,7 +283,8 @@ class _ChatScreenState extends State<ChatScreen> {
                                                     .textTheme
                                                     .bodyMedium
                                                     ?.copyWith(
-                                                    color: AppColor.white),
+                                                    color: AppColor.white,
+                                                  fontFamily: AppFont.medium,),
                                                 textAlign: TextAlign.end,
                                               ),
                                             ),
@@ -305,6 +309,7 @@ class _ChatScreenState extends State<ChatScreen> {
                         filled: true,
                         // fillColor: Colors.white,
                         hintText: "type message here".tr,
+                        hintStyle: TextStyle(fontFamily: AppFont.medium,),
                         prefixIcon: Icon(Icons.attachment,
                             color: Theme.of(context).iconTheme.color),
                         suffixIcon: InkWell(

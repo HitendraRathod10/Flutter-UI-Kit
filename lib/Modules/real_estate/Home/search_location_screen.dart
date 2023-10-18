@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
@@ -26,7 +27,7 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
           appBar: AppBar(
             elevation: 0,
             title: Text("Search location",
-                style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.semiBold,)),
             leading: InkWell(
                 onTap: () {
                   Navigator.pop(context);
@@ -57,6 +58,7 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
                           decoration: InputDecoration(
                             filled: true,
                             hintText: "search by street/area/city".tr,
+                            hintStyle: TextStyle(fontFamily: AppFont.medium,),
                             border:
                                 OutlineInputBorder(borderSide: BorderSide.none),
                             contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
@@ -106,7 +108,7 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
                                 .textTheme
                                 .headline3
                                 ?.copyWith(
-                                    fontWeight: FontWeight.w600,
+                                    fontFamily: AppFont.medium,
                                     color: Colors.deepOrangeAccent))
                       ],
                     ),
@@ -124,7 +126,7 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
                       style: Theme.of(context)
                           .textTheme
                           .bodyLarge
-                          ?.copyWith(letterSpacing: 5)),
+                          ?.copyWith(letterSpacing: 5,fontFamily: AppFont.semiBold,)),
                   const SizedBox(height: 10),
                   Expanded(
                       child: Stack(children: [
@@ -178,12 +180,12 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium
-                      ?.copyWith(fontWeight: FontWeight.w600)),
+                      ?.copyWith(fontFamily: AppFont.medium,)),
               Text('  \u2022  ${providerData.locationData[index]['distance']}',
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium
-                      ?.copyWith(fontWeight: FontWeight.w500, fontSize: 14)),
+                      ?.copyWith(fontFamily: AppFont.medium, fontSize: 14)),
             ],
           ),
           // const SizedBox(height: 2),
@@ -191,7 +193,7 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
               style: Theme.of(context)
                   .textTheme
                   .bodyLarge
-                  ?.copyWith(fontWeight: FontWeight.w300, color: Colors.grey),
+                  ?.copyWith(fontFamily: AppFont.medium, color: Colors.grey),
               maxLines: 1,
               overflow: TextOverflow.ellipsis),
           const SizedBox(height: 20)
@@ -205,7 +207,7 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
                 children: [
                   Text('view more'.tr,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w700,
+                          fontFamily: AppFont.medium,
                           color: Colors.deepOrangeAccent)),
                   const Icon(
                     Icons.keyboard_arrow_down,

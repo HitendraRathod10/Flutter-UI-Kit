@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 import '../utils/app_color.dart';
 
@@ -15,7 +16,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     return Scaffold(
       // backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        title: Text("edit profile".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+        title: Text("edit profile".tr,style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.semiBold,)),
         // backgroundColor: AppColor.white,
         leading: InkWell(
             onTap: () {
@@ -54,7 +55,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 ),
                 child: Center(
                     child: Text("change profile photo".tr,
-                      style: const TextStyle(color: AppColor.white,fontSize: 17,fontWeight: FontWeight.w700),)),
+                      style: const TextStyle(color: AppColor.white,fontSize: 17,fontFamily: AppFont.regular,),)),
               ),
               const SizedBox(
                 height: 30,
@@ -75,6 +76,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       filled: true,
                       // fillColor: Theme.of(context).hintColor,
                       hintText: "username".tr,
+                      hintStyle: TextStyle(fontFamily: AppFont.regular,),
                       border:
                       OutlineInputBorder(borderSide: BorderSide.none),
                     contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
@@ -109,6 +111,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       filled: true,
                       // fillColor: Theme.of(context).hintColor,
                       hintText: "email".tr,
+                      hintStyle: TextStyle(fontFamily: AppFont.regular,),
                       border:
                       OutlineInputBorder(borderSide: BorderSide.none),
                     contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
@@ -143,6 +146,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       filled: true,
                       // fillColor: Theme.of(context).hintColor,
                       hintText: "contact no".tr,
+                      hintStyle: TextStyle(fontFamily: AppFont.regular,),
                       border:
                       OutlineInputBorder(borderSide: BorderSide.none),
                     contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
@@ -170,7 +174,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                 ),
                 child: Center(
                     child: Text("save changes".tr,
-                      style: const TextStyle(color: AppColor.white,fontSize: 20,fontWeight: FontWeight.w500),)),
+                      style: const TextStyle(color: AppColor.white,fontSize: 20,fontFamily: AppFont.medium),)),
               )
             ],
           ),

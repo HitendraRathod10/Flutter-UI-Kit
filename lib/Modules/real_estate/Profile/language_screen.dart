@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../utils/app_color.dart';
@@ -44,7 +45,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
     return Scaffold(
       appBar: AppBar(
           title: Text('choose language'.tr,
-              style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.semiBold)),
           leading: InkWell(
             onTap: () {
               Navigator.pop(context);
@@ -84,7 +85,7 @@ class _LanguageScreenState extends State<LanguageScreen> {
                     child: Row(
                       children: [
                         Text(key,
-                            style: Theme.of(context).textTheme.titleMedium),
+                            style: Theme.of(context).textTheme.titleMedium?.copyWith(fontFamily: AppFont.medium)),
                         const Spacer(),
                         index == dataIndex
                             ? const Icon(Icons.done)

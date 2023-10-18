@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
@@ -35,7 +36,7 @@ class _HouseResultScreenState extends State<HouseResultScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.screenName == "House" ? "house".tr : widget.screenName ==  "Flat" ? "flats / apartments".tr : widget.screenName ==  "Residential" ? "residential".tr : widget.screenName ==  "Commercial" ? "commercial".tr : widget.screenName,
-              style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+              style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.semiBold,)),
           // backgroundColor: AppColor.white,
           leading: InkWell(
               onTap: () {
@@ -97,7 +98,7 @@ class _HouseResultScreenState extends State<HouseResultScreen> {
                                     child: Text(
                                       "${widget.realStateHouseData[index].address}",
                                       style: const TextStyle(
-                                          // fontFamily: AppFont.regular,
+                                          fontFamily: AppFont.medium,
                                           fontSize: 17),
                                       overflow: TextOverflow.ellipsis,
                                     ))
@@ -129,7 +130,7 @@ class _HouseResultScreenState extends State<HouseResultScreen> {
                                   child: Text(
                                       "${widget.realStateHouseData[index].type}",
                                       style: const TextStyle(
-                                          // fontFamily: AppFont.regular,
+                                          fontFamily: AppFont.medium,
                                           fontSize: 17),
                                       overflow: TextOverflow.ellipsis),
                                 )
@@ -160,7 +161,7 @@ class _HouseResultScreenState extends State<HouseResultScreen> {
                                   child: Text(
                                       "${widget.realStateHouseData[index].price}",
                                       style: const TextStyle(
-                                          // fontFamily: AppFont.regular,
+                                          fontFamily: AppFont.medium,
                                           fontSize: 17),
                                       overflow: TextOverflow.ellipsis),
                                 )
@@ -337,7 +338,7 @@ class _HouseResultScreenState extends State<HouseResultScreen> {
           child: Text(
             '${widget.realStateHouseData[index].title}',
             style: const TextStyle(
-                color: Colors.white, fontSize: 27, fontWeight: FontWeight.w700),
+                color: Colors.white, fontSize: 27, fontFamily: AppFont.semiBold,),
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
           ),

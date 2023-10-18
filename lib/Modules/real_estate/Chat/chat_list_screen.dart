@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
@@ -32,7 +33,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
         appBar: AppBar(
           title: Text(
             "chats".tr,
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(),
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.semiBold,),
           ),
           automaticallyImplyLeading: false,
           // backgroundColor: AppColor.white,
@@ -63,6 +64,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                         filled: true,
                         // fillColor: Theme.of(context).backgroundColor,
                         hintText: "search by name".tr,
+                        hintStyle: TextStyle(fontFamily: AppFont.medium,),
                         contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
                         suffixIcon: snap.searchResult.isEmpty ? Icon(Icons.search,
                             color: Theme.of(context).iconTheme.color) : IconButton(onPressed: ()=> snap.clearText(), icon: Icon(Icons.clear,color: Theme.of(context).iconTheme.color)) ,
@@ -99,7 +101,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                                           "${providerData.searchResult[index].title}",
                                           style: Theme.of(context)
                                               .textTheme
-                                              .displaySmall),
+                                              .displaySmall?.copyWith(fontFamily: AppFont.medium,)),
                                       leading: Container(
                                         padding: const EdgeInsets.all(07),
                                         height: 50,
@@ -122,7 +124,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                           ),*/
                                       ),
                                       subtitle: Text(
-                                          "${providerData.searchResult[index].chat?.last.customer != "" ? providerData.searchResult[index].chat?.last.customer : providerData.searchResult[index].chat?.last.suppler}"),
+                                          "${providerData.searchResult[index].chat?.last.customer != "" ? providerData.searchResult[index].chat?.last.customer : providerData.searchResult[index].chat?.last.suppler}",style: TextStyle(fontFamily: AppFont.medium,),),
                                       // tileColor: index % 2 == 0 ? Colors.grey.shade200 : AppColor.white,
                                       trailing: Column(
                                         mainAxisAlignment:
@@ -133,7 +135,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                                           Text(
                                             "${providerData.searchResult[index].chat?.last.time}",
                                             style:
-                                                const TextStyle(fontSize: 12),
+                                                const TextStyle(fontSize: 12,fontFamily: AppFont.medium,),
                                           ),
                                           const SizedBox(
                                             height: 03,
@@ -148,7 +150,8 @@ class _ChatListScreenState extends State<ChatListScreen> {
                                               "5",
                                               style: TextStyle(
                                                   fontSize: 12,
-                                                  color: AppColor.white),
+                                                  color: AppColor.white,
+                                                  fontFamily: AppFont.medium,),
                                             ),
                                           ),
                                         ],
@@ -186,7 +189,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                                           maxLines: 1,
                                           style: Theme.of(context)
                                               .textTheme
-                                              .displaySmall),
+                                              .displaySmall?.copyWith(fontFamily: AppFont.medium,)),
                                       leading: Container(
                                         padding: const EdgeInsets.all(07),
                                         height: 50,
@@ -220,7 +223,7 @@ class _ChatListScreenState extends State<ChatListScreen> {
                                           Text(
                                             "${providerData.realStateChatData[index].chat?.last.time}",
                                             style:
-                                                const TextStyle(fontSize: 12),
+                                                const TextStyle(fontSize: 10, fontFamily: AppFont.medium,),
                                           ),
                                           const SizedBox(
                                             height: 03,
@@ -234,8 +237,9 @@ class _ChatListScreenState extends State<ChatListScreen> {
                                             child: const Text(
                                               "5",
                                               style: TextStyle(
-                                                  fontSize: 12,
-                                                  color: AppColor.white),
+                                                  fontSize: 10,
+                                                  color: AppColor.white,
+                                                  fontFamily: AppFont.medium,),
                                             ),
                                           ),
                                         ],

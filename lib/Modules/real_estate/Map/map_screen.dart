@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:get/get.dart';
 import '../utils/app_color.dart';
@@ -61,7 +62,7 @@ class _MapScreenState extends State<MapScreen> {
                                       'Indraprasth - 11',
                                       style: TextStyle(
                                           color: AppColor.appBlueColor,
-                                          fontWeight: FontWeight.bold,
+                                          fontFamily: AppFont.semiBold,
                                           fontSize: 20),
                                       maxLines: 1,
                                       overflow: TextOverflow.ellipsis,
@@ -70,11 +71,11 @@ class _MapScreenState extends State<MapScreen> {
                                     Text("Prahladnagar, Ahmedabad",
                                         style: TextStyle(
                                             fontSize: 16,
-                                            fontWeight: FontWeight.normal),
+                                            fontFamily: AppFont.medium,),
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis),
                                     SizedBox(height: 4),
-                                    Text("3 BHK")
+                                    Text("3 BHK",style: TextStyle(fontFamily: AppFont.medium,),)
                                   ])),
                         )
                       ],
@@ -140,6 +141,7 @@ class _MapScreenState extends State<MapScreen> {
                           contentPadding: EdgeInsets.fromLTRB(12, 8, 12, 8),
                           // fillColor: Colors.white,
                           hintText: 'search location'.tr,
+                          hintStyle: TextStyle(fontFamily: AppFont.regular,),
                           // labelText: "Search Location",
                           // labelStyle: TextStyle(
                           //   color: AppColor.appBlueColor,

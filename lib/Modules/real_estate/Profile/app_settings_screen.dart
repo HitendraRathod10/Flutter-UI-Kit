@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 import '../utils/theme_controller.dart';
 import 'display_theme_mode.dart';
@@ -16,7 +17,7 @@ class _AppSettingsScreenState extends State<AppSettingsScreen> {
     ThemeController themeController = Get.put(ThemeController());
     return Scaffold(
       appBar: AppBar(
-        title: Text("app settings screen".tr, style: Theme.of(context).textTheme.titleLarge?.copyWith()),
+        title: Text("app settings screen".tr, style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.semiBold)),
         leading: InkWell(
             onTap: () {
               Navigator.pop(context);
@@ -41,7 +42,7 @@ class _AppSettingsScreenState extends State<AppSettingsScreen> {
                       /*  themeController.isDarkMode.value
     ? 'Light Mode'
         : */'display'.tr,
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 25,fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 25,fontFamily: AppFont.medium),
                     ),
                     const SizedBox(height: 5),
                     Row(
@@ -50,7 +51,7 @@ class _AppSettingsScreenState extends State<AppSettingsScreen> {
                         Text(
                           /*  themeController.isDarkMode.value
     ? 'Light Mode'
-        : */'dark mode'.tr,
+        : */'dark mode'.tr,style: TextStyle(fontFamily: AppFont.medium),
                           // style: fixedStyle,
                         ),
                         Icon(Icons.east_rounded)
