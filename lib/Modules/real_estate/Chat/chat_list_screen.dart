@@ -20,7 +20,9 @@ class _ChatListScreenState extends State<ChatListScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Provider.of<HomeProvider>(context, listen: false).getRecommaned('Chat');
+    Future.delayed(const Duration(microseconds: 1), () {
+      Provider.of<HomeProvider>(context, listen: false).getRecommaned('Chat');
+    });
   }
 
   @override
