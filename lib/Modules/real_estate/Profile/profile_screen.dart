@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/Home/home_provider.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Login/login_screen.dart';
 import '../utils/app_color.dart';
@@ -19,6 +22,14 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  ThemeController themeController = Get.put(ThemeController());
+
+  forClearLangOnLogout() async {
+    Get.updateLocale(const Locale("en"));
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString("selectedLanguage", "en");
+    prefs.setString("selectedLanguageIndex", "0");
+  }
 
   showDeleteAlertDialog(BuildContext context) {
     Widget cancelButton = Container(
@@ -47,7 +58,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
       child: TextButton(
           onPressed: () {
             // Navigator.pop(context);
-            Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=> const LoginScreen()), (route) => false);
+            Navigator.of(context).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => const LoginScreen()),
+                (route) => false);
+            Provider.of<HomeProvider>(context, listen: false).onItemTapped(0);
+            forClearLangOnLogout();
           },
           child: Padding(
             padding: EdgeInsets.only(
@@ -84,7 +99,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       },
     );
   }
-  ThemeController themeController = Get.put(ThemeController());
+
   TextStyle fixedStyle = GoogleFonts.roboto(
     color: Colors.white,
   );
