@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 
 import '../Login/login_screen.dart';
 
@@ -70,7 +71,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
                             color: AppColor.primary_color,
                             child: AnimatedBuilder(animation: _characterCount, builder: (BuildContext context,Widget? child){
                               String text = _currentString.substring(0, _characterCount.value);
-                              return Text(text,style: TextStyle(color: Colors.white,fontSize: 35,fontWeight: FontWeight.bold),);
+                              return Text(text,style: TextStyle(color: Colors.white,fontSize: 30,fontFamily: AppFont.bold,),);
                             })
                         ),
                       ),
@@ -88,13 +89,14 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("Sign Up",style: TextStyle(color: AppColor.primary_color,fontWeight: FontWeight.bold,fontSize: 20),textAlign: TextAlign.center,),
+                        Text("Sign Up",style: TextStyle(color: AppColor.primary_color,fontFamily: AppFont.bold,fontSize: 20),textAlign: TextAlign.center,),
                         Padding(
                           padding: const EdgeInsets.only(left: 20.0,right: 20.0,top: 15),
                           child: TextFormField(
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(left: 8),
                               hintText: "Email Id",
+                              hintStyle: TextStyle(fontFamily: AppFont.medium,),
                               errorMaxLines: 2,
                               border: OutlineInputBorder(
                                 borderSide: BorderSide(color: AppColor.primary_color),
@@ -114,6 +116,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(left: 8),
                               hintText: "Password",
+                              hintStyle: TextStyle(fontFamily: AppFont.medium,),
                               errorMaxLines: 2,
                               border: OutlineInputBorder(
                                 borderSide: BorderSide(color: AppColor.primary_color),
@@ -144,6 +147,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
                             decoration: InputDecoration(
                               contentPadding: EdgeInsets.only(left: 8),
                               hintText: "Confirm Password",
+                              hintStyle: TextStyle(fontFamily: AppFont.medium,),
                               errorMaxLines: 2,
                               border: OutlineInputBorder(
                                 borderSide: BorderSide(color: AppColor.primary_color),
@@ -171,7 +175,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
                           margin: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
                           padding: const EdgeInsets.symmetric(vertical: 18.0),
                           width: MediaQuery.of(context).size.width,
-                          child: Center(child: Text("Sign Up",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),)),
+                          child: Center(child: Text("Sign Up",style: TextStyle(color: Colors.white,fontSize: 18,fontFamily: AppFont.bold,),)),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
                               gradient: LinearGradient(colors: [
@@ -197,7 +201,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
                               color: Colors.grey,
                               width: MediaQuery.of(context).size.width/4,
                             ),
-                            const Text("  Or Sign Up with  ",style: TextStyle(color: Colors.black,fontSize: 15),),
+                            const Text("  Or Sign Up with  ",style: TextStyle(color: Colors.black,fontSize: 12, fontFamily: AppFont.medium,),),
                             Container(
                               height: 01,
                               color: Colors.grey,
@@ -245,8 +249,8 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("Already have an account ?",style: Theme.of(context).textTheme.titleMedium?.copyWith(),),
-                                  Text(" Login",style: Theme.of(context).textTheme.titleLarge?.copyWith(color: AppColor.primary_color,fontWeight: FontWeight.bold,fontSize: 18)),
+                                  Text("Already have an account ?",style: Theme.of(context).textTheme.titleMedium?.copyWith(fontFamily: AppFont.medium,),),
+                                  Text(" Login",style: Theme.of(context).textTheme.titleLarge?.copyWith(color: AppColor.primary_color,fontFamily: AppFont.semiBold,fontSize: 18)),
                                 ],
                               )
                           ),

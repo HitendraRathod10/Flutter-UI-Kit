@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Login/login_screen.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
@@ -67,8 +68,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                                     text,
                                     style: const TextStyle(
                                         color: Colors.white,
-                                        fontSize: 35,
-                                        fontWeight: FontWeight.bold),
+                                        fontSize: 30,
+                                        fontFamily: AppFont.bold,),
                                   );
                                 })),
                       ),
@@ -97,7 +98,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                           "Forget Password",
                           style: TextStyle(
                               color: AppColor.primary_color,
-                              fontWeight: FontWeight.bold,
+                              fontFamily: AppFont.bold,
                               fontSize: 20),
                           textAlign: TextAlign.center,
                         ),
@@ -108,6 +109,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                             decoration: InputDecoration(
                               contentPadding: const EdgeInsets.only(left: 8),
                               hintText: "Email Id",
+                              hintStyle: const TextStyle(fontFamily: AppFont.medium,),
                               errorMaxLines: 2,
                               border: OutlineInputBorder(
                                 borderSide: const BorderSide(
@@ -150,7 +152,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
-                                  fontWeight: FontWeight.bold),
+                                  fontFamily: AppFont.bold,),
                             )),
                           ),
                         ),
@@ -165,6 +167,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                               "Back to login",
                               style: TextStyle(
                                   fontSize: 20,
+                                  fontFamily: AppFont.medium,
                                   decoration: TextDecoration.underline,
                                   color: AppColor.appBlueColor),
                             ))

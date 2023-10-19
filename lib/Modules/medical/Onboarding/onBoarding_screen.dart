@@ -5,6 +5,7 @@ import 'package:flutter_ui_kit/Modules/medical/Login/login_screen.dart';
 import 'package:flutter_ui_kit/Modules/medical/Onboarding/onBoardingControllar.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 
 import '../../real_estate/Onboarding/onboarding_controller.dart';
@@ -61,7 +62,7 @@ Padding(
       AnimatedBuilder(
       animation: _characterCount,
       builder: (BuildContext context, Widget? child) {    String text = _currentString.substring(0, _characterCount.value);
-      return new Text(text,style: TextStyle(color: AppColor.primary_color,fontSize: 25,fontWeight: FontWeight.bold),);
+      return new Text(text,style: TextStyle(color: AppColor.primary_color,fontSize: 25,fontFamily: AppFont.bold,),);
       },
       )
     ],
@@ -124,7 +125,7 @@ Padding(
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(color:AppColor.primary_color)
                       ),
-                      child: Text(onBoardinControllar.currentIndex.value == 2 ?"Next":"Skip",style: TextStyle(color:onBoardinControllar.currentIndex.value == 2 ? Colors.white : AppColor.primary_color,fontWeight: FontWeight.bold,fontSize: 17),),
+                      child: Text(onBoardinControllar.currentIndex.value == 2 ?"Next":"Skip",style: TextStyle(color:onBoardinControllar.currentIndex.value == 2 ? Colors.white : AppColor.primary_color,fontFamily: AppFont.semiBold,fontSize: 17),),
                     ),
                   )
                 ],

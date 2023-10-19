@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Forgot%20password/forgot_password_screen.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:flutter_ui_kit/module_list.dart';
 
 import '../homeScreen/home_screen.dart';
@@ -90,8 +91,8 @@ class _Login_ScreenState extends State<Login_Screen>
                                       text,
                                       style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 35,
-                                          fontWeight: FontWeight.bold),
+                                          fontSize: 32,
+                                          fontFamily: AppFont.bold,),
                                     );
                                   })),
                         ),
@@ -120,7 +121,7 @@ class _Login_ScreenState extends State<Login_Screen>
                             "Login",
                             style: TextStyle(
                                 color: AppColor.primary_color,
-                                fontWeight: FontWeight.bold,
+                                fontFamily: AppFont.bold,
                                 fontSize: 20),
                             textAlign: TextAlign.center,
                           ),
@@ -131,6 +132,7 @@ class _Login_ScreenState extends State<Login_Screen>
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.only(left: 8),
                                 hintText: "Email Id",
+                                hintStyle: TextStyle(fontFamily: AppFont.medium,),
                                 errorMaxLines: 2,
                                 border: OutlineInputBorder(
                                   borderSide:
@@ -153,6 +155,7 @@ class _Login_ScreenState extends State<Login_Screen>
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.only(left: 8),
                                 hintText: "Password",
+                                hintStyle: TextStyle(fontFamily: AppFont.medium,),
                                 errorMaxLines: 2,
                                 border: OutlineInputBorder(
                                   borderSide:
@@ -198,7 +201,7 @@ class _Login_ScreenState extends State<Login_Screen>
                                   child: Text(
                                     "Forget Your Password?",
                                     style: TextStyle(
-                                        color: Colors.grey, fontSize: 15),
+                                        color: Colors.grey, fontSize: 15,fontFamily: AppFont.medium,),
                                   ),
                                 )
                               ],
@@ -220,7 +223,7 @@ class _Login_ScreenState extends State<Login_Screen>
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 18,
-                                    fontWeight: FontWeight.bold),
+                                    fontFamily: AppFont.bold,),
                               )),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(8),
@@ -251,7 +254,7 @@ class _Login_ScreenState extends State<Login_Screen>
                               const Text(
                                 "  Or Login with  ",
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 15),
+                                    color: Colors.black, fontSize: 15,fontFamily: AppFont.medium,),
                               ),
                               Container(
                                 height: 01,
@@ -315,7 +318,7 @@ class _Login_ScreenState extends State<Login_Screen>
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium
-                                      ?.copyWith(),
+                                      ?.copyWith(fontFamily: AppFont.medium,),
                                 ),
                                 Text(" SignUp",
                                     style: Theme.of(context)
@@ -323,7 +326,7 @@ class _Login_ScreenState extends State<Login_Screen>
                                         .titleLarge
                                         ?.copyWith(
                                             color: AppColor.primary_color,
-                                            fontWeight: FontWeight.bold,
+                                            fontFamily: AppFont.semiBold,
                                             fontSize: 18)),
                               ],
                             )),
