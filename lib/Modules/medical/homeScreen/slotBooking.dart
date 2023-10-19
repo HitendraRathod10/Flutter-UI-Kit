@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 
@@ -86,15 +87,15 @@ class _SlotBookingState extends State<SlotBooking> {
           },
           child: Container(
             margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-            padding: const EdgeInsets.symmetric(vertical: 18.0),
+            // padding: const EdgeInsets.symmetric(),
             width: MediaQuery.of(context).size.width,
             child: const Center(
                 child: Text(
               "BOOK NOW",
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold),
+                  fontSize: 13,
+                  fontFamily: AppFont.bold,),
             )),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
@@ -114,7 +115,7 @@ class _SlotBookingState extends State<SlotBooking> {
       appBar: AppBar(
         title: const Text(
           "Book Your Appointment",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontFamily: AppFont.bold,),
         ),
         backgroundColor: AppColor.primary_color,
         elevation: 0,
@@ -147,8 +148,8 @@ class _SlotBookingState extends State<SlotBooking> {
                         "DR. SURYAKANT PANKAJ",
                         style: TextStyle(
                             color: AppColor.primary_color,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
+                            fontSize: 17,
+                            fontFamily: AppFont.semiBold,),
                       ),
                       const SizedBox(
                         height: 10,
@@ -156,7 +157,7 @@ class _SlotBookingState extends State<SlotBooking> {
                       const Text(
                         "DR. SURYAKANT PANKAJ",
                         style: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w700),
+                            fontSize: 13, fontFamily: AppFont.medium,),
                       ),
                       const SizedBox(
                         height: 10,
@@ -186,7 +187,7 @@ class _SlotBookingState extends State<SlotBooking> {
             padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 8),
             child: Text(
               "Choose Your Appointment date",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 18, fontFamily: AppFont.semiBold,),
             ),
           ),
           const SizedBox(
@@ -222,8 +223,8 @@ class _SlotBookingState extends State<SlotBooking> {
                                     .weekday -
                                 1],
                             style: const TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                                fontFamily: AppFont.regular,
                                 color: AppColor.primary_color),
                           ),
                           const SizedBox(
@@ -246,7 +247,8 @@ class _SlotBookingState extends State<SlotBooking> {
                                 child: Text(
                               "${dayFormatter.format(dates[index])} ${monthFormatter.format(dates[index])}",
                               style: TextStyle(
-                                  fontSize: 25,
+                                  fontSize: 23,
+                                  fontFamily: AppFont.regular,
                                   color: selectedDay == index + 1
                                       ? AppColor.white
                                       : AppColor.black),
@@ -262,7 +264,7 @@ class _SlotBookingState extends State<SlotBooking> {
             padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 15),
             child: Text(
               "Morning",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+              style: TextStyle(fontSize: 18, fontFamily: AppFont.semiBold,),
             ),
           ),
           Padding(
@@ -285,7 +287,7 @@ class _SlotBookingState extends State<SlotBooking> {
                   padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 15),
                   child: Text(
                     "Afternoon",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    style: TextStyle(fontSize: 18, fontFamily: AppFont.semiBold),
                   ),
                 ),
           selectedDayForTiming == "Sunday"
@@ -310,7 +312,7 @@ class _SlotBookingState extends State<SlotBooking> {
                   padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 15),
                   child: Text(
                     "Evening",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                    style: TextStyle(fontSize: 18, fontFamily: AppFont.semiBold),
                   ),
                 ),
           selectedDayForTiming == "Sunday"
@@ -353,7 +355,7 @@ class _SlotBookingState extends State<SlotBooking> {
             text,
             style: TextStyle(
                 fontSize: 15,
-                fontWeight: FontWeight.w700,
+                fontFamily: AppFont.regular,
                 color: selectedSlot == text ? Colors.white : Colors.black),
           ),
         ),

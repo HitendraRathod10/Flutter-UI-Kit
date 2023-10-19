@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class DoctorListVideoConsultationBySymptom extends StatefulWidget {
@@ -31,7 +32,7 @@ class _DoctorListVideoConsultationBySymptomState
               color: AppColor.offWhite,
               child: const Text(
                 "Request for online consultation",
-                style: TextStyle(fontSize: 24.0),
+                style: TextStyle(fontSize: 24.0, fontFamily: AppFont.semiBold),
               ),
             ),
             titlePadding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
@@ -47,6 +48,7 @@ class _DoctorListVideoConsultationBySymptomState
                     TextFormField(
                       decoration: InputDecoration(
                         labelText: 'Patient Name',
+                        labelStyle: TextStyle(fontFamily: AppFont.medium),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15)),
                       ),
@@ -57,6 +59,7 @@ class _DoctorListVideoConsultationBySymptomState
                     TextFormField(
                       decoration: InputDecoration(
                         labelText: 'Patient Age',
+                        labelStyle: TextStyle(fontFamily: AppFont.medium),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15)),
                       ),
@@ -67,6 +70,7 @@ class _DoctorListVideoConsultationBySymptomState
                     TextFormField(
                       decoration: InputDecoration(
                         labelText: 'Patient Contact Number',
+                        labelStyle: TextStyle(fontFamily: AppFont.medium),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15)),
                       ),
@@ -77,6 +81,7 @@ class _DoctorListVideoConsultationBySymptomState
                     TextFormField(
                       decoration: InputDecoration(
                         labelText: 'Patient Address',
+                        labelStyle: TextStyle(fontFamily: AppFont.medium),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15)),
                       ),
@@ -116,8 +121,8 @@ class _DoctorListVideoConsultationBySymptomState
                             "Submit",
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold),
+                                fontSize: 17,
+                                fontFamily: AppFont.semiBold),
                           ),
                         ),
                       ),
@@ -127,11 +132,11 @@ class _DoctorListVideoConsultationBySymptomState
                     ),
                     const Text(
                       'Note :',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(fontFamily: AppFont.semiBold),
                     ),
                     const Text(
                       'Doctor will be co-ordinate with you in 24 hours via video call.',
-                      style: TextStyle(fontSize: 12),
+                      style: TextStyle(fontSize: 12, fontFamily: AppFont.regular),
                     ),
                   ],
                 ),
@@ -150,7 +155,7 @@ class _DoctorListVideoConsultationBySymptomState
         backgroundColor: AppColor.primary_color,
         title: const Text(
           "Choose doctor",
-          style: TextStyle(color: AppColor.white),
+          style: TextStyle(color: AppColor.white, fontFamily: AppFont.bold),
         ),
       ),
       body: ListView.builder(
@@ -191,7 +196,7 @@ class _DoctorListVideoConsultationBySymptomState
                           const Text(
                             'Dr. John Deo',
                             style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
+                                fontSize: 13, fontFamily: AppFont.medium),
                           ),
                           const SizedBox(
                             height: 3,
@@ -201,12 +206,12 @@ class _DoctorListVideoConsultationBySymptomState
                               Text(
                                 'Exp. - ',
                                 style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.bold),
+                                    fontSize: 13, fontFamily: AppFont.semiBold),
                               ),
                               Text(
                                 '8 years',
                                 style: TextStyle(
-                                    fontSize: 15, fontWeight: FontWeight.bold),
+                                    fontSize: 13, fontFamily: AppFont.semiBold),
                               ),
                             ],
                           ),
@@ -229,7 +234,7 @@ class _DoctorListVideoConsultationBySymptomState
                               ),
                               const Text(
                                 "SVP Hospital",
-                                style: TextStyle(fontSize: 16),
+                                style: TextStyle(fontSize: 14, fontFamily: AppFont.regular),
                               )
                             ],
                           ),
@@ -247,7 +252,7 @@ class _DoctorListVideoConsultationBySymptomState
                               ),
                               const Text(
                                 "10 Minutes",
-                                style: TextStyle(fontSize: 16),
+                                style: TextStyle(fontSize: 14, fontFamily: AppFont.regular),
                               )
                             ],
                           ),
@@ -262,7 +267,7 @@ class _DoctorListVideoConsultationBySymptomState
                               ),
                               Text(
                                 "500",
-                                style: TextStyle(fontSize: 16),
+                                style: TextStyle(fontSize: 14, fontFamily: AppFont.regular),
                               )
                             ],
                           ),
@@ -280,7 +285,7 @@ class _DoctorListVideoConsultationBySymptomState
                               ),
                               const Text(
                                 "English, Hindi",
-                                style: TextStyle(fontSize: 16),
+                                style: TextStyle(fontSize: 14, fontFamily: AppFont.regular),
                               )
                             ],
                           ),

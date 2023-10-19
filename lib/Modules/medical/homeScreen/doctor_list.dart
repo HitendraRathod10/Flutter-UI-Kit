@@ -2,6 +2,7 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/slotBooking.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 
 class Doctor_list extends StatefulWidget {
   const Doctor_list({super.key});
@@ -39,7 +40,7 @@ class _Doctor_listState extends State<Doctor_list> {
       appBar: AppBar(
         title: const Text(
           "Doctors",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontFamily: AppFont.bold, fontSize: 20),
         ),
         backgroundColor: AppColor.primary_color,
         elevation: 0,
@@ -60,10 +61,11 @@ class _Doctor_listState extends State<Doctor_list> {
                       btnOkColor: AppColor.primary_color,
                       dialogBackgroundColor: AppColor.offWhite,
                       titleTextStyle: const TextStyle(
-                          color: AppColor.primary_color, fontSize: 20),
+                          color: AppColor.primary_color, fontSize: 20, fontFamily: AppFont.medium,),
                       title:
                           'Book Your Slot tomorrow because ${doctors[index]["name"]} is not available',
                       btnOkOnPress: () {},
+                      buttonsTextStyle: const TextStyle(fontFamily: AppFont.bold,),
                     ).show();
                   } else {
                     Navigator.push(context,
@@ -92,7 +94,7 @@ class _Doctor_listState extends State<Doctor_list> {
                           style: Theme.of(context)
                               .textTheme
                               .displaySmall
-                              ?.copyWith(fontWeight: FontWeight.bold)),
+                              ?.copyWith(fontFamily: AppFont.semiBold,)),
                       leading: Container(
                         height: 60,
                         width: 60,
@@ -117,7 +119,7 @@ class _Doctor_listState extends State<Doctor_list> {
                           Text(
                             "5",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15),
+                                fontFamily: AppFont.regular, fontSize: 15),
                           ),
                         ],
                       )),
@@ -128,7 +130,7 @@ class _Doctor_listState extends State<Doctor_list> {
                             doctors[index]["type"],
                             maxLines: 1,
                             style: const TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w600),
+                                fontSize: 12, fontFamily: AppFont.regular,),
                           ),
                           Text(
                             doctors[index]["availability"]
@@ -137,7 +139,7 @@ class _Doctor_listState extends State<Doctor_list> {
                             maxLines: 1,
                             style: TextStyle(
                                 fontSize: 12,
-                                fontWeight: FontWeight.w600,
+                                fontFamily: AppFont.regular,
                                 color: doctors[index]["availability"]
                                     ? Colors.green
                                     : Colors.redAccent),

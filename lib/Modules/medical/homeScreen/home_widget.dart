@@ -6,6 +6,7 @@ import 'package:flutter_ui_kit/Modules/medical/homeScreen/articleDetail.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/doctor_list.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/packages_overview.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/video_consultation_symptoms_screen.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 
 class Home_Widget extends StatefulWidget {
   const Home_Widget({super.key});
@@ -35,11 +36,11 @@ class _Home_WidgetState extends State<Home_Widget> {
             children: const [
               Text(
                 "Hey,",
-                style: TextStyle(fontSize: 25),
+                style: TextStyle(fontSize: 25,fontFamily: AppFont.semiBold,),
               ),
               Text(
                 " Ravi",
-                style: TextStyle(fontSize: 25, color: AppColor.primary_color),
+                style: TextStyle(fontSize: 25, color: AppColor.primary_color, fontFamily: AppFont.semiBold,),
               ),
             ],
           ),
@@ -143,14 +144,14 @@ class _Home_WidgetState extends State<Home_Widget> {
                           "Book",
                           style: TextStyle(
                             fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                            fontFamily: AppFont.bold,
                           ),
                         ),
                         Text(
                           "my appointment",
                           style: TextStyle(
                             fontSize: 20,
-                            fontWeight: FontWeight.bold,
+                            fontFamily: AppFont.bold,
                           ),
                         ),
                       ],
@@ -198,12 +199,12 @@ class _Home_WidgetState extends State<Home_Widget> {
                         Text(
                           "Video",
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                              fontSize: 20, fontFamily: AppFont.bold,),
                         ),
                         Text(
                           "consultation",
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
+                              fontSize: 20, fontFamily: AppFont.bold,),
                         ),
                       ],
                     ),
@@ -219,7 +220,7 @@ class _Home_WidgetState extends State<Home_Widget> {
             padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
             child: Text(
               "Packages",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 22, fontFamily: AppFont.bold,),
             ),
           ),
           ListView.builder(
@@ -272,14 +273,14 @@ class _Home_WidgetState extends State<Home_Widget> {
                                     style: TextStyle(
                                         color: AppColor.primary_color,
                                         fontSize: 20,
-                                        fontWeight: FontWeight.bold),
+                                        fontFamily: AppFont.semiBold,),
                                   ),
                                   const SizedBox(
                                     height: 2,
                                   ),
                                   const Text(
                                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                                    style: TextStyle(fontSize: 18),
+                                    style: TextStyle(fontSize: 18,fontFamily: AppFont.regular,),
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
                                   ),
@@ -297,7 +298,7 @@ class _Home_WidgetState extends State<Home_Widget> {
                                         "₹400 / Month",
                                         style: TextStyle(
                                             fontSize: 15,
-                                            fontWeight: FontWeight.w800),
+                                            fontFamily: AppFont.regular,),
                                       ),
                                       const Spacer(),
                                       Container(
@@ -312,8 +313,8 @@ class _Home_WidgetState extends State<Home_Widget> {
                                           "Buy Now",
                                           style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold),
+                                              fontSize: 15,
+                                              fontFamily: AppFont.semiBold,),
                                         ),
                                       )
                                     ],
@@ -330,7 +331,7 @@ class _Home_WidgetState extends State<Home_Widget> {
             padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
             child: Text(
               "Articles",
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 22, fontFamily: AppFont.bold,),
             ),
           ),
           Padding(

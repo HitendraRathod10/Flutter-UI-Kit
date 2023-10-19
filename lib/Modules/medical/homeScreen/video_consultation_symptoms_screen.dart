@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/doctor_list_video_consultation_by_symptom.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 
 class VideoConsultationSymptomsScreen extends StatefulWidget {
   const VideoConsultationSymptomsScreen({Key? key}) : super(key: key);
@@ -33,7 +34,7 @@ class _VideoConsultationSymptomsScreenState
         backgroundColor: AppColor.primary_color,
         title: const Text(
           "Select your Symptom",
-          style: TextStyle(color: AppColor.white),
+          style: TextStyle(color: AppColor.white, fontFamily: AppFont.bold),
         ),
       ),
       body: Column(
@@ -99,7 +100,7 @@ class _VideoConsultationSymptomsScreenState
                           Text(
                             details.entries.toList()[index].key,
                             style: const TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.bold),
+                                fontSize: 17, fontFamily: AppFont.medium),
                           ),
                         ],
                       ),
