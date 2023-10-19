@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import '../utils/app_color.dart';
 
@@ -140,16 +141,29 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
             const SizedBox(
               height: 50,
             ),
-            Container(
-              width: double.infinity,
-              height: 50,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Theme.of(context).buttonTheme.colorScheme?.background
+            GestureDetector(
+              onTap: (){
+                Navigator.of(context).pop();
+                Fluttertoast.showToast(
+                    msg:
+                    "Password changes successfully.",
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    backgroundColor: AppColor.appBlueColor,
+                    textColor: Colors.white,
+                    fontSize: 16.0);
+              },
+              child: Container(
+                width: double.infinity,
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Theme.of(context).buttonTheme.colorScheme?.background
+                ),
+                child: Center(
+                    child: Text("update password".tr,
+                      style: TextStyle(color: AppColor.white,fontSize: 20,fontFamily: AppFont.medium),)),
               ),
-              child: Center(
-                  child: Text("update password".tr,
-                    style: TextStyle(color: AppColor.white,fontSize: 20,fontFamily: AppFont.medium),)),
             )
           ],
         ),

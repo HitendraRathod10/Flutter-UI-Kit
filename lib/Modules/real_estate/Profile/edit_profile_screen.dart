@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import '../utils/app_color.dart';
 
 class EditProfileScreen extends StatefulWidget {
@@ -9,8 +13,20 @@ class EditProfileScreen extends StatefulWidget {
   @override
   State<EditProfileScreen> createState() => _EditProfileScreenState();
 }
-
+enum ImageSourceType { gallery, camera }
 class _EditProfileScreenState extends State<EditProfileScreen> {
+
+  var _image;
+  var imagePicker;
+  var type;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    imagePicker = ImagePicker();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +49,17 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               const SizedBox(
                 height: 10,
               ),
-              Center(
+              _image != null
+                  ? ClipRRect(
+                      borderRadius: BorderRadius.circular(80),
+                      child: Image.file(
+                        _image,
+                        height: 160,
+                        width: 160,
+                        fit: BoxFit.cover,
+                      ),
+                    )
+                  : Center(
                 child: ClipOval(
                   child: Image.network(
                       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ72nARG6ueWpDbDXkXV137m7fVt2ALVshZwg&usqp=CAU",
@@ -46,16 +72,35 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               const SizedBox(
                 height: 15,
               ),
-              Container(
-                width: MediaQuery.of(context).size.width/1.6,
-                height: 35,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: AppColor.appBlueColor
+              GestureDetector(
+                onTap: () async {
+                  var source = type == ImageSourceType.camera
+                      ? ImageSource.camera
+                      : ImageSource.gallery;
+                  XFile image = await imagePicker.pickImage(
+                      source: source,
+                      imageQuality: 50,
+                      preferredCameraDevice: CameraDevice.front);
+                  setState(() {
+                    _image = File(image.path);
+                  });
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 1.6,
+                  height: 35,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: AppColor.appBlueColor),
+                  child: Center(
+                      child: Text(
+                    "change profile photo".tr,
+                    style: const TextStyle(
+                      color: AppColor.white,
+                      fontSize: 17,
+                      fontFamily: AppFont.regular,
+                    ),
+                  )),
                 ),
-                child: Center(
-                    child: Text("change profile photo".tr,
-                      style: const TextStyle(color: AppColor.white,fontSize: 17,fontFamily: AppFont.regular,),)),
               ),
               const SizedBox(
                 height: 30,
@@ -165,16 +210,29 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               const SizedBox(
                 height: 30,
               ),
-              Container(
-                width: double.infinity,
-                height: 50,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Theme.of(context).buttonTheme.colorScheme?.background
+              GestureDetector(
+                onTap: (){
+                  Navigator.of(context).pop();
+                  Fluttertoast.showToast(
+                      msg:
+                      "Profile edited successfully.",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: AppColor.appBlueColor,
+                      textColor: Colors.white,
+                      fontSize: 16.0);
+                },
+                child: Container(
+                  width: double.infinity,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Theme.of(context).buttonTheme.colorScheme?.background
+                  ),
+                  child: Center(
+                      child: Text("save changes".tr,
+                        style: const TextStyle(color: AppColor.white,fontSize: 20,fontFamily: AppFont.medium),)),
                 ),
-                child: Center(
-                    child: Text("save changes".tr,
-                      style: const TextStyle(color: AppColor.white,fontSize: 20,fontFamily: AppFont.medium),)),
               )
             ],
           ),
