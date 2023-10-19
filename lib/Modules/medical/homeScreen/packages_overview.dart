@@ -3,6 +3,7 @@ import 'package:flutter_expandable_fab/flutter_expandable_fab.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PackagesOverview extends StatefulWidget {
@@ -19,7 +20,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
       appBar: AppBar(
         title: const Text(
           "Health Package",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontFamily: AppFont.bold),
         ),
         backgroundColor: AppColor.primary_color,
         elevation: 0,
@@ -48,13 +49,13 @@ class _PackagesOverviewState extends State<PackagesOverview> {
                       Text(
                         "Full body check Up",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
+                            fontFamily: AppFont.semiBold, fontSize: 18),
                       ),
                       SizedBox(height: 5),
                       Text(
                         "By Dr. John Deo",
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 15),
+                            fontFamily: AppFont.semiBold, fontSize: 13),
                       ),
                     ],
                   ),
@@ -77,12 +78,12 @@ class _PackagesOverviewState extends State<PackagesOverview> {
               const SizedBox(height: 5),
               const Text(
                 "Family Doctor",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                style: TextStyle(fontFamily: AppFont.semiBold, fontSize: 11),
               ),
               const SizedBox(height: 10),
               const Text(
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                style: TextStyle(fontSize: 17),
+                style: TextStyle(fontSize: 15, fontFamily: AppFont.regular),
               ),
               const SizedBox(height: 10),
               Row(
@@ -91,7 +92,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
                   SizedBox(width: 5),
                   Text(
                     "Vitamin B-12",
-                    style: TextStyle(fontSize: 15),
+                    style: TextStyle(fontSize: 15, fontFamily: AppFont.regular),
                   ),
                 ],
               ),
@@ -102,7 +103,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
                   SizedBox(width: 5),
                   Text(
                     "Body Mass Index",
-                    style: TextStyle(fontSize: 15),
+                    style: TextStyle(fontSize: 15, fontFamily: AppFont.regular),
                   ),
                 ],
               ),
@@ -113,7 +114,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
                   SizedBox(width: 5),
                   Text(
                     "Urine (Routine & Micro)",
-                    style: TextStyle(fontSize: 15),
+                    style: TextStyle(fontSize: 15, fontFamily: AppFont.regular),
                   ),
                 ],
               ),
@@ -124,7 +125,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
                   SizedBox(width: 5),
                   Text(
                     "Vitamin D",
-                    style: TextStyle(fontSize: 15),
+                    style: TextStyle(fontSize: 15, fontFamily: AppFont.regular),
                   ),
                 ],
               ),
@@ -135,7 +136,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
                   SizedBox(width: 5),
                   Text(
                     "FBS",
-                    style: TextStyle(fontSize: 15),
+                    style: TextStyle(fontSize: 15, fontFamily: AppFont.regular),
                   ),
                 ],
               ),
@@ -146,7 +147,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
                   SizedBox(width: 5),
                   Text(
                     "ECG",
-                    style: TextStyle(fontSize: 15),
+                    style: TextStyle(fontSize: 15, fontFamily: AppFont.regular),
                   ),
                 ],
               ),
@@ -157,7 +158,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
                   SizedBox(width: 5),
                   Text(
                     "Lipid Profile",
-                    style: TextStyle(fontSize: 15),
+                    style: TextStyle(fontSize: 15, fontFamily: AppFont.regular),
                   ),
                 ],
               ),
@@ -269,7 +270,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
             heroTag: null,
             backgroundColor: AppColor.offWhite,
             foregroundColor: AppColor.primary_color,
-            label: const Text("Call"),
+            label: const Text("Call", style: TextStyle(fontFamily: AppFont.regular),),
             elevation: 15,
             icon: const Icon(Icons.headset_mic_outlined),
             onPressed: () async {
@@ -285,7 +286,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
             heroTag: null,
             backgroundColor: AppColor.offWhite,
             foregroundColor: AppColor.primary_color,
-            label: const Text("Chat"),
+            label: const Text("Chat", style: TextStyle(fontFamily: AppFont.regular),),
             elevation: 15,
             icon: const Icon(Icons.chat),
             onPressed: () {},
@@ -294,7 +295,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
             heroTag: null,
             backgroundColor: AppColor.offWhite,
             foregroundColor: AppColor.primary_color,
-            label: const Text("Buy now"),
+            label: const Text("Buy now", style: TextStyle(fontFamily: AppFont.regular),),
             elevation: 15,
             icon: const Icon(Icons.add_circle),
             onPressed: () {},

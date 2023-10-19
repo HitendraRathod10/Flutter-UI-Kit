@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 
 class Notification_widget extends StatefulWidget {
   const Notification_widget({super.key});
@@ -43,7 +44,7 @@ class _NotificationState extends State<Notification_widget> {
       appBar: AppBar(
         title: const Text(
           "Notification",
-          style: TextStyle(color: AppColor.white),
+          style: TextStyle(color: AppColor.white, fontFamily: AppFont.bold),
         ),
         backgroundColor: AppColor.primary_color,
         centerTitle: true,
@@ -83,12 +84,12 @@ class _NotificationState extends State<Notification_widget> {
                           Text(
                             staticData[index]['title'],
                             style: const TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15),
+                                fontFamily: AppFont.semiBold, fontSize: 15),
                           ),
                           const SizedBox(
                             height: 5,
                           ),
-                          Text(staticData[index]['subtitle'])
+                          Text(staticData[index]['subtitle'], style: const TextStyle(fontFamily: AppFont.regular),)
                         ],
                       ),
                     )

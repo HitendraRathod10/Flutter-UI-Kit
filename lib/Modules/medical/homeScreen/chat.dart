@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Chat extends StatefulWidget {
@@ -29,7 +30,7 @@ class _ChatState extends State<Chat> {
         appBar: AppBar(
           backgroundColor: AppColor.primary_color,
           title: Text(widget.data["DoctorName"],
-              style: const TextStyle(color: AppColor.white)),
+              style: const TextStyle(color: AppColor.white, fontFamily: AppFont.bold)),
           // backgroundColor: AppColor.white,
           leading: InkWell(
               onTap: () {
@@ -115,7 +116,7 @@ class _ChatState extends State<Chat> {
                                                       .bodyLarge
                                                       ?.copyWith(
                                                           color:
-                                                              AppColor.black),
+                                                              AppColor.black, fontFamily: AppFont.regular),
                                                 ),
                                               ),
                                             ],
@@ -136,7 +137,7 @@ class _ChatState extends State<Chat> {
                                                       .bodyMedium
                                                       ?.copyWith(
                                                           color:
-                                                              AppColor.black),
+                                                              AppColor.black, fontFamily: AppFont.regular),
                                                   textAlign: TextAlign.end,
                                                 ),
                                               ),
@@ -186,7 +187,7 @@ class _ChatState extends State<Chat> {
                                                   .textTheme
                                                   .bodyLarge
                                                   ?.copyWith(
-                                                      color: AppColor.white),
+                                                      color: AppColor.white, fontFamily: AppFont.regular),
                                             ),
                                           ),
                                         ],
@@ -205,7 +206,7 @@ class _ChatState extends State<Chat> {
                                                   .textTheme
                                                   .bodyMedium
                                                   ?.copyWith(
-                                                      color: AppColor.white),
+                                                      color: AppColor.white, fontFamily: AppFont.regular),
                                               textAlign: TextAlign.end,
                                             ),
                                           ),
@@ -225,12 +226,13 @@ class _ChatState extends State<Chat> {
                     borderRadius: BorderRadius.circular(20),
                     ),
                 child: TextFormField(
-                  style: const TextStyle(color: AppColor.black),
+                  style: const TextStyle(color: AppColor.black, fontFamily: AppFont.regular),
                   decoration: InputDecoration(
                       filled: true,
                       fillColor: AppColor.offWhite,
                       contentPadding: const EdgeInsets.all(8),
                       hintText: "Type message here",
+                      hintStyle: TextStyle(fontFamily: AppFont.regular),
                       prefixIcon: Icon(Icons.attachment,
                           color: Theme.of(context).iconTheme.color),
                       suffixIcon: InkWell(

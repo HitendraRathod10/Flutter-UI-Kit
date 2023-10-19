@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/chat.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 
 // import '../../real_estate/utils/app_color.dart';
 
@@ -19,7 +20,7 @@ class _Chat_ListState extends State<Chat_List> {
       appBar: AppBar(
         title: const Text(
           "Chats",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Colors.white, fontFamily: AppFont.bold),
         ),
         backgroundColor: AppColor.primary_color,
         elevation: 0,
@@ -46,7 +47,7 @@ class _Chat_ListState extends State<Chat_List> {
                     style: Theme.of(context)
                         .textTheme
                         .displaySmall
-                        ?.copyWith(fontWeight: FontWeight.bold)),
+                        ?.copyWith(fontFamily: AppFont.medium)),
                 leading: Container(
                   height: 60,
                   width: 60,
@@ -72,7 +73,7 @@ class _Chat_ListState extends State<Chat_List> {
                           [recommendedData[index]["chat"].length - 1]["doctor"],
                   maxLines: 1,
                   style: const TextStyle(
-                      fontSize: 12, fontWeight: FontWeight.w600),
+                      fontSize: 12, fontFamily: AppFont.regular),
                 ),
                 // tileColor: index % 2 == 0 ? Colors.grey.shade200 : AppColor.white,
                 trailing: Column(
@@ -81,7 +82,7 @@ class _Chat_ListState extends State<Chat_List> {
                   children: [
                     const Text(
                       "12:20",
-                      style: TextStyle(fontSize: 12),
+                      style: TextStyle(fontSize: 12, fontFamily: AppFont.regular),
                     ),
                     const SizedBox(
                       height: 03,
@@ -96,7 +97,7 @@ class _Chat_ListState extends State<Chat_List> {
                             child: Text(
                               recommendedData[index]["unreadMsgCount"],
                               style: const TextStyle(
-                                  fontSize: 12, color: AppColor.offWhite),
+                                  fontSize: 12, color: AppColor.offWhite, fontFamily: AppFont.medium),
                             ),
                           )
                         : const SizedBox(),

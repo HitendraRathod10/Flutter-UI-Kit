@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/home_screen.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -146,8 +147,10 @@ class _EditProfileState extends State<EditProfile> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextFormField(
+                            style: TextStyle(fontFamily: AppFont.regular),
                               decoration: InputDecoration(
                                 labelText: 'Name',
+                                labelStyle: TextStyle(fontFamily: AppFont.regular),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15)),
                               ),
@@ -156,8 +159,10 @@ class _EditProfileState extends State<EditProfile> {
                             height: 15,
                           ),
                           TextFormField(
+                            style: TextStyle(fontFamily: AppFont.regular),
                               decoration: InputDecoration(
                                 labelText: 'Email',
+                                labelStyle: TextStyle(fontFamily: AppFont.regular),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15)),
                               ),
@@ -166,8 +171,10 @@ class _EditProfileState extends State<EditProfile> {
                             height: 15,
                           ),
                           TextFormField(
+                            style: TextStyle(fontFamily: AppFont.regular),
                               decoration: InputDecoration(
                                 labelText: 'Date of Birth',
+                                labelStyle: TextStyle(fontFamily: AppFont.regular),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15)),
                               ),
@@ -176,8 +183,10 @@ class _EditProfileState extends State<EditProfile> {
                             height: 15,
                           ),
                           TextFormField(
+                            style: TextStyle(fontFamily: AppFont.regular),
                               decoration: InputDecoration(
                                 labelText: 'Contact Number',
+                                labelStyle: TextStyle(fontFamily: AppFont.regular),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15)),
                               ),
@@ -222,8 +231,8 @@ class _EditProfileState extends State<EditProfile> {
                                     "Update",
                                     style: TextStyle(
                                         color: Colors.white,
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.bold),
+                                        fontSize: 17,
+                                        fontFamily: AppFont.bold),
                                   ),
                                 ),
                               ),
