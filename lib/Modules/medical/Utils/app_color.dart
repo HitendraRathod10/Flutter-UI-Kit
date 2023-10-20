@@ -15,4 +15,5 @@ class AppColor{
   static const appBlueColor = Color(0xFF4E598C);
   static const offWhite = Color(0xFFFAF9F6);
   static const appGrey = Color(0xFF808080);
+  static const appScreenBackground = Color(0xFFF2F2F2);
 }

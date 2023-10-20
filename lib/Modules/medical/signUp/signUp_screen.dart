@@ -44,6 +44,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.appScreenBackground,
       body: Container(
         height: MediaQuery.of(context).size.height,
         child: ListView(

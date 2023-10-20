@@ -24,7 +24,7 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     print("${MediaQuery.of(context).size.width}");
     return Scaffold(
-      backgroundColor: const Color(0xFFE4ECF0),
+      backgroundColor: AppColor.appScreenBackground,
       body: Container(
         height: MediaQuery.of(context).size.height,
         child: ListView(

@@ -18,7 +18,7 @@ class _DoctorListVideoConsultationBySymptomState
         context: context,
         builder: (context) {
           return AlertDialog(
-            backgroundColor: AppColor.offWhite,
+            backgroundColor: AppColor.appScreenBackground,
             elevation: 20,
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
@@ -29,7 +29,7 @@ class _DoctorListVideoConsultationBySymptomState
             ),
             insetPadding: EdgeInsets.zero,
             title: Container(
-              color: AppColor.offWhite,
+              // color: AppColor.offWhite,
               child: const Text(
                 "Request for online consultation",
                 style: TextStyle(fontSize: 24.0, fontFamily: AppFont.semiBold),
@@ -150,6 +150,7 @@ class _DoctorListVideoConsultationBySymptomState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.appScreenBackground,
       appBar: AppBar(
         iconTheme: const IconThemeData(color: AppColor.white),
         backgroundColor: AppColor.primary_color,

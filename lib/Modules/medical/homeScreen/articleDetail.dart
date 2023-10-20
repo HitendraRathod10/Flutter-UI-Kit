@@ -287,6 +287,7 @@ class _ArticalsDetailState extends State<ArticalsDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.appScreenBackground,
 appBar: AppBar(
   title: Text("Knee Pain",style: TextStyle(color: Colors.white),),
   backgroundColor: AppColor.primary_color,

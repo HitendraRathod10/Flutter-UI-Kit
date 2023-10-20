@@ -29,6 +29,7 @@ class _VideoConsultationSymptomsScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.appScreenBackground,
       appBar: AppBar(
         iconTheme: const IconThemeData(color: AppColor.white),
         backgroundColor: AppColor.primary_color,

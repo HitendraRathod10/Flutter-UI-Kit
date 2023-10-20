@@ -28,7 +28,7 @@ class _Home_WidgetState extends State<Home_Widget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.primary_color.withOpacity(0),
+      backgroundColor: AppColor.appScreenBackground,
       appBar: AppBar(
         title: Padding(
           padding: const EdgeInsets.only(left: 15.0),

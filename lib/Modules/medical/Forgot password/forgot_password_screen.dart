@@ -34,6 +34,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.appScreenBackground,
       body: Container(
         height: MediaQuery.of(context).size.height,
         child: ListView(

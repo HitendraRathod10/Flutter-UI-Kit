@@ -17,6 +17,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColor.appScreenBackground,
       appBar: AppBar(
         title: const Text(
           "Health Package",

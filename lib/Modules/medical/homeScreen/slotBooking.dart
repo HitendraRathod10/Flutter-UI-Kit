@@ -70,7 +70,7 @@ class _SlotBookingState extends State<SlotBooking> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE4ECF0),
+      backgroundColor: AppColor.appScreenBackground,
       bottomNavigationBar: SizedBox(
         height: 80,
         // color: Colors.grey,

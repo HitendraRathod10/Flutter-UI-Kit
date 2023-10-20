@@ -56,6 +56,7 @@ class _Login_ScreenState extends State<Login_Screen>
         return Future.value(false);
       },
       child: Scaffold(
+        backgroundColor: AppColor.appScreenBackground,
         body: Container(
           height: MediaQuery.of(context).size.height,
           child: ListView(

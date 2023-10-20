@@ -40,7 +40,7 @@ class _NotificationState extends State<Notification_widget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE4ECF0),
+      backgroundColor: AppColor.appScreenBackground,
       appBar: AppBar(
         title: const Text(
           "Notification",

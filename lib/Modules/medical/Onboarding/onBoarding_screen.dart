@@ -48,6 +48,7 @@ String _currentString = "Medical App";
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: AppColor.appScreenBackground,
         body: Obx(() => Column(
           children: [
 Padding(

@@ -16,7 +16,7 @@ class _Chat_ListState extends State<Chat_List> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFE4ECF0),
+      backgroundColor: AppColor.appScreenBackground,
       appBar: AppBar(
         title: const Text(
           "Chats",
