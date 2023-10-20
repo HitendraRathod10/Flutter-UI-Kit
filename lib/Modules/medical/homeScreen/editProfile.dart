@@ -16,8 +16,6 @@ class EditProfile extends StatefulWidget {
   State<EditProfile> createState() => _EditProfileState();
 }
 
-enum ImageSourceType { gallery, camera }
-
 class _EditProfileState extends State<EditProfile> {
   var _image;
   var imagePicker;
@@ -28,6 +26,70 @@ class _EditProfileState extends State<EditProfile> {
     // TODO: implement initState
     super.initState();
     imagePicker = ImagePicker();
+  }
+
+  openCamera() async {
+    XFile image = await imagePicker.pickImage(
+      source: ImageSource.camera,
+      imageQuality: 100,
+    );
+    setState(() {
+      _image = File(image.path);
+    });
+  }
+
+  openGallery() async {
+    XFile image = await imagePicker.pickImage(
+      source: ImageSource.gallery,
+      imageQuality: 100,
+    );
+    setState(() {
+      _image = File(image.path);
+    });
+  }
+
+  showAlertOfCameraAndGallery() async {
+    return await showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text(
+              'choose where you want to select the image',
+              style: TextStyle(fontFamily: AppFont.semiBold),
+            ),
+            actionsAlignment: MainAxisAlignment.spaceEvenly,
+            actions: [
+              TextButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        AppColor.primary_color),
+                    elevation: MaterialStateProperty.all<double>(10)),
+                onPressed: () {
+                  openCamera();
+                  Navigator.of(context).pop();
+                },
+                child: const Text(
+                  'Camera',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              TextButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        AppColor.primary_color),
+                    elevation: MaterialStateProperty.all<double>(10)),
+                onPressed: () {
+                  openGallery();
+                  Navigator.of(context).pop();
+                },
+                child: const Text(
+                  'Gallery',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ],
+          );
+        });
   }
 
   @override
@@ -107,19 +169,7 @@ class _EditProfileState extends State<EditProfile> {
                                           right: 10,
                                           child: GestureDetector(
                                             onTap: () async {
-                                              var source =
-                                                  type == ImageSourceType.camera
-                                                      ? ImageSource.camera
-                                                      : ImageSource.gallery;
-                                              XFile image =
-                                                  await imagePicker.pickImage(
-                                                      source: source,
-                                                      imageQuality: 50,
-                                                      preferredCameraDevice:
-                                                          CameraDevice.front);
-                                              setState(() {
-                                                _image = File(image.path);
-                                              });
+                                              showAlertOfCameraAndGallery();
                                             },
                                             child: const CircleAvatar(
                                                 radius: 20,
@@ -147,10 +197,12 @@ class _EditProfileState extends State<EditProfile> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextFormField(
-                            style: TextStyle(fontFamily: AppFont.regular),
+                              style:
+                                  const TextStyle(fontFamily: AppFont.regular),
                               decoration: InputDecoration(
                                 labelText: 'Name',
-                                labelStyle: TextStyle(fontFamily: AppFont.regular),
+                                labelStyle: const TextStyle(
+                                    fontFamily: AppFont.regular),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15)),
                               ),
@@ -159,10 +211,12 @@ class _EditProfileState extends State<EditProfile> {
                             height: 15,
                           ),
                           TextFormField(
-                            style: TextStyle(fontFamily: AppFont.regular),
+                              style:
+                                  const TextStyle(fontFamily: AppFont.regular),
                               decoration: InputDecoration(
                                 labelText: 'Email',
-                                labelStyle: TextStyle(fontFamily: AppFont.regular),
+                                labelStyle: const TextStyle(
+                                    fontFamily: AppFont.regular),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15)),
                               ),
@@ -171,10 +225,12 @@ class _EditProfileState extends State<EditProfile> {
                             height: 15,
                           ),
                           TextFormField(
-                            style: TextStyle(fontFamily: AppFont.regular),
+                              style:
+                                  const TextStyle(fontFamily: AppFont.regular),
                               decoration: InputDecoration(
                                 labelText: 'Date of Birth',
-                                labelStyle: TextStyle(fontFamily: AppFont.regular),
+                                labelStyle: const TextStyle(
+                                    fontFamily: AppFont.regular),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15)),
                               ),
@@ -183,10 +239,12 @@ class _EditProfileState extends State<EditProfile> {
                             height: 15,
                           ),
                           TextFormField(
-                            style: TextStyle(fontFamily: AppFont.regular),
+                              style:
+                                  const TextStyle(fontFamily: AppFont.regular),
                               decoration: InputDecoration(
                                 labelText: 'Contact Number',
-                                labelStyle: TextStyle(fontFamily: AppFont.regular),
+                                labelStyle: const TextStyle(
+                                    fontFamily: AppFont.regular),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(15)),
                               ),

@@ -27,6 +27,70 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     imagePicker = ImagePicker();
   }
 
+  openCamera() async {
+    XFile image = await imagePicker.pickImage(
+      source: ImageSource.camera,
+      imageQuality: 100,
+    );
+    setState(() {
+      _image = File(image.path);
+    });
+  }
+
+  openGallery() async {
+    XFile image = await imagePicker.pickImage(
+      source: ImageSource.gallery,
+      imageQuality: 100,
+    );
+    setState(() {
+      _image = File(image.path);
+    });
+  }
+
+  showAlertOfCameraAndGallery() async {
+    return await showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: const Text(
+              'choose where you want to select the image',
+              style: TextStyle(fontFamily: AppFont.semiBold),
+            ),
+            actionsAlignment: MainAxisAlignment.spaceEvenly,
+            actions: [
+              TextButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        Theme.of(context).buttonTheme.colorScheme!.background),
+                    elevation: MaterialStateProperty.all<double>(10)),
+                onPressed: () {
+                  openCamera();
+                  Navigator.of(context).pop();
+                },
+                child: const Text(
+                  'Camera',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              TextButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        Theme.of(context).buttonTheme.colorScheme!.background),
+                    elevation: MaterialStateProperty.all<double>(10)),
+                onPressed: () {
+                  openGallery();
+                  Navigator.of(context).pop();
+                },
+                child: const Text(
+                  'Gallery',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,23 +138,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               ),
               GestureDetector(
                 onTap: () async {
-                  var source = type == ImageSourceType.camera
-                      ? ImageSource.camera
-                      : ImageSource.gallery;
-                  XFile image = await imagePicker.pickImage(
-                      source: source,
-                      imageQuality: 50,
-                      preferredCameraDevice: CameraDevice.front);
-                  setState(() {
-                    _image = File(image.path);
-                  });
+                  showAlertOfCameraAndGallery();
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width / 1.6,
                   height: 35,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      color: AppColor.appBlueColor),
+                      color: Theme.of(context).buttonTheme.colorScheme?.background),
                   child: Center(
                       child: Text(
                     "change profile photo".tr,
