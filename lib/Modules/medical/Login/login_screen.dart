@@ -174,7 +174,7 @@ class _Login_ScreenState extends State<Login_Screen>
                                         ? Icons.visibility
                                         : Icons.visibility_off,
                                     //change icon based on boolean value
-                                    color: Theme.of(context).primaryColorDark,
+                                    color: AppColor.primary_color,
                                   ),
                                   onPressed: () {
                                     setState(() {

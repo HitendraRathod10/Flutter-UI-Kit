@@ -130,7 +130,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
                               suffixIcon:    IconButton(
                                 icon: Icon(
                                   _passwordInVisible ? Icons.visibility : Icons.visibility_off, //change icon based on boolean value
-                                  color: Theme.of(context).primaryColorDark,
+                                  color: AppColor.primary_color,
                                 ),
                                 onPressed: () {
                                   setState(() {
@@ -161,7 +161,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
                               suffixIcon:    IconButton(
                                 icon: Icon(
                                   _confirmPasswordInVisible ? Icons.visibility : Icons.visibility_off, //change icon based on boolean value
-                                  color: Theme.of(context).primaryColorDark,
+                                  color: AppColor.primary_color,
                                 ),
                                 onPressed: () {
                                   setState(() {

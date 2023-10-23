@@ -168,9 +168,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                               "Back to login",
                               style: TextStyle(
                                   fontSize: 20,
-                                  fontFamily: AppFont.medium,
+                                  fontFamily: AppFont.semiBold,
                                   decoration: TextDecoration.underline,
-                                  color: AppColor.appBlueColor),
+                                  color: AppColor.primary_color),
                             ))
                       ],
                     ),
