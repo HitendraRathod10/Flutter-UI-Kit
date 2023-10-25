@@ -1,4 +1,6 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_kit/Modules/medical/Settings/settings_screen.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/editProfile.dart';
@@ -46,7 +48,7 @@ class _ProfileState extends State<Profile> {
                       ClipPath(
                         clipper: customClipper(),
                         child: Container(
-                            padding: EdgeInsets.only(top: 50, left: 20),
+                            padding: const EdgeInsets.only(top: 50, left: 20),
                             height: MediaQuery.of(context).size.height / 2.8,
                             width: MediaQuery.of(context).size.width,
                             color: AppColor.primary_color,
@@ -57,13 +59,13 @@ class _ProfileState extends State<Profile> {
                                 //   padding: EdgeInsets.only(left: 15.0),
                                 //   child: Text("Profile",style: TextStyle(color: AppColor.white,fontWeight: FontWeight.bold,fontSize: 30),textAlign: TextAlign.center,),
                                 // ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 CircleAvatar(
                                   radius:
                                       MediaQuery.of(context).size.width / 5.088,
-                                  backgroundImage: NetworkImage(
+                                  backgroundImage: const NetworkImage(
                                       "https://img.freepik.com/free-photo/attractive-young-male-nutriologist-lab-coat-smiling-against-white-background_662251-2960.jpg"),
                                 )
                               ],
@@ -72,6 +74,21 @@ class _ProfileState extends State<Profile> {
                     ],
                   ),
                 ),
+                Positioned(
+                    right: 10,
+                    top: 5,
+                    child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const SettingsScreen()));
+                        },
+                        child: const Icon(
+                          Icons.settings,
+                          color: AppColor.white,
+                        ))),
                 Positioned(
                   top: MediaQuery.of(context).size.height / 3,
                   left: 20,
@@ -87,101 +104,59 @@ class _ProfileState extends State<Profile> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           con(icon: Icons.person, name: "Jigar Ghodasara"),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           con(
                               icon: Icons.email_outlined,
                               name: "jigargodasara@elsner.com"),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           con(icon: Icons.calendar_month, name: "21/11/2001"),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           con(icon: Icons.phone, name: "+91 6355962307"),
-
-                          SizedBox(height: 50,),
-                          SizedBox(
+                          const SizedBox(
                             height: 50,
                           ),
-                          Row(
-                            children: [
-                              Expanded(
-                                child: GestureDetector(
-                                  onTap: (){
-                                    Navigator.push(context, MaterialPageRoute(builder: (context)=> const EditProfile()));
-                                  },
-                                  child: Container(
-                                    margin: const EdgeInsets.symmetric(
-                                        horizontal: 0, vertical: 15),
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 18.0),
-                                    width: MediaQuery.of(context).size.width,
-                                    child: Center(
-                                        child: Text(
-                                      "Edit",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontFamily: AppFont.bold),
-                                    )),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(8),
-                                        gradient: LinearGradient(colors: [
-                                          AppColor.primary_color,
-                                          AppColor.primary_color.withAlpha(80),
-                                        ]),
-                                        boxShadow: [
-                                          BoxShadow(
-                                              color: AppColor.primary_color
-                                                  .withAlpha(20),
-                                              blurRadius: 10,
-                                              offset: Offset(3, 10))
-                                        ]),
-                                  ),
-                                ),
+                          Center(
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).pushAndRemoveUntil(
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Login_Screen()),
+                                    (route) => false);
+                              },
+                              child: Container(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 18.0),
+                                width: MediaQuery.of(context).size.width / 2,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8),
+                                    gradient: LinearGradient(colors: [
+                                      AppColor.primary_color,
+                                      AppColor.primary_color.withAlpha(80),
+                                    ]),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: AppColor.primary_color
+                                              .withAlpha(20),
+                                          blurRadius: 10,
+                                          offset: const Offset(3, 10))
+                                    ]),
+                                child: const Center(
+                                    child: Text(
+                                  "Logout",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 18,
+                                      fontFamily: AppFont.bold),
+                                )),
                               ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Expanded(
-                                child: GestureDetector(
-                                  onTap: (){
-                                    Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>const Login_Screen()), (route) => false);
-                                  },
-                                  child: Container(
-                                    margin: const EdgeInsets.symmetric(
-                                        horizontal: 0, vertical: 15),
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 18.0),
-                                    width: MediaQuery.of(context).size.width,
-                                    child: Center(
-                                        child: Text(
-                                      "Logout",
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 18,
-                                          fontFamily: AppFont.bold),
-                                    )),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(8),
-                                        gradient: LinearGradient(colors: [
-                                          AppColor.primary_color,
-                                          AppColor.primary_color.withAlpha(80),
-                                        ]),
-                                        boxShadow: [
-                                          BoxShadow(
-                                              color: AppColor.primary_color
-                                                  .withAlpha(20),
-                                              blurRadius: 10,
-                                              offset: Offset(3, 10))
-                                        ]),
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ],
                       ),
@@ -204,22 +179,22 @@ class _ProfileState extends State<Profile> {
           border: Border.all(color: AppColor.white),
           boxShadow: const [
             BoxShadow(
-              color: AppColor.primary_color,
-              offset: Offset(4, 4),
-              blurRadius: 2,
-              spreadRadius: 1
-            )
+                color: AppColor.primary_color,
+                offset: Offset(4, 4),
+                blurRadius: 2,
+                spreadRadius: 1)
           ]),
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
       child: Row(
         children: [
           Icon(icon),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Expanded(
               child: Text(name,
-                  style: TextStyle(fontSize: 15, fontFamily: AppFont.regular)))
+                  style: const TextStyle(
+                      fontSize: 15, fontFamily: AppFont.regular)))
         ],
       ),
     );
