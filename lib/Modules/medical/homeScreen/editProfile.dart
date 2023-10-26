@@ -53,8 +53,8 @@ class _EditProfileState extends State<EditProfile> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: const Text(
-              'choose where you want to select the image',
+            title: Text(
+              'choose where you want to select the image'.tr,
               style: TextStyle(fontFamily: AppFont.semiBold),
             ),
             actionsAlignment: MainAxisAlignment.spaceEvenly,
@@ -68,8 +68,8 @@ class _EditProfileState extends State<EditProfile> {
                   openCamera();
                   Navigator.of(context).pop();
                 },
-                child: const Text(
-                  'Camera',
+                child: Text(
+                  'camera'.tr,
                   style: TextStyle(color: Colors.white),
                 ),
               ),
@@ -82,8 +82,8 @@ class _EditProfileState extends State<EditProfile> {
                   openGallery();
                   Navigator.of(context).pop();
                 },
-                child: const Text(
-                  'Gallery',
+                child: Text(
+                  'gallery'.tr,
                   style: TextStyle(color: Colors.white),
                 ),
               ),

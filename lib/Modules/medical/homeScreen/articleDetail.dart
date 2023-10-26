@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
+import 'package:get/get.dart';
 import 'package:html/parser.dart' as htmlparser;
 import 'package:html/dom.dart' as dom;
 
@@ -289,7 +290,7 @@ class _ArticalsDetailState extends State<ArticalsDetail> {
     return Scaffold(
       backgroundColor: AppColor.appScreenBackground,
 appBar: AppBar(
-  title: Text("Knee Pain",style: TextStyle(color: Colors.white),),
+  title: Text("knee pain".tr,style: TextStyle(color: Colors.white),),
   backgroundColor: AppColor.primary_color,
   elevation: 0,
   iconTheme: IconThemeData(

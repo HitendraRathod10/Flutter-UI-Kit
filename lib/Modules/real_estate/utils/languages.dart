@@ -86,6 +86,10 @@ class Languages extends Translations {
           "packages": "संकुल",
           "buy now": "अभी खरीदें",
           "articles": "लेख",
+          "choose where you want to select the image": "चुनें कि आप छवि का चयन कहाँ करना चाहते हैं",
+          "camera": "कैमरा",
+          "gallery": "गैलरी",
+          "knee pain": "घुटने के दर्द",
         },
         'gu': {
           "choose language": "ભાષા પસંદ કરો",
@@ -169,6 +173,10 @@ class Languages extends Translations {
           "packages": "પેકેજો",
           "buy now": "હમણાં જ ખરીદો",
           "articles": "લેખ",
+          "choose where you want to select the image": "તમે જ્યાં છબી પસંદ કરવા માંગો છો તે પસંદ કરો",
+          "camera": "કેમેરા",
+          "gallery": "ગેલેરી",
+          "knee pain": "ઘૂંટણનો દુખાવો",
         },
         'en': {
           "choose language": "Choose Language",
@@ -252,6 +260,10 @@ class Languages extends Translations {
           "packages": "Packages",
           "buy now": "Buy Now",
           "articles": "Articles",
+          "choose where you want to select the image": "Choose where you want to select the image",
+          "camera": "Camera",
+          "gallery": "Gallery",
+          "knee pain": "Knee pain",
         },
         'he': {
           "choose language": "בחר שפה",
@@ -335,6 +347,10 @@ class Languages extends Translations {
           "packages": "חבילות",
           "buy now": "קנה עכשיו",
           "articles": "מאמרים",
+          "choose where you want to select the image": "בחר היכן ברצונך לבחור את התמונה",
+          "camera": "מַצלֵמָה",
+          "gallery": "גלריה",
+          "knee pain": "כאבי ברכיים",
         },
         'ar': {
           "choose language": "اختر اللغة",
@@ -418,6 +434,10 @@ class Languages extends Translations {
           "packages": "الحزم",
           "buy now": "קנה עכשיו",
           "articles": "مقالات",
+          "choose where you want to select the image": "اختر المكان الذي تريد تحديد الصورة فيه",
+          "camera": "آلة تصوير",
+          "gallery": "صالة عرض",
+          "knee pain": "ألم الركبة",
         }
       };
 }
