@@ -77,7 +77,7 @@ class Languages extends Translations {
           "update": "आधुनिकतम बनाना",
           "profile updated successfully.": "प्रोफाइल को सफलतापूर्वक अपडेट किया गया।",
           "password changed successfully.": "पासवर्ड सफलतापूर्वक बदला गया।",
-          "": "",
+          "notification": "अधिसूचना",
           "": "",
         },
         'gu': {
@@ -153,6 +153,7 @@ class Languages extends Translations {
           "update": "અદ્યતન બનાવવું",
           "profile updated successfully.": "પ્રોફાઇલ સફળતાપૂર્વક અપડેટ થઈ.",
           "password changed successfully.": "પાસવર્ડ સફળતાપૂર્વક બદલાયો.",
+          "notification": "સૂચના",
         },
         'en': {
           "choose language": "Choose Language",
@@ -227,6 +228,7 @@ class Languages extends Translations {
           "update": "Update",
           "profile updated successfully.": "Profile updated successfully.",
           "password changed successfully.": "Password changed successfully.",
+          "notification": "Notification",
         },
         'he': {
           "choose language": "בחר שפה",
@@ -301,6 +303,7 @@ class Languages extends Translations {
           "update": "עדכון",
           "profile updated successfully.": "הפרופיל עודכן בהצלחה.",
           "password changed successfully.": "סיסמה שונתה בהצלחה.",
+          "notification": "הוֹדָעָה",
         },
         'ar': {
           "choose language": "اختر اللغة",
@@ -375,6 +378,7 @@ class Languages extends Translations {
           "update": "تحديث",
           "profile updated successfully.": "تم تحديث الملف الشخصي بنجاح.",
           "password changed successfully.": "تم تغيير الرقم السري بنجاح.",
+          "notification": "إشعار",
         }
       };
 }

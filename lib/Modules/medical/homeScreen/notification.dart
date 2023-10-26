@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
+import 'package:get/get.dart';
 
 class Notification_widget extends StatefulWidget {
   const Notification_widget({super.key});
@@ -42,8 +43,8 @@ class _NotificationState extends State<Notification_widget> {
     return Scaffold(
       backgroundColor: AppColor.appScreenBackground,
       appBar: AppBar(
-        title: const Text(
-          "Notification",
+        title: Text(
+          "notification".tr,
           style: TextStyle(color: AppColor.white, fontFamily: AppFont.bold),
         ),
         backgroundColor: AppColor.primary_color,
