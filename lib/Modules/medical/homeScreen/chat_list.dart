@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/chat.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
-
+import 'package:get/get.dart';
 // import '../../real_estate/utils/app_color.dart';
 
 class Chat_List extends StatefulWidget {
@@ -18,8 +18,8 @@ class _Chat_ListState extends State<Chat_List> {
     return Scaffold(
       backgroundColor: AppColor.appScreenBackground,
       appBar: AppBar(
-        title: const Text(
-          "Chats",
+        title: Text(
+          "chat".tr,
           style: TextStyle(color: Colors.white, fontFamily: AppFont.bold),
         ),
         backgroundColor: AppColor.primary_color,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:get/get.dart';
 
 class Chat extends StatefulWidget {
   Map<String, dynamic> data;
@@ -231,7 +232,7 @@ class _ChatState extends State<Chat> {
                       filled: true,
                       fillColor: AppColor.offWhite,
                       contentPadding: const EdgeInsets.all(8),
-                      hintText: "Type message here",
+                      hintText: "type message here".tr,
                       hintStyle: TextStyle(fontFamily: AppFont.regular),
                       prefixIcon: Icon(Icons.attachment,
                           color: Theme.of(context).iconTheme.color),
