@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/articleDetail.dart';
@@ -33,9 +34,9 @@ class _Home_WidgetState extends State<Home_Widget> {
         title: Padding(
           padding: const EdgeInsets.only(left: 15.0),
           child: Row(
-            children: const [
+            children: [
               Text(
-                "Hey,",
+                "hello".tr,
                 style: TextStyle(fontSize: 25,fontFamily: AppFont.semiBold,),
               ),
               Text(
@@ -139,16 +140,16 @@ class _Home_WidgetState extends State<Home_Widget> {
                   ),
                   Center(
                     child: Column(
-                      children: const [
+                      children: [
                         Text(
-                          "Book",
+                          "book".tr,
                           style: TextStyle(
                             fontSize: 20,
                             fontFamily: AppFont.bold,
                           ),
                         ),
                         Text(
-                          "my appointment",
+                          "my appointment".tr,
                           style: TextStyle(
                             fontSize: 20,
                             fontFamily: AppFont.bold,
@@ -195,14 +196,14 @@ class _Home_WidgetState extends State<Home_Widget> {
                   ),
                   Center(
                     child: Column(
-                      children: const [
+                      children: [
                         Text(
-                          "Video",
+                          "video".tr,
                           style: TextStyle(
                               fontSize: 20, fontFamily: AppFont.bold,),
                         ),
                         Text(
-                          "consultation",
+                          "consultation".tr,
                           style: TextStyle(
                               fontSize: 20, fontFamily: AppFont.bold,),
                         ),
@@ -216,10 +217,10 @@ class _Home_WidgetState extends State<Home_Widget> {
           const SizedBox(
             height: 50,
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
             child: Text(
-              "Packages",
+              "packages".tr,
               style: TextStyle(fontSize: 22, fontFamily: AppFont.bold,),
             ),
           ),
@@ -309,8 +310,8 @@ class _Home_WidgetState extends State<Home_Widget> {
                                           borderRadius:
                                               BorderRadius.circular(8),
                                         ),
-                                        child: const Text(
-                                          "Buy Now",
+                                        child: Text(
+                                          "buy now".tr,
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 15,
@@ -327,10 +328,10 @@ class _Home_WidgetState extends State<Home_Widget> {
                       ),
                     ),
                   )),
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20),
             child: Text(
-              "Articles",
+              "articles".tr,
               style: TextStyle(fontSize: 22, fontFamily: AppFont.bold,),
             ),
           ),

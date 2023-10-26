@@ -5,6 +5,7 @@ import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/editProfile.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
+import 'package:get/get.dart';
 
 import '../Login/login_screen.dart';
 
@@ -147,9 +148,9 @@ class _ProfileState extends State<Profile> {
                                           blurRadius: 10,
                                           offset: const Offset(3, 10))
                                     ]),
-                                child: const Center(
+                                child: Center(
                                     child: Text(
-                                  "Logout",
+                                  "logout".tr,
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 18,
