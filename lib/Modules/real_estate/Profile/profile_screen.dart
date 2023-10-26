@@ -232,7 +232,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           const SizedBox(
                             width: 10,
                           ),
-                          Text("language".tr,style: Theme.of(context).textTheme.titleMedium?.copyWith(fontFamily: AppFont.medium,)),
+                          Text("change language".tr,style: Theme.of(context).textTheme.titleMedium?.copyWith(fontFamily: AppFont.medium,)),
                           const Spacer(),
                           const Icon(Icons.chevron_right)
                         ],

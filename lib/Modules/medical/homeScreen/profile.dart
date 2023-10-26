@@ -24,7 +24,7 @@ class _ProfileState extends State<Profile> {
 
   @override
   Widget build(BuildContext context) {
-    print("${MediaQuery.of(context).size.width}");
+    // print("${MediaQuery.of(context).size.width}");
     return Scaffold(
       backgroundColor: AppColor.appScreenBackground,
       body: Container(

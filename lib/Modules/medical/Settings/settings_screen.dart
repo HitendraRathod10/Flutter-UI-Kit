@@ -4,7 +4,7 @@ import 'package:flutter_ui_kit/Modules/medical/Settings/change_password.dart';
 import 'package:flutter_ui_kit/Modules/medical/Settings/change_theme.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/editProfile.dart';
-
+import 'package:get/get.dart';
 import '../../real_estate/utils/app_font.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -20,8 +20,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return Scaffold(
       backgroundColor: AppColor.appScreenBackground,
       appBar: AppBar(
-        title: const Text(
-          "Settings",
+        title: Text(
+          "settings".tr,
           style: TextStyle(color: AppColor.white, fontFamily: AppFont.bold),
         ),
         backgroundColor: AppColor.primary_color,
@@ -33,19 +33,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
       body: Column(
         children: [
           cardItem(
-              titleName: "Edit profile",
+              titleName: "edit profile".tr,
               iconName: Icons.person,
               navigationScreen: const EditProfile()),
           cardItem(
-              titleName: "Change password",
+              titleName: "change password".tr,
               iconName: Icons.password_rounded,
               navigationScreen: const ChangePassword()),
           cardItem(
-              titleName: "Change language",
+              titleName: "change language".tr,
               iconName: Icons.language,
               navigationScreen: const ChangeLanguage()),
           cardItem(
-              titleName: "Change theme",
+              titleName: "change theme".tr,
               iconName: Icons.color_lens,
               navigationScreen: const ChangeTheme()),
         ],

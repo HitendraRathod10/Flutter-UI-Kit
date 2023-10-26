@@ -6,7 +6,7 @@ import 'package:flutter_ui_kit/Modules/medical/homeScreen/home_screen.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
-
+import 'package:get/get.dart';
 import '../Forgot password/forgot_password_screen.dart';
 
 class EditProfile extends StatefulWidget {
@@ -200,7 +200,7 @@ class _EditProfileState extends State<EditProfile> {
                               style:
                                   const TextStyle(fontFamily: AppFont.regular),
                               decoration: InputDecoration(
-                                labelText: 'Name',
+                                labelText: 'name'.tr,
                                 labelStyle: const TextStyle(
                                     fontFamily: AppFont.regular),
                                 border: OutlineInputBorder(
@@ -214,7 +214,7 @@ class _EditProfileState extends State<EditProfile> {
                               style:
                                   const TextStyle(fontFamily: AppFont.regular),
                               decoration: InputDecoration(
-                                labelText: 'Email',
+                                labelText: 'email'.tr,
                                 labelStyle: const TextStyle(
                                     fontFamily: AppFont.regular),
                                 border: OutlineInputBorder(
@@ -228,7 +228,7 @@ class _EditProfileState extends State<EditProfile> {
                               style:
                                   const TextStyle(fontFamily: AppFont.regular),
                               decoration: InputDecoration(
-                                labelText: 'Date of Birth',
+                                labelText: 'date of birth'.tr,
                                 labelStyle: const TextStyle(
                                     fontFamily: AppFont.regular),
                                 border: OutlineInputBorder(
@@ -242,7 +242,7 @@ class _EditProfileState extends State<EditProfile> {
                               style:
                                   const TextStyle(fontFamily: AppFont.regular),
                               decoration: InputDecoration(
-                                labelText: 'Contact Number',
+                                labelText: 'contact no'.tr,
                                 labelStyle: const TextStyle(
                                     fontFamily: AppFont.regular),
                                 border: OutlineInputBorder(
@@ -256,7 +256,7 @@ class _EditProfileState extends State<EditProfile> {
                             child: GestureDetector(
                               onTap: () {
                                 Fluttertoast.showToast(
-                                    msg: "Profile updated successfully.",
+                                    msg: "profile updated successfully.".tr,
                                     toastLength: Toast.LENGTH_SHORT,
                                     gravity: ToastGravity.BOTTOM,
                                     backgroundColor: AppColor.primary_color,
@@ -284,9 +284,9 @@ class _EditProfileState extends State<EditProfile> {
                                           blurRadius: 10,
                                           offset: const Offset(3, 10))
                                     ]),
-                                child: const Center(
+                                child: Center(
                                   child: Text(
-                                    "Update",
+                                    "update".tr,
                                     style: TextStyle(
                                         color: Colors.white,
                                         fontSize: 17,

@@ -3,6 +3,7 @@ import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/home_screen.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 class ChangePassword extends StatefulWidget {
   const ChangePassword({Key? key}) : super(key: key);
@@ -21,8 +22,8 @@ class _ChangePasswordState extends State<ChangePassword> {
     return Scaffold(
       backgroundColor: AppColor.appScreenBackground,
       appBar: AppBar(
-        title: const Text(
-          "Change password",
+        title: Text(
+          "change password".tr,
           style: TextStyle(
               color: Colors.white, fontFamily: AppFont.bold, fontSize: 20),
         ),
@@ -37,18 +38,18 @@ class _ChangePasswordState extends State<ChangePassword> {
         child: Column(
           children: [
             textFormField(
-                labelText: "Current Password",
+                labelText: "current password".tr,
                 passwordShow: currentPasswordInVisible),
             const SizedBox(
               height: 15,
             ),
             textFormField(
-                labelText: "New Password", passwordShow: newPasswordInVisible),
+                labelText: "new password".tr, passwordShow: newPasswordInVisible),
             const SizedBox(
               height: 15,
             ),
             textFormField(
-                labelText: "Confirm New Password",
+                labelText: "confirm new password".tr,
                 passwordShow: confirmNewPasswordInVisible),
             const SizedBox(
               height: 60,
@@ -57,7 +58,7 @@ class _ChangePasswordState extends State<ChangePassword> {
               child: GestureDetector(
                 onTap: () {
                   Fluttertoast.showToast(
-                      msg: "Password changed successfully.",
+                      msg: "password changed successfully.".tr,
                       toastLength: Toast.LENGTH_SHORT,
                       gravity: ToastGravity.BOTTOM,
                       backgroundColor: AppColor.primary_color,
@@ -83,9 +84,9 @@ class _ChangePasswordState extends State<ChangePassword> {
                             blurRadius: 10,
                             offset: const Offset(3, 10))
                       ]),
-                  child: const Center(
+                  child: Center(
                     child: Text(
-                      "Change Password",
+                      "change password".tr,
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 17,
