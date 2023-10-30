@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/slotBooking.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
+import 'package:get/get.dart';
 
 class Doctor_list extends StatefulWidget {
   const Doctor_list({super.key});
@@ -38,8 +39,8 @@ class _Doctor_listState extends State<Doctor_list> {
     return Scaffold(
       backgroundColor: AppColor.appScreenBackground,
       appBar: AppBar(
-        title: const Text(
-          "Doctors",
+        title: Text(
+          "doctors".tr,
           style: TextStyle(color: Colors.white, fontFamily: AppFont.bold, fontSize: 20),
         ),
         backgroundColor: AppColor.primary_color,
@@ -59,11 +60,12 @@ class _Doctor_listState extends State<Doctor_list> {
                       dialogType: DialogType.noHeader,
                       animType: AnimType.scale,
                       btnOkColor: AppColor.primary_color,
+                      btnOkText: 'ok'.tr,
                       dialogBackgroundColor: AppColor.offWhite,
                       titleTextStyle: const TextStyle(
                           color: AppColor.primary_color, fontSize: 20, fontFamily: AppFont.medium,),
                       title:
-                          'Book Your Slot tomorrow because ${doctors[index]["name"]} is not available',
+                          'book your slot tomorrow because doctor is not available'.tr,
                       btnOkOnPress: () {},
                       buttonsTextStyle: const TextStyle(fontFamily: AppFont.bold,),
                     ).show();
@@ -134,8 +136,8 @@ class _Doctor_listState extends State<Doctor_list> {
                           ),
                           Text(
                             doctors[index]["availability"]
-                                ? "Available for Today"
-                                : "Try to Tomorrow",
+                                ? "available for today".tr
+                                : "try to tomorrow".tr,
                             maxLines: 1,
                             style: TextStyle(
                                 fontSize: 12,

@@ -4,6 +4,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
+import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PackagesOverview extends StatefulWidget {
@@ -271,7 +272,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
             heroTag: null,
             backgroundColor: AppColor.offWhite,
             foregroundColor: AppColor.primary_color,
-            label: const Text("Call", style: TextStyle(fontFamily: AppFont.regular),),
+            label: Text("call".tr, style: TextStyle(fontFamily: AppFont.regular),),
             elevation: 15,
             icon: const Icon(Icons.headset_mic_outlined),
             onPressed: () async {
@@ -287,7 +288,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
             heroTag: null,
             backgroundColor: AppColor.offWhite,
             foregroundColor: AppColor.primary_color,
-            label: const Text("Chat", style: TextStyle(fontFamily: AppFont.regular),),
+            label: Text("chat".tr, style: TextStyle(fontFamily: AppFont.regular),),
             elevation: 15,
             icon: const Icon(Icons.chat),
             onPressed: () {},
@@ -296,7 +297,7 @@ class _PackagesOverviewState extends State<PackagesOverview> {
             heroTag: null,
             backgroundColor: AppColor.offWhite,
             foregroundColor: AppColor.primary_color,
-            label: const Text("Buy now", style: TextStyle(fontFamily: AppFont.regular),),
+            label: Text("buy now".tr, style: TextStyle(fontFamily: AppFont.regular),),
             elevation: 15,
             icon: const Icon(Icons.add_circle),
             onPressed: () {},
