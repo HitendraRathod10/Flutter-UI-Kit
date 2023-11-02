@@ -224,12 +224,15 @@ class _OverviewScreenState extends State<OverviewScreen> {
                       ))),*/
                     Positioned(
                         left: 15,
+                        right: 15,
                         bottom: 20,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "${widget.realStateData!.title}",
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 1,
                               style: Theme.of(context)
                                   .textTheme
                                   .titleMedium
@@ -249,14 +252,20 @@ class _OverviewScreenState extends State<OverviewScreen> {
                                 const SizedBox(
                                   width: 05,
                                 ),
-                                Text(
-                                  "${widget.realStateData?.address}",
-                                  maxLines: 2,
-                                  style: const TextStyle(
+                                Expanded(
+                                  child: Text(
+                                    "${widget.realStateData?.address}",
+                                    maxLines: 1,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleMedium
+                                        ?.copyWith(
                                       fontFamily: AppFont.medium,
+                                      color: AppColor.white,
                                       fontSize: 20,
-                                      color: AppColor.white),
-                                  overflow: TextOverflow.ellipsis,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
                                 ),
                               ],
                             )
@@ -333,61 +342,85 @@ class _OverviewScreenState extends State<OverviewScreen> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const SizedBox(),
-                        Row(
-                          children: [
-                            const Icon(Icons.bedroom_parent),
-                            const SizedBox(width: 5,),
-                            Text(
-                              "${widget.realStateData?.bed}",
-                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
-                            ),
-                            const SizedBox(width: 5,),
-                            Text(
-                              "bed".tr,
-                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
-                            ),
-                          ],
+                        const SizedBox(width: 2,),
+                        Flexible(
+                          flex: 2,
+                          child: Row(
+                            children: [
+                              const Icon(Icons.bedroom_parent),
+                              const SizedBox(width: 5,),
+                              Flexible(
+                                flex: 5,
+                                child: Text(
+                                  "${widget.realStateData?.bed} ",maxLines: 1,overflow: TextOverflow.ellipsis,
+                                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
+                                ),
+                              ),
+                              Flexible(
+                                flex: 7,
+                                child: Text(
+                                  "bed".tr,maxLines: 1,overflow: TextOverflow.ellipsis,
+                                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         const VerticalDivider(
                             color: AppColor.grey,
                             thickness: 1,
                             indent: 20,
                             endIndent: 20),
-                        Row(
-                          children: [
-                            const Icon(Icons.bathroom_outlined),
-                            const SizedBox(width: 5,),
-                            Text(
-                              "${widget.realStateData?.bath}",
-                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
-                            ),
-                            const SizedBox(width: 5,),
-                            Text(
-                              "bath".tr,
-                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
-                            ),
-                          ],
+                        Flexible(
+                          flex: 2,
+                          child: Row(
+                            children: [
+                              const Icon(Icons.bathroom_outlined),
+                              const SizedBox(width: 5,),
+                              Flexible(
+                                flex: 5,
+                                child: Text(
+                                  "${widget.realStateData?.bath} ",maxLines: 1,overflow: TextOverflow.ellipsis,
+                                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
+                                ),
+                              ),
+                              Flexible(
+                                flex: 7,
+                                child: Text(
+                                  "bath".tr,maxLines: 1,overflow: TextOverflow.ellipsis,
+                                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         const VerticalDivider(
                             color: AppColor.grey,
                             thickness: 1,
                             indent: 20,
                             endIndent: 20),
-                        Row(
-                          children: [
-                            const Icon(Icons.space_bar),
-                            const SizedBox(width: 5,),
-                            Text(
-                              "${widget.realStateData?.squared}",
-                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
-                            ),
-                            const SizedBox(width: 5,),
-                            Text(
-                              "sqft".tr,
-                              style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
-                            ),
-                          ],
+                        Flexible(
+                          flex: 2,
+                          child: Row(
+                            children: [
+                              const Icon(Icons.space_bar),
+                              const SizedBox(width: 5,),
+                              Flexible(
+                                flex: 5,
+                                child: Text(
+                                  "${widget.realStateData?.squared} ",maxLines: 1,overflow: TextOverflow.ellipsis,
+                                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
+                                ),
+                              ),
+                              Flexible(
+                                flex: 7,
+                                child: Text(
+                                  "sqft".tr,maxLines: 1,overflow: TextOverflow.ellipsis,
+                                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontFamily: AppFont.regular,),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         const SizedBox(),
                       ],

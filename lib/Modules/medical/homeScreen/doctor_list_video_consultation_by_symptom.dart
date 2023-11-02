@@ -17,132 +17,135 @@ class _DoctorListVideoConsultationBySymptomState
     showDialog(
         context: context,
         builder: (context) {
-          return AlertDialog(
-            backgroundColor: AppColor.appScreenBackground,
-            elevation: 20,
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(
-                Radius.circular(
-                  20.0,
+          return Padding(
+            padding: const EdgeInsets.all(15),
+            child: AlertDialog(
+              backgroundColor: AppColor.appScreenBackground,
+              elevation: 20,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(
+                    20.0,
+                  ),
                 ),
               ),
-            ),
-            insetPadding: EdgeInsets.zero,
-            title: Container(
-              // color: AppColor.offWhite,
-              child: const Text(
-                "Request for online consultation",
-                style: TextStyle(fontSize: 24.0, fontFamily: AppFont.semiBold),
+              insetPadding: EdgeInsets.zero,
+              title: Container(
+                // color: AppColor.offWhite,
+                child: const Text(
+                  "Request for online consultation",
+                  style: TextStyle(fontSize: 24.0, fontFamily: AppFont.semiBold),
+                ),
               ),
-            ),
-            titlePadding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
-            content: Container(
-              color: AppColor.offWhite,
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: 'Patient Name',
-                        labelStyle: TextStyle(fontFamily: AppFont.medium),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15)),
+              titlePadding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+              content: Container(
+                color: AppColor.offWhite,
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      TextFormField(
+                        decoration: InputDecoration(
+                          labelText: 'Patient Name',
+                          labelStyle: TextStyle(fontFamily: AppFont.medium),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: 'Patient Age',
-                        labelStyle: TextStyle(fontFamily: AppFont.medium),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15)),
+                      const SizedBox(
+                        height: 10,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: 'Patient Contact Number',
-                        labelStyle: TextStyle(fontFamily: AppFont.medium),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15)),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          labelText: 'Patient Age',
+                          labelStyle: TextStyle(fontFamily: AppFont.medium),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: 'Patient Address',
-                        labelStyle: TextStyle(fontFamily: AppFont.medium),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(15)),
+                      const SizedBox(
+                        height: 10,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).pop();
-                        Fluttertoast.showToast(
-                            msg:
-                                "Your request has been submitted.Kindly wait for 24 hours.",
-                            toastLength: Toast.LENGTH_SHORT,
-                            gravity: ToastGravity.BOTTOM,
-                            backgroundColor: AppColor.primary_color,
-                            textColor: Colors.white,
-                            fontSize: 16.0);
-                      },
-                      child: Container(
-                        width: double.infinity,
-                        height: 50,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            gradient: LinearGradient(colors: [
-                              AppColor.primary_color,
-                              AppColor.primary_color.withAlpha(80),
-                            ]),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: AppColor.primary_color.withAlpha(20),
-                                  blurRadius: 10,
-                                  offset: const Offset(3, 10))
-                            ]),
-                        child: const Center(
-                          child: Text(
-                            "Submit",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 17,
-                                fontFamily: AppFont.semiBold),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          labelText: 'Patient Contact Number',
+                          labelStyle: TextStyle(fontFamily: AppFont.medium),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          labelText: 'Patient Address',
+                          labelStyle: TextStyle(fontFamily: AppFont.medium),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          Fluttertoast.showToast(
+                              msg:
+                                  "Your request has been submitted.Kindly wait for 24 hours.",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.BOTTOM,
+                              backgroundColor: AppColor.primary_color,
+                              textColor: Colors.white,
+                              fontSize: 16.0);
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              gradient: LinearGradient(colors: [
+                                AppColor.primary_color,
+                                AppColor.primary_color.withAlpha(80),
+                              ]),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: AppColor.primary_color.withAlpha(20),
+                                    blurRadius: 10,
+                                    offset: const Offset(3, 10))
+                              ]),
+                          child: const Center(
+                            child: Text(
+                              "Submit",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17,
+                                  fontFamily: AppFont.semiBold),
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    const Text(
-                      'Note :',
-                      style: TextStyle(fontFamily: AppFont.semiBold),
-                    ),
-                    const Text(
-                      'Doctor will be co-ordinate with you in 24 hours via video call.',
-                      style: TextStyle(fontSize: 12, fontFamily: AppFont.regular),
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      const Text(
+                        'Note :',
+                        style: TextStyle(fontFamily: AppFont.semiBold),
+                      ),
+                      const Text(
+                        'Doctor will be co-ordinate with you in 24 hours via video call.',
+                        style: TextStyle(fontSize: 12, fontFamily: AppFont.regular),
+                      ),
+                    ],
+                  ),
                 ),
               ),
+              contentPadding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
             ),
-            contentPadding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
           );
         });
   }

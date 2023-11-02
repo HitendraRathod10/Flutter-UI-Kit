@@ -344,7 +344,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: CachedNetworkImage(
                 imageUrl: '${realStateRecommanedData.image}',
                 height: 100,
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
                 placeholder: (context, url) => Shimmer.fromColors(
                     baseColor: Colors.grey.shade300,
                     highlightColor: Colors.grey.shade100,

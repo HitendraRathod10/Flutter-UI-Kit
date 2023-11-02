@@ -45,35 +45,45 @@ class _PackagesOverviewState extends State<PackagesOverview> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        "Full body check Up",
-                        style: TextStyle(
-                            fontFamily: AppFont.semiBold, fontSize: 18),
-                      ),
-                      SizedBox(height: 5),
-                      Text(
-                        "By Dr. John Deo",
-                        style: TextStyle(
-                            fontFamily: AppFont.semiBold, fontSize: 13),
-                      ),
-                    ],
-                  ),
-                  RatingBar.builder(
-                    initialRating: 4.5,
-                    minRating: 1,
-                    direction: Axis.horizontal,
-                    allowHalfRating: true,
-                    itemCount: 5,
-                    itemBuilder: (context, _) => const Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                      size: 20,
+                  Container(
+                    // color: Colors.red,
+                    width: MediaQuery.of(context).size.width/2.2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Full body check Up",
+                          style: TextStyle(
+                              fontFamily: AppFont.semiBold, fontSize: 18),
+                        ),
+                        SizedBox(height: 5),
+                        Text(
+                          "By Dr. John Deo",
+                          style: TextStyle(
+                              fontFamily: AppFont.semiBold, fontSize: 13),
+                        ),
+                      ],
                     ),
-                    ignoreGestures: true,
-                    onRatingUpdate: (rating) {},
+                  ),
+                  // const Spacer(),
+                  Container(
+                    alignment: Alignment.centerRight,
+                    // color: Colors.green,
+                    width: MediaQuery.of(context).size.width/2.1,
+                    child: RatingBar.builder(
+                      initialRating: 4.5,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      itemCount: 5,
+                      itemBuilder: (context, _) => const Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                      ),
+                      itemSize: 25,
+                      ignoreGestures: true,
+                      onRatingUpdate: (rating) {},
+                    ),
                   )
                 ],
               ),

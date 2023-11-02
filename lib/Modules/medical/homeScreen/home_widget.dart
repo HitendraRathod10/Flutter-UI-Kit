@@ -295,27 +295,39 @@ class _Home_WidgetState extends State<Home_Widget> {
                                   ),
                                   Row(
                                     children: [
-                                      const Text(
-                                        "₹400 / Month",
-                                        style: TextStyle(
-                                            fontSize: 15,
-                                            fontFamily: AppFont.regular,),
-                                      ),
-                                      const Spacer(),
-                                      Container(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 20, vertical: 8),
-                                        decoration: BoxDecoration(
-                                          color: AppColor.primary_color,
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                        ),
+                                      const Expanded(
+                                        flex: 5,
                                         child: Text(
-                                          "buy now".tr,
+                                          "₹400 / Month",
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
                                           style: TextStyle(
-                                              color: Colors.white,
                                               fontSize: 15,
-                                              fontFamily: AppFont.semiBold,),
+                                              fontFamily: AppFont.regular,),
+                                        ),
+                                      ),
+                                      // const Spacer(),
+                                      Expanded(
+                                        flex: 5,
+                                        child: Container(
+                                          padding: const EdgeInsets.symmetric(
+                                              horizontal: 10, vertical: 8),
+                                          decoration: BoxDecoration(
+                                            color: AppColor.primary_color,
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              "buy now".tr,
+                                              maxLines: 1,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: const TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 15,
+                                                  fontFamily: AppFont.semiBold,),
+                                            ),
+                                          ),
                                         ),
                                       )
                                     ],

@@ -343,7 +343,7 @@ class _HouseResultScreenState extends State<HouseResultScreen> {
             maxLines: 2,
           ),
         ),
-        Positioned(right: 0, top: 0, child: bookmarkWidget(index)
+        Positioned(right: 5, top: 5, child: bookmarkWidget(index)
             /*Container(
                                   height: 40,
                                   width: 40,
