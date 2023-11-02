@@ -3,6 +3,7 @@ import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 
+import '../../real_estate/utils/check_device.dart';
 import '../Login/login_screen.dart';
 
 class SignUp_Screen extends StatefulWidget {
@@ -18,6 +19,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
   bool _passwordInVisible = true;
   bool _confirmPasswordInVisible = true;
   String _currentString = "Welcome, \nBack";
+  bool? isTab;
   @override
   void initState() {
     // TODO: implement initState
@@ -30,6 +32,9 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
         .animate(CurvedAnimation(parent: controller, curve: Curves.easeIn));
 
     controller.forward();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      methodToCheckDevice();
+    });
 
     // controller.addListener(() {
     //   if (controller.isCompleted) {
@@ -39,6 +44,11 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
     //     controller.forward();
     //   }
     // });
+  }
+  methodToCheckDevice() async {
+    isTab = await isTablet(context);
+    setState(() {});
+    debugPrint("isTab bool in login:: $isTab");
   }
 
   @override
@@ -53,7 +63,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
               alignment: Alignment.topCenter,
               children: [
                 Container(
-                  height: MediaQuery.of(context).size.height,
+                  height: isTab == true ? MediaQuery.of(context).size.height * 1.1 : MediaQuery.of(context).size.height,
                   child: Stack(
                     children: [
                       ClipPath(
@@ -84,7 +94,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
                   child: Image.asset(AppImage.medical_hospital,height: MediaQuery.of(context).size.width/2.5,width: MediaQuery.of(context).size.width/2.5,),
                 )),
                 Positioned(
-                  top: MediaQuery.of(context).size.height/3,
+                  top: isTab == true ? MediaQuery.of(context).size.height / 2.4 : MediaQuery.of(context).size.height/3,
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     child: Column(

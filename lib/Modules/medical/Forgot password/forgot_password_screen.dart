@@ -5,6 +5,8 @@ import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:get/get.dart';
 
+import '../../real_estate/utils/check_device.dart';
+
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({Key? key}) : super(key: key);
 
@@ -17,6 +19,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
   late AnimationController controller;
   late Animation<int> _characterCount;
   String _currentString = "Forget password";
+  bool? isTab;
 
   @override
   void initState() {
@@ -29,6 +32,14 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
     _characterCount = StepTween(begin: 0, end: _currentString.length)
         .animate(CurvedAnimation(parent: controller, curve: Curves.easeIn));
     controller.forward();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      methodToCheckDevice();
+    });
+  }
+  methodToCheckDevice() async {
+    isTab = await isTablet(context);
+    setState(() {});
+    debugPrint("isTab bool in forget:: $isTab");
   }
 
   @override
@@ -89,7 +100,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen>
                       ),
                     )),
                 Positioned(
-                  top: MediaQuery.of(context).size.height / 3,
+                  top: isTab == true ? MediaQuery.of(context).size.height / 2.4 : MediaQuery.of(context).size.height / 3,
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     child: Column(

@@ -3,6 +3,7 @@ import 'package:flutter_ui_kit/Modules/medical/Forgot%20password/forgot_password
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
+import 'package:flutter_ui_kit/Modules/real_estate/utils/check_device.dart';
 import 'package:flutter_ui_kit/module_list.dart';
 
 import '../homeScreen/home_screen.dart';
@@ -21,6 +22,7 @@ class _Login_ScreenState extends State<Login_Screen>
   late Animation<int> _characterCount;
   bool _passwordInVisible = true;
   String _currentString = "Welcome, \nBack";
+  bool? isTab;
 
   @override
   void initState() {
@@ -34,6 +36,9 @@ class _Login_ScreenState extends State<Login_Screen>
         .animate(new CurvedAnimation(parent: controller, curve: Curves.easeIn));
 
     controller.forward();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      methodToCheckDevice();
+    });
 
     // controller.addListener(() {
     //   if (controller.isCompleted) {
@@ -43,6 +48,11 @@ class _Login_ScreenState extends State<Login_Screen>
     //     controller.forward();
     //   }
     // });
+  }
+  methodToCheckDevice() async {
+    isTab = await isTablet(context);
+    setState(() {});
+    debugPrint("isTab bool in login:: $isTab");
   }
 
   @override
@@ -65,7 +75,7 @@ class _Login_ScreenState extends State<Login_Screen>
                 alignment: Alignment.topCenter,
                 children: [
                   Container(
-                    height: MediaQuery.of(context).size.height,
+                    height: isTab == true ? MediaQuery.of(context).size.height * 1.1 : MediaQuery.of(context).size.height,
                     child: Stack(
                       children: [
                         ClipPath(
@@ -112,7 +122,7 @@ class _Login_ScreenState extends State<Login_Screen>
                         ),
                       )),
                   Positioned(
-                    top: MediaQuery.of(context).size.height / 3,
+                    top: isTab == true ? MediaQuery.of(context).size.height / 2.4 : MediaQuery.of(context).size.height / 3,
                     child: Container(
                       width: MediaQuery.of(context).size.width,
                       child: Column(

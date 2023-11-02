@@ -7,6 +7,7 @@ import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:get/get.dart';
+import '../../real_estate/utils/check_device.dart';
 import '../Forgot password/forgot_password_screen.dart';
 
 class EditProfile extends StatefulWidget {
@@ -20,12 +21,21 @@ class _EditProfileState extends State<EditProfile> {
   var _image;
   var imagePicker;
   var type;
+  bool? isTab;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     imagePicker = ImagePicker();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      methodToCheckDevice();
+    });
+  }
+  methodToCheckDevice() async {
+    isTab = await isTablet(context);
+    setState(() {});
+    debugPrint("isTab bool in login:: $isTab");
   }
 
   openCamera() async {
@@ -114,15 +124,15 @@ class _EditProfileState extends State<EditProfile> {
                         ClipPath(
                           clipper: customClipper(),
                           child: Container(
-                            height: MediaQuery.of(context).size.height / 2.5,
+                            height: isTab == true ? MediaQuery.of(context).size.height / 1.8 : MediaQuery.of(context).size.height / 2.5,
                             color: AppColor.primary_color.withAlpha(20),
                           ),
                         ),
                         ClipPath(
                           clipper: customClipper(),
                           child: Container(
-                              padding: const EdgeInsets.only(top: 15, left: 20),
-                              height: MediaQuery.of(context).size.height / 2.8,
+                              padding: EdgeInsets.only(top: isTab == true ? 40 : 15, left: isTab == true ? 30 : 20),
+                              height: isTab == true ? MediaQuery.of(context).size.height / 2.0 : MediaQuery.of(context).size.height / 2.8,
                               width: MediaQuery.of(context).size.width,
                               color: AppColor.primary_color,
                               child: Column(
@@ -165,17 +175,18 @@ class _EditProfileState extends State<EditProfile> {
                                                   "https://cdn.pixabay.com/photo/2017/11/02/14/27/model-2911332_640.jpg"),
                                             ),
                                       Positioned(
-                                          bottom: 0,
+                                          bottom: isTab == true ? 60 : 0,
                                           right: 10,
                                           child: GestureDetector(
                                             onTap: () async {
                                               showAlertOfCameraAndGallery();
                                             },
-                                            child: const CircleAvatar(
-                                                radius: 20,
+                                            child: CircleAvatar(
+                                                radius:  isTab == true ? 30 : 20,
                                                 child: Icon(
                                                   Icons.edit,
                                                   color: AppColor.white,
+                                                  size: isTab == true ? 40 : 20,
                                                 )),
                                           ))
                                     ],
@@ -187,7 +198,7 @@ class _EditProfileState extends State<EditProfile> {
                     ),
                   ),
                   Positioned(
-                    top: MediaQuery.of(context).size.height / 3,
+                    top: isTab == true ? MediaQuery.of(context).size.height / 2.2 : MediaQuery.of(context).size.height / 3,
                     left: 20,
                     right: 20,
                     child: Container(
