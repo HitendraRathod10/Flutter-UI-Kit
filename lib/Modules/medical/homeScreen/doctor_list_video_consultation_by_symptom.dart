@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 
 class DoctorListVideoConsultationBySymptom extends StatefulWidget {
   const DoctorListVideoConsultationBySymptom({Key? key}) : super(key: key);
@@ -32,8 +33,8 @@ class _DoctorListVideoConsultationBySymptomState
               insetPadding: EdgeInsets.zero,
               title: Container(
                 // color: AppColor.offWhite,
-                child: const Text(
-                  "Request for online consultation",
+                child: Text(
+                  "request for online consultation".tr,
                   style: TextStyle(fontSize: 24.0, fontFamily: AppFont.semiBold),
                 ),
               ),
@@ -49,7 +50,7 @@ class _DoctorListVideoConsultationBySymptomState
                     children: <Widget>[
                       TextFormField(
                         decoration: InputDecoration(
-                          labelText: 'Patient Name',
+                          labelText: 'patient name'.tr,
                           labelStyle: TextStyle(fontFamily: AppFont.medium),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15)),
@@ -60,7 +61,7 @@ class _DoctorListVideoConsultationBySymptomState
                       ),
                       TextFormField(
                         decoration: InputDecoration(
-                          labelText: 'Patient Age',
+                          labelText: 'patient age'.tr,
                           labelStyle: TextStyle(fontFamily: AppFont.medium),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15)),
@@ -71,7 +72,7 @@ class _DoctorListVideoConsultationBySymptomState
                       ),
                       TextFormField(
                         decoration: InputDecoration(
-                          labelText: 'Patient Contact Number',
+                          labelText: 'patient contact number'.tr,
                           labelStyle: TextStyle(fontFamily: AppFont.medium),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15)),
@@ -82,7 +83,7 @@ class _DoctorListVideoConsultationBySymptomState
                       ),
                       TextFormField(
                         decoration: InputDecoration(
-                          labelText: 'Patient Address',
+                          labelText: 'patient address'.tr,
                           labelStyle: TextStyle(fontFamily: AppFont.medium),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(15)),
@@ -96,7 +97,7 @@ class _DoctorListVideoConsultationBySymptomState
                           Navigator.of(context).pop();
                           Fluttertoast.showToast(
                               msg:
-                                  "Your request has been submitted.Kindly wait for 24 hours.",
+                                  "your request has been submitted. kindly wait for 24 hours.".tr,
                               toastLength: Toast.LENGTH_SHORT,
                               gravity: ToastGravity.BOTTOM,
                               backgroundColor: AppColor.primary_color,
@@ -118,9 +119,9 @@ class _DoctorListVideoConsultationBySymptomState
                                     blurRadius: 10,
                                     offset: const Offset(3, 10))
                               ]),
-                          child: const Center(
+                          child: Center(
                             child: Text(
-                              "Submit",
+                              "submit".tr,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 17,
@@ -132,12 +133,12 @@ class _DoctorListVideoConsultationBySymptomState
                       const SizedBox(
                         height: 20,
                       ),
-                      const Text(
-                        'Note :',
+                      Text(
+                        'note :'.tr,
                         style: TextStyle(fontFamily: AppFont.semiBold),
                       ),
-                      const Text(
-                        'Doctor will be co-ordinate with you in 24 hours via video call.',
+                      Text(
+                        'doctor will be co-ordinate with you in 24 hours via video call.'.tr,
                         style: TextStyle(fontSize: 12, fontFamily: AppFont.regular),
                       ),
                     ],
@@ -157,8 +158,8 @@ class _DoctorListVideoConsultationBySymptomState
       appBar: AppBar(
         iconTheme: const IconThemeData(color: AppColor.white),
         backgroundColor: AppColor.primary_color,
-        title: const Text(
-          "Choose doctor",
+        title: Text(
+          "choose doctor".tr,
           style: TextStyle(color: AppColor.white, fontFamily: AppFont.bold),
         ),
       ),

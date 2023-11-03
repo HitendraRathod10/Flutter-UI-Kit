@@ -63,7 +63,7 @@ class _SignUp_ScreenState extends State<SignUp_Screen>  with TickerProviderState
               alignment: Alignment.topCenter,
               children: [
                 Container(
-                  height: isTab == true ? MediaQuery.of(context).size.height * 1.1 : MediaQuery.of(context).size.height,
+                  height: isTab == true ? MediaQuery.of(context).size.height * 1.1 : MediaQuery.of(context).size.height * 1.05,
                   child: Stack(
                     children: [
                       ClipPath(

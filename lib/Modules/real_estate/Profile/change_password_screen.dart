@@ -146,7 +146,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                 Navigator.of(context).pop();
                 Fluttertoast.showToast(
                     msg:
-                    "Password changes successfully.",
+                    "password changed successfully.".tr,
                     toastLength: Toast.LENGTH_SHORT,
                     gravity: ToastGravity.BOTTOM,
                     backgroundColor: AppColor.appBlueColor,

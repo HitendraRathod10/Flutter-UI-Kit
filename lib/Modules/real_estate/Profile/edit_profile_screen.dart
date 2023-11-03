@@ -52,8 +52,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: const Text(
-              'choose where you want to select the image',
+            title: Text(
+              'choose where you want to select the image'.tr,
               style: TextStyle(fontFamily: AppFont.semiBold),
             ),
             actionsAlignment: MainAxisAlignment.spaceEvenly,
@@ -67,8 +67,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   openCamera();
                   Navigator.of(context).pop();
                 },
-                child: const Text(
-                  'Camera',
+                child: Text(
+                  'camera'.tr,
                   style: TextStyle(color: Colors.white),
                 ),
               ),
@@ -81,8 +81,8 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   openGallery();
                   Navigator.of(context).pop();
                 },
-                child: const Text(
-                  'Gallery',
+                child: Text(
+                  'gallery'.tr,
                   style: TextStyle(color: Colors.white),
                 ),
               ),
@@ -270,7 +270,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                   Navigator.of(context).pop();
                   Fluttertoast.showToast(
                       msg:
-                      "Profile edited successfully.",
+                      "profile updated successfully.".tr,
                       toastLength: Toast.LENGTH_SHORT,
                       gravity: ToastGravity.BOTTOM,
                       backgroundColor: AppColor.appBlueColor,

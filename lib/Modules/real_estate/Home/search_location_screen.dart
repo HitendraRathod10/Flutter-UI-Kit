@@ -26,7 +26,7 @@ class _SearchLocationScreenState extends State<SearchLocationScreen> {
       return Scaffold(
           appBar: AppBar(
             elevation: 0,
-            title: Text("Search location",
+            title: Text("search location".tr,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(fontFamily: AppFont.semiBold,)),
             leading: InkWell(
                 onTap: () {

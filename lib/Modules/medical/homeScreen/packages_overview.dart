@@ -20,8 +20,8 @@ class _PackagesOverviewState extends State<PackagesOverview> {
     return Scaffold(
       backgroundColor: AppColor.appScreenBackground,
       appBar: AppBar(
-        title: const Text(
-          "Health Package",
+        title: Text(
+          "health package".tr,
           style: TextStyle(color: Colors.white, fontFamily: AppFont.bold),
         ),
         backgroundColor: AppColor.primary_color,

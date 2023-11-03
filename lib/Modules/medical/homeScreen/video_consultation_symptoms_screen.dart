@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/homeScreen/doctor_list_video_consultation_by_symptom.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
+import 'package:get/get.dart';
 
 class VideoConsultationSymptomsScreen extends StatefulWidget {
   const VideoConsultationSymptomsScreen({Key? key}) : super(key: key);
@@ -14,16 +15,16 @@ class VideoConsultationSymptomsScreen extends StatefulWidget {
 class _VideoConsultationSymptomsScreenState
     extends State<VideoConsultationSymptomsScreen> {
   var details = {
-    'Anxiety': 'https://cdn-icons-png.flaticon.com/128/7145/7145123.png',
-    'Fever': 'https://cdn-icons-png.flaticon.com/128/3781/3781981.png',
-    'Cough': 'https://cdn-icons-png.flaticon.com/128/6701/6701570.png',
-    'Cold': 'https://cdn-icons-png.flaticon.com/128/5641/5641619.png',
-    'Chest pain': 'https://cdn-icons-png.flaticon.com/128/11060/11060182.png',
-    'Headache': 'https://cdn-icons-png.flaticon.com/128/6553/6553550.png',
-    'Depression': 'https://cdn-icons-png.flaticon.com/128/7714/7714651.png',
-    'Hairfall': 'https://cdn-icons-png.flaticon.com/128/5506/5506742.png',
-    'Diabetes': 'https://cdn-icons-png.flaticon.com/128/6161/6161510.png',
-    'Injury': 'https://cdn-icons-png.flaticon.com/128/1576/1576481.png',
+    'anxiety'.tr: 'https://cdn-icons-png.flaticon.com/128/7145/7145123.png',
+    'fever'.tr: 'https://cdn-icons-png.flaticon.com/128/3781/3781981.png',
+    'cough'.tr: 'https://cdn-icons-png.flaticon.com/128/6701/6701570.png',
+    'cold'.tr: 'https://cdn-icons-png.flaticon.com/128/5641/5641619.png',
+    'chest pain'.tr: 'https://cdn-icons-png.flaticon.com/128/11060/11060182.png',
+    'headache'.tr: 'https://cdn-icons-png.flaticon.com/128/6553/6553550.png',
+    'depression'.tr: 'https://cdn-icons-png.flaticon.com/128/7714/7714651.png',
+    'hairfall'.tr: 'https://cdn-icons-png.flaticon.com/128/5506/5506742.png',
+    'diabetes'.tr: 'https://cdn-icons-png.flaticon.com/128/6161/6161510.png',
+    'injury'.tr: 'https://cdn-icons-png.flaticon.com/128/1576/1576481.png',
   };
 
   @override
@@ -33,8 +34,8 @@ class _VideoConsultationSymptomsScreenState
       appBar: AppBar(
         iconTheme: const IconThemeData(color: AppColor.white),
         backgroundColor: AppColor.primary_color,
-        title: const Text(
-          "Select your Symptom",
+        title: Text(
+          "select your symptom".tr,
           style: TextStyle(color: AppColor.white, fontFamily: AppFont.bold),
         ),
       ),

@@ -269,8 +269,8 @@ class _Home_WidgetState extends State<Home_Widget> {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const Text(
-                                    "Health Package",
+                                  Text(
+                                    "health package".tr,
                                     style: TextStyle(
                                         color: AppColor.primary_color,
                                         fontSize: 20,

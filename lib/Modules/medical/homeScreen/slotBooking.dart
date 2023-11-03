@@ -4,6 +4,7 @@ import 'package:flutter_ui_kit/Modules/medical/Utils/app_color.dart';
 import 'package:flutter_ui_kit/Modules/medical/Utils/app_image.dart';
 import 'package:flutter_ui_kit/Modules/real_estate/utils/app_font.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class SlotBooking extends StatefulWidget {
@@ -77,7 +78,7 @@ class _SlotBookingState extends State<SlotBooking> {
         child: GestureDetector(
           onTap: () {
             Fluttertoast.showToast(
-                msg: "Your appointment has been booked successfully.",
+                msg: "your appointment has been booked successfully".tr,
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.BOTTOM,
                 backgroundColor: AppColor.primary_color,
@@ -89,9 +90,9 @@ class _SlotBookingState extends State<SlotBooking> {
             margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
             // padding: const EdgeInsets.symmetric(),
             width: MediaQuery.of(context).size.width,
-            child: const Center(
+            child: Center(
                 child: Text(
-              "BOOK NOW",
+              "book now".tr,
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 13,
@@ -113,9 +114,9 @@ class _SlotBookingState extends State<SlotBooking> {
         ),
       ),
       appBar: AppBar(
-        title: const Text(
-          "Book Your Appointment",
-          style: TextStyle(color: Colors.white, fontFamily: AppFont.bold,),
+        title: Text(
+          "book your appointment".tr,
+          style: const TextStyle(color: Colors.white, fontFamily: AppFont.bold,),
         ),
         backgroundColor: AppColor.primary_color,
         elevation: 0,
@@ -183,10 +184,10 @@ class _SlotBookingState extends State<SlotBooking> {
               ],
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 8),
             child: Text(
-              "Choose Your Appointment date",
+              "choose your appointment date".tr,
               style: TextStyle(fontSize: 18, fontFamily: AppFont.semiBold,),
             ),
           ),
@@ -260,10 +261,10 @@ class _SlotBookingState extends State<SlotBooking> {
                   );
                 }),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 15),
             child: Text(
-              "Morning",
+              "morning".tr,
               style: TextStyle(fontSize: 18, fontFamily: AppFont.semiBold,),
             ),
           ),
@@ -283,10 +284,10 @@ class _SlotBookingState extends State<SlotBooking> {
           ),
           selectedDayForTiming == "Sunday"
               ? const SizedBox()
-              : const Padding(
+              : Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 15),
                   child: Text(
-                    "Afternoon",
+                    "afternoon".tr,
                     style: TextStyle(fontSize: 18, fontFamily: AppFont.semiBold),
                   ),
                 ),
@@ -308,10 +309,10 @@ class _SlotBookingState extends State<SlotBooking> {
                 ),
           selectedDayForTiming == "Sunday"
               ? const SizedBox()
-              : const Padding(
+              : Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 15),
                   child: Text(
-                    "Evening",
+                    "evening".tr,
                     style: TextStyle(fontSize: 18, fontFamily: AppFont.semiBold),
                   ),
                 ),
