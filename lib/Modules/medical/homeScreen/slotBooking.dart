@@ -222,7 +222,7 @@ class _SlotBookingState extends State<SlotBooking> {
                                         int.parse(
                                             dayFormatter.format(dates[index])))
                                     .weekday -
-                                1],
+                                1].tr,
                             style: const TextStyle(
                                 fontSize: 15,
                                 fontFamily: AppFont.regular,
