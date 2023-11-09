@@ -58,23 +58,24 @@ class _DisplayThemeModeState extends State<DisplayThemeMode> {
               const SizedBox(height: 40),
               Text('choose how your flutter ui kit experience looks for this device...'.tr,style: Theme.of(context).textTheme.headline3?.copyWith(fontFamily: AppFont.medium)),
               const SizedBox(height: 15),
-              RadioListTile(
-                title: Text('device settings'.tr,style: TextStyle(fontFamily: AppFont.medium),),
-                groupValue: themeMode,
-                value: ThemeMode.system,
-                onChanged: (value) async{
-                  final prefs = await SharedPreferences.getInstance();
-                  themeMode = ThemeMode.system;
-                  prefs.setString('themeMode',themeMode.toString());
-                  setState(() {});
-                  themeController.changeThemeMode(isDarkMode ? ThemeMode.dark : ThemeMode.light);
-                }
-              ),
+              // RadioListTile(
+              //   title: Text('device settings'.tr,style: TextStyle(fontFamily: AppFont.medium),),
+              //   groupValue: themeMode,
+              //   value: ThemeMode.system,
+              //   onChanged: (value) async{
+              //     final prefs = await SharedPreferences.getInstance();
+              //     themeMode = ThemeMode.system;
+              //     prefs.setString('themeMode',themeMode.toString());
+              //     setState(() {});
+              //     themeController.changeThemeMode(isDarkMode ? ThemeMode.dark : ThemeMode.light);
+              //   }
+              // ),
               RadioListTile(
                 title: Text('dark mode'.tr,style: TextStyle(fontFamily: AppFont.medium),),
                 groupValue: themeMode,
                 value: ThemeMode.dark,
                 onChanged: (value) async{
+                  print("valueee $value");
                   final prefs = await SharedPreferences.getInstance();
                   themeMode = ThemeMode.dark;
                   prefs.setString('themeMode',themeMode.toString());
@@ -87,6 +88,7 @@ class _DisplayThemeModeState extends State<DisplayThemeMode> {
                 groupValue: themeMode,
                 value: ThemeMode.light,
                 onChanged: (value) async{
+                  print("valueee $value");
                   final prefs = await SharedPreferences.getInstance();
                   themeMode = ThemeMode.light;
                   prefs.setString('themeMode',themeMode.toString());

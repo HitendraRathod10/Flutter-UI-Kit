@@ -119,7 +119,7 @@ class Languages extends Translations {
           "cold": "ठंड",
           "chest pain": "छाती में दर्द",
           "headache": "सिरदर्द",
-          "depression": "depression",
+          "depression": "अवसाद",
           "hairfall": "बाल झड़ना",
           "diabetes": "मधुमेह",
           "injury": "चोट",
